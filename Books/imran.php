@@ -1,0 +1,130 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Imran Khan | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.php'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.php">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/non-fiction.php">Non-fiction</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Imran Khan
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/imran.jpg"
+        alt="Imran Khan" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">A Personal History</h1>
+      <p class="book-author">Imran Khan</p>
+        
+<div class="meta-row">
+    <span class="meta-item">2011</span>
+    <span class="meta-item">448 pages</span>
+    <span class="meta-item">English</span>
+    <span class="meta-item rating">
+      4.1 (2000+ ratings)
+    </span>
+</div>
+
+<div class="genres">
+  <span class="genre-tag">Biography</span>
+  <span class="genre-tag">Politics</span>
+  <span class="genre-tag">Autobiography</span>
+</div>
+
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/imran.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+<section class="book-description">
+  <h2>Description</h2>
+
+  <p>
+    This book presents the life journey of Imran Khan, tracing his transformation from an international cricket legend to a national political leader. It explores his early life, education in England, and rise in world cricket, highlighting leadership, resilience, and discipline that later shaped his public career.
+  </p>
+
+  <p>
+    The narrative also discusses his personal struggles, spiritual growth, and motivation behind building Shaukat Khanum Cancer Hospital, showing how personal experiences influenced his commitment to public welfare. The book further reflects his views on Pakistan’s political system, governance challenges, and his vision for national reform and institutional strength.
+  </p>
+
+  <p>
+    Blending autobiography, history, and social commentary, the book offers insight into Pakistan’s political and cultural landscape through the perspective of someone who experienced global sports fame and later stepped into national leadership and public service.
+  </p>
+</section>
+
+  </section>
+
+    <section class="book-details-section">
+      <h2>Book Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Publisher</span>
+          <span class="value">Bantam Press</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">ISBN</span>
+          <span class="value">978-0-06-231500-7</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Publication Date</span>
+          <span class="value">Dec 18, 2014</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">File Size</span>
+          <span class="value">8.7 MB (PDF)</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Format</span>
+          <span class="value">PDF, EPUB</span>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+
+</body>
+</html>

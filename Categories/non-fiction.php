@@ -1,0 +1,222 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="../Pics/logo.jpg">
+    
+    <title>E-Library | Books</title>
+
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/dark-theme.css">
+    <script src="../JavaScript/main.js" defer></script>
+</head>
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/navigation-bar.php'; ?>
+
+<button onclick="goBack()" class="nav-button" id="back-btn" >←</button>
+
+<button onclick="goForward()" class="nav-button" id="forward-btn" >→</button>
+
+<section class="hero-pages">
+
+    <h2>Non-Fiction Category</h2>
+    <p>Explore our collection of Non-Fiction books.</p>
+</section>
+
+<section class="books-page-grid">
+
+    <a href="../Books/characters.php">
+    <div class="book-card">
+        <img src="../pics/books/characters.jpg" alt="Kingdom of Characters">
+        <h3>Kingdom of Characters</h3>
+        <p>Jing Tsu</p>
+    </div>
+    </a>
+
+    
+    <a href="../Books/gulag.php">
+    <div class="book-card">
+        <img src="../pics/books/gulag.jpg" alt="Gulag: A History">
+        <h3>Gulag - A History</h3>
+        <p>Anne Applebaum</p>
+    </div>
+    </a>
+
+    
+    <a href="../Books/magicalthinking.php">
+        <div class="book-card">
+            <img src="../pics/books/magicalthinking.jpg" alt="Year of Magical Thinking">
+            <h3>Year of Magical Thinking</h3>
+            <p>Joan Didion</p>
+        </div>
+    </a>
+    
+    <a href="../Books/sleep.php">
+        <div class="book-card">
+        <img src="../Pics/books/sleep.jpg" alt="Why We Sleep">
+        <h3>Why We Sleep</h3>
+        <p>Matthew Walker</p>
+    </div>
+    </a>
+
+
+    <a href="../Books/origin.php">
+    <div class="book-card">
+        <img src="../Pics/books/origin.jpg" alt="Origin of Species">
+        <h3>Origin of Species</h3>
+        <p>Charles Darwin</p>
+    </div>
+    </a>
+
+    <a href="../Books/masnavi.php">
+    <div class="book-card">
+        <img src="../Pics/books/masnavi.jpg" alt="Masnavi">
+        <h3>Masnavi of Rumi</h3>
+        <p>Alan Williams</p>
+    </div>
+    </a>
+    
+    <a href="../Books/Khalifate.php">
+    <div class="book-card">
+        <img src="../Pics/books/Khalifate.jpg" alt="Khilafate">
+        <h3>Khilafate</h3>
+        <p>Historical</p>
+    </div>
+    </a>
+
+    
+    <a href="../Books/elegentuniverse.php">
+    <div class="book-card">
+        <img src="../Pics/books/elegentuniverse.jpg" alt="The Elegant Universe">
+        <h3>Elegant Universe</h3>
+        <p>Brian Greene</p>
+    </div>
+    </a>
+
+
+    <a href="../Books/imran.php">
+        <div class="book-card">
+            <img src="../Pics/books/imran.jpg" alt="Imran Khan">
+            <h3>A Personal History</h3>
+            <p>Imran Khan</p>
+        </div>
+    </a>
+
+
+    <a href="../Books/language.php">
+    <div class="book-card">
+        <img src="../pics/books/language.jpg" alt="Study of Language">
+        <h3>Study of Language</h3>
+        <p>George Yule</p>
+    </div>
+    </a>
+
+    <a href="../Books/fundamentalist.php">
+    <div class="book-card">
+        <img src="../pics/books/fundamentalist.jpg" alt="The Reluctant Fundamentalist">
+        <h3>Reluctant Fundamentalist</h3>
+        <p>Mohsin Hamid</p>
+    </div>
+    </a>
+
+    <a href="../Books/chaos.php">
+    <div class="book-card">
+        <img src="../Pics/books/chaos.jpg" alt="Chaos">
+        <h3>Chaos</h3>
+        <p>James Gleick</p>
+    </div>
+    </a>
+
+    <a href="../Books/brass.php">
+    <div class="book-card">
+        <img src="../pics/books/brass.jpg" alt="City of Brass">
+        <h3>City of Brass</h3>
+        <p>S. A. Chakraborty</p>
+    </div>
+    </a>
+
+    
+    <a href="../Books/characters.php">
+    <div class="book-card">
+        <img src="../pics/books/characters.jpg" alt="Kingdom of Characters">
+        <h3>Kingdom of Characters</h3>
+        <p>Jing Tsu</p>
+    </div>
+    </a>
+
+    
+    <a href="../Books/gulag.php">
+    <div class="book-card">
+        <img src="../pics/books/gulag.jpg" alt="Gulag: A History">
+        <h3>Gulag - A History</h3>
+        <p>Anne Applebaum</p>
+    </div>
+    </a>
+
+    
+    <a href="../Books/magicalthinking.php">
+        <div class="book-card">
+            <img src="../pics/books/magicalthinking.jpg" alt="Year of Magical Thinking">
+            <h3>Year of Magical Thinking</h3>
+            <p>Joan Didion</p>
+        </div>
+    </a>
+    
+    <a href="../Books/sleep.php">
+        <div class="book-card">
+        <img src="../Pics/books/sleep.jpg" alt="Why We Sleep">
+        <h3>Why We Sleep</h3>
+        <p>Matthew Walker</p>
+    </div>
+    </a>
+
+    
+    <a href="../Books/Khalifate.php">
+    <div class="book-card">
+        <img src="../Pics/books/Khalifate.jpg" alt="Khilafate">
+        <h3>Khilafate</h3>
+        <p>Historical</p>
+    </div>
+    </a>
+    
+    <a href="../Books/elegentuniverse.php">
+    <div class="book-card">
+        <img src="../Pics/books/elegentuniverse.jpg" alt="The Elegant Universe">
+        <h3>Elegant Universe</h3>
+        <p>Brian Greene</p>
+    </div>
+    </a>
+
+    <a href="../Books/ArtofWar.php">
+    <div class="book-card">
+        <img src="../Pics/books/Artofwar.jpg" alt="Art of War">
+        <h3>Art of War</h3>
+        <p>Sun Tzu</p>
+    </div>
+    </a>
+
+    <a href="../Books/language.php">
+    <div class="book-card">
+        <img src="../pics/books/language.jpg" alt="Study of Language">
+        <h3>Study of Language</h3>
+        <p>George Yule</p>
+    </div>
+    </a>
+
+
+
+</section>
+
+
+
+<?php include '../footer.php'; ?>
+
+<script src="JavaScript/main.js" defer></script>
+
+</body>
+</php>

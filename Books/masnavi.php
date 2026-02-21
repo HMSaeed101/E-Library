@@ -1,0 +1,125 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Rumi | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.php'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.php">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/non-fiction.php">Non-fiction</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Masnavi of Rumi
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/masnavi.jpg"
+        alt="Masnavi or Rumi" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Masnavi of Rumi</h1>
+      <p class="book-author">Alan Williams</p>
+        
+<div class="meta-row">
+    <span class="meta-item">2010</span>
+    <span class="meta-item">650 pages</span>
+    <span class="meta-item">English</span>
+    <span class="meta-item rating">
+      4.1 (2000+ ratings)
+    </span>
+</div>
+
+    <div class="genres">
+        <span class="genre-tag">Sufi Poetry</span>
+        <span class="genre-tag">Spirituality</span>
+        <span class="genre-tag">Philosophy</span>
+        <span class="genre-tag">Classical Literature</span>
+    </div>
+
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/masnavi.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+<section class="book-description">
+  <h2>Description</h2>
+
+  <p>
+    The Masnavi, also called the Masnavi-i Ma'navi, is a six-volume poetic work by Jalaluddin Rumi, considered one of the most important works of Sufi literature. This English translation by Alan Williams presents Rumi’s timeless spiritual and moral teachings through stories, parables, and reflections.
+    The book explores themes of divine love, human psychology, ethics, and the journey of the soul. Rumi uses poetry to convey mystical insights, illustrating how ordinary experiences can carry profound spiritual meaning.
+    This edition makes Rumi’s complex Persian verses accessible to modern readers, retaining the lyrical and philosophical depth of the original. It serves as both a literary masterpiece and a guide for those seeking inner growth and understanding of Sufi thought.
+  </p>
+</section>
+
+  </section>
+
+    <section class="book-details-section">
+      <h2>Book Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Publisher</span>
+          <span class="value">HarperOne</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">ISBN</span>
+          <span class="value">978-0-06-231500-7</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Publication Date</span>
+          <span class="value">Dec 18, 2014</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">File Size</span>
+          <span class="value">8.7 MB (PDF)</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Format</span>
+          <span class="value">PDF, EPUB</span>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+
+</body>
+</html>

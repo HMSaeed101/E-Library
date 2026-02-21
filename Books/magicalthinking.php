@@ -1,0 +1,123 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Magical Thinking | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.php'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.php">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/Science.php">Science</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Magical Thinking
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/magicalthinking.jpg"
+        alt="Magical Thinking" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Magical Thinking</h1>
+      <p class="book-author">Joan Didion</p>
+        
+    <div class="meta-row">
+  <span class="meta-item">304 pages</span>
+  <span class="meta-item">2012</span>
+  <span class="meta-item">English</span>
+  <span class="meta-item rating">
+    3.55 (784 ratings)
+  </span>
+</div>
+
+        <div class="genres">
+  <span class="genre-tag">Psychology</span>
+  <span class="genre-tag">Science</span>
+  <span class="genre-tag">Philosophy</span>
+</div>
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/magicalthinking.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <section class="book-description">
+  <h2>Description</h2>
+  <p>
+    In this witty and perceptive debut, a former editor at Psychology Today shows us how magical thinking makes life worth living. Psychologists have documented a litany of cognitive biases- misperceptions of the world-and explained their positive functions. Now, Matthew Hutson shows us that even the most hardcore skeptic indulges in magical thinking all the time-and it's crucial to our survival. 
+    
+    Drawing on evolution, cognitive science, and neuroscience, Hutson shows us that magical thinking has been so useful to us that it's hardwired into our brains. It encourages us to think that we actually have free will. It helps make us believe that we have an underlying purpose in the world. It can even protect us from the paralyzing awareness of our own mortality. In other words, magical thinking is a completely irrational way of making our lives make rational sense. 
+    
+    With wonderfully entertaining stories, personal reflections, and sharp observations, Hutson reveals our deepest fears and longings. He also assures us that it is no accident his surname contains so many of the same letters as this imprint.
+  </p>
+</section>
+
+
+    <section class="book-details-section">
+  <h2>Book Details</h2>
+  <div class="details-grid">
+    <div class="detail-item">
+      <span class="label">Publisher</span>
+      <span class="value">Hudson Street Press</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">ISBN</span>
+      <span class="value">978-1594630873</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Publication Date</span>
+      <span class="value">April 12, 2012</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">File Size</span>
+      <span class="value">~1-2 MB</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Format</span>
+      <span class="value">PDF, EPUB</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+</body>
+</html>

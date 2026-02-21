@@ -1,0 +1,121 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Paradise | Book</title>
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.php'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.php">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/fiction.php">Fiction</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          The Paradise
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/paradise.jpg"
+        alt="Paradise" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Paradise</h1>
+      <p class="book-author">Abdulrazak Gurnah</p>
+        
+    <div class="meta-row">
+        <span class="meta-item">Published 1994</span>
+        <span class="meta-item">256 pages</span>
+        <span class="meta-item">English</span>
+        <span class="meta-item rating">
+          3.7 – 4.0
+        </span>
+      </div>
+
+        <div class="genres">
+          <span class="genre-tag">Fiction</span>
+          <span class="genre-tag">Postcolonial</span>
+        <span class="genre-tag">African Literature</span>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/Sealed-Nectar.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <section class="book-description">
+    <h2>Description</h2>
+    <p>
+      Paradise is a powerful coming-of-age story set in early 20th-century East Africa, just before European colonial powers fully tighten their grip. It follows Yusuf, a young boy from a modest family, who is pawned into servitude to settle his father's debts and embarks on a transformative journey with a merchant caravan across unfamiliar lands.
+    </p>
+    <p>
+      Through Yusuf's eyes, Abdulrazak Gurnah (Nobel Prize in Literature 2021) explores themes of innocence and corruption, tradition versus colonialism, identity, belonging, and the harsh beauty of pre-colonial Africa. A tragic love story and a subtle critique of cultural disruption, the novel was shortlisted for the Booker Prize and marked Gurnah's international breakthrough.
+    </p>
+  </section>
+
+    <section class="book-details-section">
+      <h2>Book Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Publisher</span>
+          <span class="value">Hamish Hamilton</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">ISBN</span>
+          <span class="value">978-0-06-231500-7</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Publication Date</span>
+          <span class="value">Dec 18, 2014</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">File Size</span>
+          <span class="value">8.7 MB (PDF)</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Format</span>
+          <span class="value">PDF, EPUB</span>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Persian Fire | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.php'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.php">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/history.php">History</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Persian Fire
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/persia.jpg"
+        alt="Persian Fire" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Persian Fire</h1>
+      <p class="book-author">Tom Holland</p>
+        
+    <div class="meta-row">
+        <span class="meta-item">2005</span>
+  <span class="meta-item">464 pages</span>
+  <span class="meta-item">English</span>
+  <span class="meta-item rating">
+    4.16 (7,835 ratings)
+  </span>
+</div>
+
+    <div class="genres">
+  <span class="genre-tag">Nonfiction</span>
+  <span class="genre-tag">Ancient History</span>
+  <span class="genre-tag">Classics</span>
+</div>
+
+    <div class="action-buttons">
+      <button class="btn primary" onclick="window.open('../PDFs/persia.pdf', '_blank')">Read Now</button>
+      <button class="btn secondary">Add to Favorites</button>
+      <button class="btn tertiary">Download PDF</button>
+    </div>
+        
+      </div>
+    </div>
+
+    <section class="book-description">
+  <h2>Description</h2>
+  <p>
+    A "sweeping popular account" (The Seattle Times) of how Athens and Sparta withstood an assault from the Persian Empire in the cradle of Western civilization, from the acclaimed author of Rubicon and co-host of the hit podcast The Rest Is History.
+
+    In the fifth century B.C., a global superpower was determined to bring truth and order to what it regarded as two terrorist states. The superpower was Persia, incomparably rich in ambition, gold, and men. The terrorist states were Athens and Sparta, eccentric cities in a poor and mountainous backwater: Greece. 
+
+    The story of how their citizens took on the Great King of Persia, and thereby saved not only themselves but Western civilization as well, is as heart-pounding as any episode in history. Tom Holland’s brilliant study of these critical Persian Wars skillfully examines a conflict of critical importance to both ancient and modern history.
+  </p>
+</section>
+
+
+  </section>
+
+    <section class="book-details-section">
+      <h2>Book Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Publisher</span>
+          <span class="value">Riverhead Books</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">ISBN</span>
+          <span class="value">978-0-06-231500-7</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Publication Date</span>
+          <span class="value">November 23, 2020</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">File Size</span>
+          <span class="value">3.4 MB (PDF)</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Format</span>
+          <span class="value">PDF, EPUB</span>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+
+</body>
+</html>

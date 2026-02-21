@@ -1,0 +1,121 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>The Kite Runner | Book</title>
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.php'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.php">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/fiction.php">Fiction</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Kite Runner
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/KiteRunner.jpg"
+        alt="The Kite Runner" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">The Kite Runner</h1>
+      <p class="book-author">Khalid Hosssenni</p>
+        
+    <div class="meta-row">
+        <span class="meta-item">Published 2003</span>
+        <span class="meta-item">~371 pages</span>
+        <span class="meta-item">English</span>
+        <span class="meta-item rating">
+          4.3+ mil (ratings)
+        </span>
+      </div>
+
+        <div class="genres">
+          <span class="genre-tag">Fiction</span>
+          <span class="genre-tag">Drama</span>
+          <span class="genre-tag">Coming-of-Age</span>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/Sealed-Nectar.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <section class="book-description">
+    <h2>Description</h2>
+    <p>
+      The Kite Runner is a powerful and heartbreaking novel that tells the story of Amir, a young boy from a privileged family in Kabul, and his complex friendship with Hassan, the son of his father's servant. Set against the turbulent backdrop of Afghanistan from the 1970s through the rise of the Taliban, the book explores themes of guilt, betrayal, redemption, family, and the lasting impact of childhood choices.
+    </p>
+    <p>
+      Through kite flying tournaments, acts of courage and cowardice, and a journey that spans decades and continents, Khaled Hosseini crafts an unforgettable tale of friendship, atonement, and the search for personal honor in a world torn by war and division. A modern classic that has touched millions of readers worldwide.
+    </p>
+  </section>
+
+    <section class="book-details-section">
+      <h2>Book Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Publisher</span>
+          <span class="value">Riverhead Books</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">ISBN</span>
+          <span class="value">978-0-06-231500-7</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Publication Date</span>
+          <span class="value">May 29, 2003</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">File Size</span>
+          <span class="value">2.8 MB (PDF)</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Format</span>
+          <span class="value">PDF, EPUB</span>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+
+</body>
+</html>

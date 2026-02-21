@@ -1,0 +1,236 @@
+.dark-theme{
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+    transition: background-color 0.01s ease, color 0.1s ease;
+}
+.dark-theme a {
+    color: var(--color-dark-text);
+    transition: color 0.3s ease;
+}
+.dark-theme a:hover {
+    color: var(--color-accent);
+}
+.dark-theme .button {
+    background-color: var(--color-dark-primary);
+    color: var(--color-dark-text);
+    border: 1px solid #333;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.dark-theme .button:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    transform: scale(1.15);
+}
+.dark-theme #emailbutton {
+    background-color: #ffcc00bc;
+    color: #032273;
+}
+.dark-theme .nav-button
+{
+    color : #032273;
+    background-color : var(--color-accent);
+}
+
+/* Headings*/
+.dark-theme h1 {
+    color: var(--color-white);
+    background: radial-gradient(circle, #0f1f4c 70%, rgba(31, 61, 136, 0) 100%);
+}
+.dark-theme h2 {
+    color: #bbdefb;
+}
+.dark-theme h3 {
+    color: #e0e0e0;
+}
+.dark-theme h4 {
+    color: #e0e0e0;
+}
+
+/* Header */
+.dark-theme .header {
+    background-color: var(--color-dark-primary);
+    color: var(--color-white);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+}
+.dark-theme .header.scrolled {
+    box-shadow: 0 10px 20px rgba(223, 216, 17, 0.164);
+}
+.dark-theme .navigation-bar a {
+    color: var(--color-white);
+}
+.dark-theme .navigation-bar a:hover {
+    background: #ffcc00;
+    color: #1f3c88;
+}
+.dark-theme .navigation-bar a.active::after {
+    background: #ffcc00;
+}
+
+/* Hero Section */
+.dark-theme .hero {
+    background:linear-gradient(rgba(0, 0, 0, 0.541), rgba(0,0,0,0.7)), url("../Pics/books/Open_Book.jpg");
+    background-size: cover;
+    background-position: bottom;
+    color: #ffffff;
+}
+.dark-theme .search-box input {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+.dark-theme .search-dropdown {
+    background: #1e1e1e;
+    border: 1px solid #444;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.dark-theme .search-dropdown .item {
+    color: #e0e0e0;
+}
+.dark-theme .search-dropdown .item:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+
+/* Featured Books */
+.dark-theme .featured-books {
+    background-color: #121212;
+}
+.dark-theme .book-card {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.dark-theme .book-card h3,
+.dark-theme .book-card p {
+    color: #bbdefb;
+}
+.dark-theme .book-card:hover {
+    box-shadow: 0 6px 10px rgba(235, 232, 19, 0.556);
+}
+
+/* Books Page */
+.dark-theme .books-page-grid {
+    background-color: #121212;
+}
+.dark-theme .search-books-page input {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+/* Categories */
+.dark-theme .category-card {
+    background-color: #0f1f4c;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+.dark-theme .category-card:hover {
+    box-shadow: 0 2px 4px #ffcc00;
+}
+
+/* Footer */
+.dark-theme .footer {
+    background-color: #0f1f4c;
+    color: #e0e0e0;
+}
+.dark-theme .footer h4 {
+    background: rgba(0, 0, 0, 0.5);
+}
+.dark-theme .input {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+.dark-theme .copyright {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Login Page */
+.dark-theme .login-page {
+    background-color: #121212;
+}
+.dark-theme .login-container {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+}
+.dark-theme .login-container input {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+.dark-theme .login-container button {
+    background-color: #0f1f4c;
+}
+.dark-theme .login-container button:hover {
+    background-color: #ffcc00;
+    color: #1f3c88;
+}
+.dark-theme .signup-link {
+    color: #e0e0e0;
+}
+.dark-theme .signup-link a {
+    color: #bbdefb;
+}
+
+/* Contact Page */
+.dark-theme .contact-page-form-section {
+    background-color: #121212;
+}
+.dark-theme .contact-page-form {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+.dark-theme .contact-page-form label {
+    color: #bbdefb;
+}
+.dark-theme .contact-page-form input,
+.dark-theme .contact-page-form textarea {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+/* About Page */
+.dark-theme .about-content {
+    color: #e0e0e0;
+}
+.dark-theme .about-section h3 {
+    color: #bbdefb;
+}
+.dark-theme .name {
+    color: #e0e0e0;
+}
+.dark-theme .role {
+    color: #bbbbbb;
+}
+.dark-theme .avatar-wrapper {
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.2);
+}
+.dark-theme .avatar-wrapper:hover {
+    box-shadow: 12px 12px 24px rgba(0,0,0,0.4), 0 4px 10px #ffcc00;
+    border: 2px solid #ffcc00;
+}
+
+/* Hero for other pages */
+.dark-theme .hero-pages {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* Breadcrumb */
+.dark-theme .breadcrumb-item a {
+    color: #bbdefb;
+}
+.dark-theme .breadcrumb-item a:hover,
+.dark-theme .breadcrumb-item a:focus {
+    color: #ffffff;
+    background: rgba(255, 196, 0, 0.3);
+}
+.dark-theme .breadcrumb-item.active {
+    color: #e0e0e0;
+}
+.dark-theme .breadcrumb-item + .breadcrumb-item::before {
+    color: #888;
+}

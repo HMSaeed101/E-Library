@@ -1,0 +1,155 @@
+/* Profile Container */
+.dark-theme .profile-container {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+}
+
+/* Profile Header */
+.dark-theme .profile-header {
+    background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+    border: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile Image */
+.dark-theme .profile-img {
+    border: 2px solid #444;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile Info */
+.dark-theme .profile-info {
+    color: var(--color-dark-text);
+}
+
+.dark-theme .profile-info h2 {
+    color: #ffffff;
+}
+
+.dark-theme .username {
+    color: var(--color-dark-muted);
+}
+
+.dark-theme .join-date {
+    color: #9ca3af;
+}
+
+/* Stats */
+.dark-theme .stat-box {
+    background: #333;
+    border: 1px solid #444;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .stat-box h3 {
+    color: #ffffff;
+}
+
+.dark-theme .stat-box span {
+    color: var(--color-dark-muted);
+}
+
+/* Buttons */
+.dark-theme .btn.primary {
+    background: var(--color-dark-primary);
+    color: #ffffff;
+}
+
+.dark-theme .btn.primary:hover {
+    background: #ffcc00;
+    color: #1f3c88;
+}
+
+.dark-theme .btn.outline {
+    border: 2px solid #3b82f6;
+    color: #3b82f6;
+}
+
+.dark-theme .btn.outline:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #60a5fa;
+}
+
+.dark-theme .btn.ghost {
+    color: var(--color-dark-muted);
+}
+
+.dark-theme .btn.ghost:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Sections */
+.dark-theme .section {
+    background: var(--color-dark-surface);
+    border: 1px solid #333;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    color: var(--color-dark-text);
+}
+
+.dark-theme .section h3 {
+    color: #a2cdf0;
+}
+
+.dark-theme .section h4 {
+    color: #e0e0e0;
+}
+
+/* Book Cards */
+.dark-theme .book-card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: var(--color-dark-text);
+}
+
+.dark-theme .book-card h4 {
+    color: #e0e0e0;
+}
+
+.dark-theme .book-card span {
+    color: var(--color-dark-muted);
+}
+
+/* Progress Bar */
+.dark-theme .progress-bar {
+    background: #333;
+}
+
+.dark-theme .progress {
+    background: #3b82f6;
+}
+
+/* Tabs */
+.dark-theme .tab {
+    background: #333;
+    color: var(--color-dark-text);
+    border: 1px solid #444;
+}
+
+.dark-theme .tab:hover {
+    background: #444;
+}
+
+.dark-theme .tab.active {
+    background: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+}
+
+/* Action Buttons */
+.dark-theme .action-btn,
+.dark-theme .setting-btn {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+.dark-theme .action-btn:hover,
+.dark-theme .setting-btn:hover {
+    background: #60a5fa;
+}
+
+/* Settings Grid */
+.dark-theme .settings-grid {
+    color: var(--color-dark-text);
+}

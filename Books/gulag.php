@@ -1,0 +1,120 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Gulag | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.php'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.php">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/history.php">History</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Gulag
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/gulag.jpg"
+        alt="Gulag"
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Gulag</h1>
+      <p class="book-author">Anne Applebaum</p>
+        
+    <div class="meta-row">
+        <span class="meta-item">2003</span>
+        <span class="meta-item">720 pages</span>
+        <span class="meta-item">English</span>
+        <span class="meta-item rating">
+          4.3 (13,782 ratings)
+        </span>
+      </div>
+
+        <div class="genres">
+          <span class="genre-tag">Russian</span>
+          <span class="genre-tag">Politics</span>
+          <span class="genre-tag">History</span>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/gulag.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <section class="book-description">
+    <h2>Description</h2>
+    <p>
+Drawing on his own incarceration and exile, as well as on evidence from more than 200 fellow prisoners and Soviet archives, Aleksandr I. Solzhenitsyn reveals the entire apparatus of Soviet repression—the state within the state that ruled all-powerfully. Through truly Shakespearean portraits of its victims—men, women, and children—we encounter secret police operations, labor camps and prisons; the uprooting or extermination of whole populations, the welcome that awaited Russian soldiers who had been German prisoners of war. Yet we also witness the astounding moral courage of the incorruptible, who, defenseless, endured great brutality and degradation. The Gulag Archipelago 1918–1956 —a grisly indictment of a regime, fashioned here into a veritable literary miracle—has now been updated with a new introduction that includes the fall of the Soviet Union and Solzhenitsyn's move back to Russia.
+</p>
+
+
+  </section>
+
+    <section class="book-details-section">
+      <h2>Book Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Publisher</span>
+          <span class="value">Doubleday</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">ISBN</span>
+          <span class="value">978-0-06-231500-7</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Publication Date</span>
+          <span class="value">April 29, 2003</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">File Size</span>
+          <span class="value">3.8 MB (PDF)</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Format</span>
+          <span class="value">PDF, EPUB</span>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+
+</body>
+</html>

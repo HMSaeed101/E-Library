@@ -1,0 +1,123 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Art of War | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.php'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.php">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/non-fiction.php">Non-Fiction</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Art of War
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/Artofwar.jpg"
+        alt="Art of War" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Art of War</h1>
+      <p class="book-author">Sun Tzu</p>
+        
+    <div class="meta-row">
+      <span class="meta-item">5th century BCE</span>
+      <span class="meta-item">~60–100 pages</span>
+      <span class="meta-item">Classical Chinese</span>
+      <span class="meta-item rating">
+        4.8 (500,000 ratings)
+      </span>
+    </div>
+
+        <div class="genres">
+          <span class="genre-tag">Military Strategy</span>
+          <span class="genre-tag">Philosophy</span>
+          <span class="genre-tag">Leadership</span>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/artofwar.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <section class="book-description">
+  <h2>Description</h2>
+  <p>
+    <em>The Art of War</em> is an ancient Chinese military treatise attributed to the legendary strategist Sun Tzu (also spelled Sunzi), dating back to the late Spring and Autumn period (roughly 5th century BCE). Comprising just 13 concise chapters, this timeless work explores the essence of strategy, conflict, and victory — emphasizing that the supreme art of war is to subdue the enemy without fighting.
+  </p>
+  <p>
+    Sun Tzu teaches that success in any confrontation — whether on the battlefield, in business, politics, or personal challenges — depends on thorough preparation, deep understanding of oneself and the opponent, adaptability, deception when necessary, and the intelligent use of resources.
+  </p>
+  <p>
+    Far more than a war manual, <em>The Art of War</em> is a profound guide to strategy, psychology, and efficient decision-making. Its compact wisdom has been studied by figures such as Mao Zedong, Napoleon, Douglas MacArthur, and countless modern executives. This edition presents the classic text in a clear, readable format — perfect for reflection, study, and applying its enduring lessons to everyday challenges.
+  </p>
+</section>
+
+    <section class="book-details-section">
+  <h2>Book Details</h2>
+  <div class="details-grid">
+    <div class="detail-item">
+      <span class="label">Publisher</span>
+      <span class="value">HMS Publications</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">ISBN</span>
+      <span class="value">578-7-16-652410-0</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Publication Date</span>
+      <span class="value">April 06, 2017</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">File Size</span>
+      <span class="value">8.7 MB (PDF)</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Format</span>
+      <span class="value">PDF, EPUB</span>
+    </div>
+  </div>
+</section>
+</main>
+
+
+</body>
+</html>

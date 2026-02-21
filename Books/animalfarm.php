@@ -1,0 +1,122 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Animal Farm | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.php'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.php">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/fiction.php">Fiction</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Animal Farm
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/animalfarm.jpg"
+        alt="Animal Farm"
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Animal Farm</h1>
+      <p class="book-author">George Orwell</p>
+        
+    <div class="meta-row">
+    <span class="meta-item">1945</span>
+    <span class="meta-item">112 pages</span>
+    <span class="meta-item">English</span>
+    <span class="meta-item rating">
+      4.48 (245,000 ratings)
+    </span>
+</div>
+
+<div class="genres">
+    <span class="genre-tag">Political Satire</span>
+    <span class="genre-tag">Allegory</span>
+    <span class="genre-tag">Fiction</span>
+    <span class="genre-tag">Classic Literature</span>
+</div>
+
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/animalfarm.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <section class="book-description">
+    <h2>Description</h2>
+    <p>
+Animal Farm is George Orwell’s timeless allegorical novella that exposes the dangers of totalitarianism and corruption. Set on a seemingly simple farm, the animals overthrow their human owner to create a society where all are equal. But as the pigs gradually seize power, the new leadership mirrors the oppressive tyranny they replaced, showing how ideals can be manipulated for control. Through sharp satire, Orwell explores themes of power, propaganda, betrayal, and the fragility of freedom, making this story as relevant today as when it was first published in 1945.
+</p>
+
+
+  </section>
+
+    <section class="book-details-section">
+      <h2>Book Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Publisher</span>
+          <span class="value">Secker & Warburg</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">ISBN</span>
+          <span class="value">978-6-26-231556-7</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Publication Date</span>
+          <span class="value">April 03, 2019</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">File Size</span>
+          <span class="value">4.7 MB (PDF)</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Format</span>
+          <span class="value">PDF, EPUB</span>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+
+</body>
+</html>
