@@ -121,7 +121,7 @@
 }
 
 /* Books */
-.book-grid {
+.profile-book-grid {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;

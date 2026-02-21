@@ -73,7 +73,7 @@ $user = mysqli_fetch_assoc($result);
     <div class="section">
         <h3>Currently Reading</h3>
 
-        <div class="book-grid">
+        <div class="profile-book-grid">
 
             <div class="book-card">
                 <h4>Atomic Habits</h4>
