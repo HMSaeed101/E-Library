@@ -104,7 +104,7 @@ $user = mysqli_fetch_assoc($result);
             <button class="tab">History</button>
         </div>
 
-        <div class="book-grid">
+        <div class="profile-book-grid">
 
             <div class="book-card">
                 <h4>The Al Chemist</h4>
