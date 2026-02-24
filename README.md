@@ -1,6 +1,6 @@
 # Electronic Library
 
-A simple PHP-based electronic library website (XAMPP-compatible) for browsing and reading books (PDF/EPUB). Includes a Books collection, categories, search UI, dark mode, and basic navigation.
+A simple PHP-based electronic library website (XAMPP-compatible) for browsing and reading books (PDF/EPUB). Includes a Books collection, categories, search UI, dark mode, and basic navigation, and User Profile.
 
 ## Features
 - Book pages with metadata and description
@@ -28,6 +28,7 @@ A simple PHP-based electronic library website (XAMPP-compatible) for browsing an
   - [Books/animalfarm.php](Books/animalfarm.php)  
   - [Books/MasterMargrita.php](Books/MasterMargrita.php)  
   - [Books/language.php](Books/language.php)
+  - and many more ...
 
 ## Adding a new book
 1. Upload PDF to [PDFs/](PDFs/) and cover image to [Pics/books/](Pics/books/).  
