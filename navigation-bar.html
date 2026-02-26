@@ -1,0 +1,47 @@
+<header class="header">
+
+    <div class="logo-area">
+        <div class="logo-img">
+            <img src="logo.jpg" alt="Logo Image">
+        </div>
+        <div>
+            <p>E-Library</p>
+        </div>
+    </div>
+    
+    <nav class="navigation-bar">
+
+    <a href="/ELECTRONIC LIBRARY/index.html"    data-page="index.html">Home</a>
+    <a href="/ELECTRONIC LIBRARY/books.html"     data-page="books.html">Books</a>
+    <a href="/ELECTRONIC LIBRARY/categories.html" data-page="categories.html">Categories</a>
+    <a href="/ELECTRONIC LIBRARY/contact.html"   data-page="contact.html">Contact Us</a>
+    <a href="/ELECTRONIC LIBRARY/login.html"     data-page="login.html">Login</a>
+    <a href="/ELECTRONIC LIBRARY/profile.html"     data-page="profile.html">Profile</a>
+
+    <button onclick="toggleDarkMode()" id="darkmode-btn">
+        <span class="moon">🌙</span>
+        <span class="sun">☀️</span>
+    </button>
+
+</nav>
+
+<!-- Scroll Navigation Bar Box Shadows -->
+<script>
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', () => 
+    {
+        if (window.scrollY > 50) 
+        {
+            header.classList.add('scrolled');
+        } 
+        else 
+        {
+            header.classList.remove('scrolled');
+        }
+    }
+    );
+</script>
+
+
+</header>

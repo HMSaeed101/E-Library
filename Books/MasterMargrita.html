@@ -1,0 +1,117 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Master and Margrita | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.html'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.html">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/fiction.html">Fiction</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Master and Margrita
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/MasterMargrita.jpg"
+        alt="Master and Margrita" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Master and Margrita</h1>
+      <p class="book-author">Mikhail Bulgakov</p>
+        
+<div class="meta-row">
+  <span class="meta-item">1967</span>
+  <span class="meta-item">384 pages</span>
+  <span class="meta-item">English</span>
+  <span class="meta-item rating">
+    4.28 (300,000+ ratings)
+  </span>
+</div>
+
+<div class="genres">
+  <span class="genre-tag">Classics</span>
+  <span class="genre-tag">Fantasy</span>
+  <span class="genre-tag">Satire</span>
+</div>
+
+  <div class="action-buttons">
+    <button class="btn primary" onclick="window.open('../PDFs/chaos.pdf', '_blank')">Read Now</button>
+    <button class="btn secondary">Add to Favorites</button>
+    <button class="btn tertiary">Download PDF</button>
+  </div>
+        
+  </div>
+</div>
+
+<section class="book-description">
+  <h2>Description</h2>
+  <p>
+    The first complete, annotated English Translation of Mikhail Bulgakov's comic masterpiece. An audacious revision of the stories of Faust and Pontius Pilate, The Master and Margarita is recognized as one of the essential classics of modern Russian literature. The novel's vision of Soviet life in the 1930s is so ferociously accurate that it could not be published during its author's lifetime and appeared only in a censored version in the 1960s. Its truths are so enduring that its language has become part of the common Russian speech. One hot spring, the devil arrives in Moscow, accompanied by a retinue that includes a beautiful naked witch and an immense talking black cat with a fondness for chess and vodka. The visitors quickly wreak havoc in a city that refuses to believe in either God or Satan. But they also bring peace to two unhappy Muscovites: one is the Master, a writer pilloried for daring to write a novel about Christ and Pontius Pilate; the other is Margarita, who loves the Master so deeply that she is willing literally to go to hell for him. What ensues is a novel of inexhaustible energy, humor, and philosophical depth, a work whose nuances emerge for the first time in Diana Burgin's and Katherine Tiernan O'Connor's splendid English version.
+  </p>
+</section>
+
+    <section class="book-details-section">
+  <h2>Book Details</h2>
+  <div class="details-grid">
+    <div class="detail-item">
+      <span class="label">Publisher</span>
+      <span class="value">Vintage International</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">ISBN</span>
+      <span class="value">978-0679760801</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Publication Date</span>
+      <span class="value">March 19, 1996</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">File Size</span>
+      <span class="value">~2-3 MB</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Format</span>
+      <span class="value">PDF, EPUB</span>
+    </div>
+  </div>
+</section>
+</main>
+
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>SPQR | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.html'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.html">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/history.html">History</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          SPQR
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/spqr.jpg"
+        alt="SPQR" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">SPQR - Ancient Rome</h1>
+      <p class="book-author">Mary Beard</p>
+        
+<div class="meta-row">
+    <span class="meta-item">1930</span>
+  <span class="meta-item">328 pages</span>
+  <span class="meta-item">English</span>
+  <span class="meta-item rating">
+    4.28 (1,515 ratings)
+  </span>
+</div>
+
+<div class="genres">
+  <span class="genre-tag">Philosophy</span>
+  <span class="genre-tag">Religion</span>
+  <span class="genre-tag">Islam</span>
+</div>
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/allama.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+<section class="book-description">
+  <h2>Description</h2>
+  <p>
+    In SPQR, an instant classic, Mary Beard narrates the history of Rome with passion and without technical jargon and demonstrates how a slightly shabby Iron Age village rose to become the undisputed hegemon of the Mediterranean (Wall Street Journal). Hailed by critics as animating the grand sweep and the intimate details that bring the distant past vividly to life in a way that makes your hair stand on end and spanning nearly a thousand years of history, this highly informative, highly readable work examines not just how we think of ancient Rome but challenges the comfortable historical perspectives that have existed for centuries. With its nuanced attention to class, democratic struggles, and the lives of entire groups of people omitted from the historical narrative for centuries, SPQR will shape our view of Roman history for decades to come.
+  </p>
+</section>
+
+
+  </section>
+
+    <section class="book-details-section">
+  <h2>Book Details</h2>
+  <div class="details-grid">
+    <div class="detail-item">
+      <span class="label">Publisher</span>
+      <span class="value">Stanford University Press</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">ISBN</span>
+      <span class="value">978-0804781473</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Publication Date</span>
+      <span class="value">May 22, 2013</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">File Size</span>
+      <span class="value">~2-3 MB</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Format</span>
+      <span class="value">PDF, EPUB</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+</body>
+</html>

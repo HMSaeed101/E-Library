@@ -1,0 +1,121 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Study of Language | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.html'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.html">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/non-fiction.html">Non-Fiction</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          The Elegent Universe
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/language.jpg"
+        alt="Study of Languages" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Study of Languages</h1>
+      <p class="book-author">George Yule</p>
+        
+    <div class="meta-row">
+      <span class="meta-item">2022 (8th edition)</span>
+  <span class="meta-item">404 pages</span>
+  <span class="meta-item">English</span>
+  <span class="meta-item rating">
+    4.01 (2,278 ratings)
+  </span>
+</div>
+
+        <div class="genres">
+  <span class="genre-tag">Linguistics</span>
+  <span class="genre-tag">Language</span>
+  <span class="genre-tag">Textbook</span>
+</div>
+
+        <div class="action-buttons">
+          <button class="btn primary" onclick="window.open('../PDFs/language.pdf', '_blank')">Read Now</button>
+          <button class="btn secondary">Add to Favorites</button>
+          <button class="btn tertiary">Download PDF</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <section class="book-description">
+  <h2>Description</h2>
+  <p>
+    This bestselling textbook provides an engaging and user-friendly introduction to the study of language. Assuming no prior knowledge of the subject, Yule presents information in bite-sized sections, clearly explaining the major concepts in linguistics through all the key elements of language. The new edition has been revised and updated throughout, with major changes in the chapters on origins, phonetics, syntax, semantics, pragmatics, discourse analysis, first and second language acquisition and culture. There are also eighty new study questions, more than fifty new tasks, and twenty-four new sample sentences.
+  </p>
+</section>
+
+
+  </section>
+
+    <section class="book-details-section">
+  <h2>Book Details</h2>
+  <div class="details-grid">
+    <div class="detail-item">
+      <span class="label">Publisher</span>
+      <span class="value">Cambridge University Press</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">ISBN</span>
+      <span class="value">978-1009233408</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Publication Date</span>
+      <span class="value">November 10, 2022</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">File Size</span>
+      <span class="value">~4-6 MB</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Format</span>
+      <span class="value">PDF, EPUB</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+</body>
+</html>

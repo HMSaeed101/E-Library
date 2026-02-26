@@ -1,0 +1,122 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
+?>
+
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/jpeg" href="../pics/logo.jpg">
+
+  <title>Nahj al-Balagha | Book</title>
+  
+  <link rel="stylesheet" href="../css/book.css" />
+  <link rel="stylesheet" href="../css/dark-book.css" />
+  <script src="../javascript/book.js" defer></script>
+</head>
+
+<body>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.html'; ?>
+
+<nav class="breadcrumb">
+  <ol class="breadcrumb-list">
+
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/categories.html">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/Electronic Library/Categories/non-fiction.html">Non-fiction</a>
+    </li>
+
+    <!-- current page – no link -->
+      <li class="breadcrumb-item active"  aria-current="page">
+          Nahj al-Balagha
+      </li>
+  </ol>  
+</nav>
+
+
+<main class="book-container">
+
+  <div class="book-header">
+  
+    <div class="book-cover-wrapper">
+      <img 
+        src="../Pics/books/nahjulbalagah.jpg"
+        alt="Nahj-ul-Balagah" 
+        class="book-cover"
+      />
+    </div>
+
+    <div class="book-info">
+      <h1 class="book-title">Nahj al-Balagha</h1>
+      <p class="book-author">Al-Sayyid al-Radi</p>
+        
+<div class="meta-row">
+    <span class="meta-item">11th Century</span>
+    <span class="meta-item">448 pages</span>
+    <span class="meta-item">Arabic</span>
+    <span class="meta-item rating">
+      4.1 (2000+ ratings)
+    </span>
+</div>
+
+<div class="genres">
+  <span class="genre-tag">Islamic studies</span>
+  <span class="genre-tag">Politics</span>
+  <span class="genre-tag">Ethics</span>
+</div>
+
+<div class="action-buttons">
+  <button class="btn primary" onclick="window.open('../PDFs/nahjulbalagah.pdf', '_blank')">Read Now</button>
+  <button class="btn secondary">Add to Favorites</button>
+  <button class="btn tertiary">Download PDF</button>
+</div>
+
+</div>
+
+</div>
+
+<section class="book-description">
+  <h2>Description</h2>
+
+  <p>
+    Nahj al-Balagha (The Peak of Eloquence) is a profound collection of sermons, letters, and sayings attributed to Imam Ali ibn Abi Talib (RA), the cousin and son-in-law of Prophet Muhammad (PBUH). This book captures the essence of Islamic thought, governance, morality, spirituality, and social justice. It reflects Imam Ali’s unmatched eloquence, wisdom, and guidance on ethical leadership, human rights, and personal conduct. The text is highly valued for its literary beauty, philosophical depth, and practical lessons in ethics and governance, making it both a spiritual guide and a source of historical insight. Scholars and readers alike turn to it for understanding the principles of justice, devotion, and intellect within an Islamic framework.
+  </p>
+</section>
+
+  </section>
+
+    <section class="book-details-section">
+      <h2>Book Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Publisher</span>
+          <span class="value">HMS Publications</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">ISBN</span>
+          <span class="value">978-1-879402-34-8</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Publication Date</span>
+          <span class="value">Feb 18, 1957</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">File Size</span>
+          <span class="value">8.7 MB (PDF)</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Format</span>
+          <span class="value">PDF, EPUB</span>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+
+</body>
+</html>

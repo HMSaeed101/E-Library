@@ -91,15 +91,15 @@ if (savedMode === 'true')
 // Active Page Status Style 
 document.addEventListener("DOMContentLoaded", () => 
 {
-    let currentFile = window.location.pathname.split("/").pop() || "index.php";
+    let currentFile = window.location.pathname.split("/").pop() || "index.html";
 
     // Remove query string if present (?anything)
     currentFile = currentFile.split("?")[0];
 
-    // Optional: treat empty string or "/" explicitly as index.php
+    // Optional: treat empty string or "/" explicitly as index.html
     if (currentFile === "" || currentFile === "/") 
     {
-        currentFile = "index.php";
+        currentFile = "index.html";
     }
 
     document.querySelectorAll(".navigation-bar a").forEach(link => 

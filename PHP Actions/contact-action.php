@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
 
 $name    = $_POST['name'];
 $email   = $_POST['email'];
@@ -11,7 +11,7 @@ $sql = "INSERT INTO contact (name, email, subject, message)
 
 if (mysqli_query($conn, $sql)) 
 {
-    header("Location: contact.php?msg=Message sent successfully");
+    header("Location: contact.html?msg=Message sent successfully");
 
     exit();
 } 
