@@ -1,10 +1,10 @@
-<?php
+<!-- <?php
 session_start();
 
 include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
 
 $errorMessage = $_GET['error'] ?? '';
-?>
+?> -->
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@ $errorMessage = $_GET['error'] ?? '';
     <script src="JavaScript/main.js" defer></script>
 </head>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.html'; ?>
+<div id="navigation-bar"></div>
 
 
 <body>
@@ -40,14 +40,23 @@ $errorMessage = $_GET['error'] ?? '';
         </div>
     </section>
 
-<script>
+<!-- <script>
 document.addEventListener('DOMContentLoaded', () => 
 {
     const errorMessage = <?php echo json_encode($errorMessage); ?>;
 
     if (errorMessage) {alert(errorMessage);}
 });
+</script> -->
+
+<div id="footer"></div>
+
+<script src="JavaScript/include.js"></script>
+<script>
+  includeHTML("navigation-bar", "navigation-bar.html");
+  includeHTML("footer", "footer.html");
 </script>
+<script src="JavaScript/main.js"></script>
 
 </body>
 </html>

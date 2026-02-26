@@ -1,9 +1,4 @@
-<?php
-include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
-?>
-
 <!DOCTYPE html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +10,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections
 
 <body>
 
-<?php include 'navigation-bar.html';?>
+<div id="navigation-bar"></div>
 
 
 <section class="hero">
@@ -190,8 +185,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections
 </div>
 
 
-<?php include 'footer.html';?>
+<div id="footer"></div>
 
+<script src="JavaScript/include.js"></script>
+<script>
+  includeHTML("navigation-bar", "navigation-bar.html");
+  includeHTML("footer", "footer.html");
+</script>
 <script src="JavaScript/main.js" defer></script>
 
 </body>
