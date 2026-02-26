@@ -16,16 +16,18 @@
 
 <body>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/Navigation-bar.html'; ?>
+<div id="cat-nav-bar"></div>
+
+
 
 <nav class="breadcrumb">
   <ol class="breadcrumb-list">
 
     <li class="breadcrumb-item">
-      <a href="/Electronic Library/categories.html">Categories</a>
+      <a href="../categories.html">Categories</a>
     </li>
     <li class="breadcrumb-item">
-      <a href="/Electronic Library/Categories/fiction.html">Fiction</a>
+      <a href="../Categories/fiction.html">Fiction</a>
     </li>
 
     <!-- current page – no link -->
@@ -113,6 +115,13 @@ David Copperfield is a semi-autobiographical novel by Charles Dickens that follo
 
 </main>
 
+
+
+<script src="../JavaScript/include.js"></script>
+<script>
+  includeHTML("cat-nav-bar", "../cat-nav-bar.html");
+  includeHTML("footer", "../footer.html");
+</script>
 
 </body>
 </html>

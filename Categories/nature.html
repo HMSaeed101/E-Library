@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/navigation-bar.html'; ?>
+<div id="cat-nav-bar"></div>
 
 <button onclick="goBack()" class="nav-button" id="back-btn" >←</button>
 
@@ -168,7 +168,13 @@
 </section>
 
 
-<?php include '../footer.html'; ?>
+
+
+<script src="../JavaScript/include.js"></script>
+<script>
+  includeHTML("cat-nav-bar", "../cat-nav-bar.html");
+  includeHTML("footer", "../footer.html");
+</script>
 
 
 </body>
