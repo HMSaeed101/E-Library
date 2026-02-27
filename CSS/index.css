@@ -199,7 +199,8 @@ h4 {
 /* ================================================
    NAVIGATION Bar
 ================================================== */
-.header {
+.header 
+{
     position: fixed;
     top: 0;
     display: flex;
@@ -355,7 +356,6 @@ body.dark-theme #darkmode-btn .sun{
 =============================================== */
 .test-section, .stats-section 
 {
-    background : yellow;
     display : flex;
     flex-direction :column;
     justify-content: center;
@@ -477,7 +477,6 @@ body.dark-theme #darkmode-btn .sun{
   max-width: 1000px;
   margin: 0 auto;
   justify-content: center;
-  background : yellow;
 }
 .category-card {
   display: flex;
