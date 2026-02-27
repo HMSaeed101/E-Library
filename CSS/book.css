@@ -86,7 +86,6 @@ a:hover
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid black;
 }
 .navigation-bar {
     display: flex;

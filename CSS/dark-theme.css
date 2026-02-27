@@ -81,7 +81,7 @@ body.dark-theme #darkmode-btn .sun{
 
 /* Hero Section */
 .dark-theme .hero {
-    background:linear-gradient(rgba(0, 0, 0, 0.541), rgba(0,0,0,0.7)), url("../Pics/Open_Book.jpg");
+    background:linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)), url("../Pics/Open_Book.jpg");
     background-size: cover;
     background-position: bottom;
     color: #ffffff;
@@ -225,7 +225,7 @@ body.dark-theme #darkmode-btn .sun{
 
 /* Hero for other pages */
 .dark-theme .hero-pages {
-    background-color: #1e1e1e;
+    background:linear-gradient(rgba(0, 0, 0, 0.413), rgba(0, 0, 0, 0.553)), url("../Pics/MultiBooks.jpg");
     color: #e0e0e0;
 }
 

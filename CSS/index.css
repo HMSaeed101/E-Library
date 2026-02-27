@@ -180,7 +180,7 @@ h1 {
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 42px;
     margin-bottom: 20px;
     text-align : center;
     color: var(--color-primary);
@@ -234,9 +234,8 @@ h4 {
 .logo-img img {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
     object-fit: cover;
-    border: 2px solid black;
+    padding : 0px;
 }
 .navigation-bar {
     display: flex;
@@ -750,9 +749,10 @@ h4 {
 /* hero for all pages except main */
 .hero-pages
 {
+    background-image: url("../Pics/MultiBooks.jpg");
+    background-position : top;
     padding: 60px 20px 40px;
     text-align: center;
-    background-color: #e8edff;
     display: flex;
     flex-direction: column;
     justify-content: center;
