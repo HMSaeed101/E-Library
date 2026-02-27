@@ -135,18 +135,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================
        ACTIVE PAGE HIGHLIGHT
-    ========================== */
-    let currentFile = window.location.pathname.split("/").pop() || "index.html";
-    currentFile = currentFile.split("?")[0];
+    ========================= */
+    let currentFile = window.location.pathname.split("/").pop(); // get file name
 
-    if (currentFile === "" || currentFile === "/") {
-        currentFile = "index.html";
-    }
+    if (!currentFile) 
+    {currentFile = "index.html"; // default page}
 
+    // Select all links inside navigation-bar
     const navLinks = document.querySelectorAll(".navigation-bar a");
 
+    // Loop through links and add 'active' class
     navLinks.forEach(link => {
-        if (link.dataset.page === currentFile) {
+        const page = link.dataset.page; // get data-page attribute
+        if (page === currentFile) {
             link.classList.add("active");
         }
     });
@@ -182,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-});
+}});
 
 
 /* =========================
