@@ -60,13 +60,13 @@ document.addEventListener('DOMContentLoaded', () =>
     }
     
 
-    // Contact Form Pop-up
-    document.querySelector(".contact-page-form").addEventListener("submit", function(e) 
-    {
-        e.preventDefault();
-        alert("Your message was sent successfully!");
-        this.submit();
-    });
+    // // Contact Form Pop-up
+    // document.querySelector(".contact-page-form").addEventListener("submit", function(e) 
+    // {
+    //     e.preventDefault();
+    //     alert("Your message was sent successfully!");
+    //     this.submit();
+    // });
 }
 );
 
@@ -86,7 +86,15 @@ if (savedMode === 'true')
     document.body.classList.add('dark-theme');
 }
 
-
+// Scroll Navigation Bar Box Shadows
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => 
+{
+    if (window.scrollY > 50) 
+        {header.classList.add('scrolled');} 
+    else{header.classList.remove('scrolled');}
+    }
+);
 
 // Active Page Status Style 
 document.addEventListener("DOMContentLoaded", () => 

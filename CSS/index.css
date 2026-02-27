@@ -295,7 +295,7 @@ body.dark-theme #darkmode-btn .sun{
 .hero 
 {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
-    background-image: url("../Pics/books/Open_Book.jpg");
+    background-image: url("../Pics/Open_Book.jpg");
     background-size: cover;
     background-position: bottom;
     height: 90vh;
@@ -348,6 +348,42 @@ body.dark-theme #darkmode-btn .sun{
 .search-dropdown .item:hover {
     background-color: #f0f0f0;
     color: #000;
+}
+
+/* ============================================
+   Stats Section
+=============================================== */
+.test-section, .stats-section 
+{
+    background : yellow;
+    display : flex;
+    flex-direction :column;
+    justify-content: center;
+    text-align :center;
+    align-items : center;
+    margin : 30px;
+}
+.test-area, .stats-area
+{
+    display:flex;
+    flex-direction :row;
+    justify-content : center;
+    gap : 20px;
+    background : rgba(0, 0, 0, 0.212);
+    padding : 30px 30px;
+}
+.test-card, .stat-card
+{
+    width: 250px;
+    height: 100px;
+    flex: 0 0 auto;
+    background: rgb(32, 161, 27);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    align-items : center;
+    justify-content : center;
+    padding: 10px;
 }
 
 /* =============================================
@@ -437,11 +473,11 @@ body.dark-theme #darkmode-btn .sun{
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
-  padding: 40px 40px 80px 40px;
+  padding: 40px 40px 40px 40px;
   max-width: 1000px;
   margin: 0 auto;
   justify-content: center;
-
+  background : yellow;
 }
 .category-card {
   display: flex;
@@ -702,10 +738,6 @@ body.dark-theme #darkmode-btn .sun{
   font-size: 0.9rem;
   color: #666;
 }
-
-
-
-
 
 /* hero for all pages except main */
 .hero-pages

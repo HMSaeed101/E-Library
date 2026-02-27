@@ -68,7 +68,7 @@
 
 /* Hero Section */
 .dark-theme .hero {
-    background:linear-gradient(rgba(0, 0, 0, 0.541), rgba(0,0,0,0.7)), url("../Pics/books/Open_Book.jpg");
+    background:linear-gradient(rgba(0, 0, 0, 0.541), rgba(0,0,0,0.7)), url("../Pics/Open_Book.jpg");
     background-size: cover;
     background-position: bottom;
     color: #ffffff;

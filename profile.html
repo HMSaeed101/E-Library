@@ -1,4 +1,5 @@
-<!-- <?php
+<!-- 
+<?php
 session_start();
 include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
 
@@ -9,7 +10,6 @@ if (!isset($_SESSION['user_id']))
 }
 
 $user_id = $_SESSION['user_id'];
-
 
 $sql = "SELECT * FROM users WHERE id = $user_id";
 $result = mysqli_query($conn, $sql);
@@ -30,19 +30,19 @@ $user = mysqli_fetch_assoc($result);
 
 <body>
 
-<?php include 'navigation-bar.html';?>
+<div id="navigation-bar"></div>
 
 <div class="profile-container">
 
 <div class="profile-header">
 
     <div class="avatar-container">
-        <img src="<?php echo $user['avatar']; ?>" class="profile-img">
+        <img src="logo.jpg" class="profile-img">
     </div>
 
     <div class="profile-info">
-        <h2><?php echo $user['full_name']; ?></h2>
-        <p class="username">@<?php echo $user['username']; ?></p>
+        <h2>Saeed</h2>
+        <p class="username">@hms_aeed</p>
         <p class="join-date">Member since July 2022 • Rawalpindi</p>
 
         <div class="stats">
@@ -115,6 +115,11 @@ $user = mysqli_fetch_assoc($result);
     </div>
 
 </div>
+<script src="JavaScript/include.js"></script>
+<script>
+  includeHTML("navigation-bar", "navigation-bar.html");
+  includeHTML("footer", "footer.html");
+</script>
 
 </body>
 </html>
