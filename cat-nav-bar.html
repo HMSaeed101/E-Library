@@ -22,22 +22,23 @@
 
 </nav>
 
-<!-- Scroll Navigation Bar Box Shadows -->
-<script>
-    const header = document.querySelector('.header');
 
-    window.addEventListener('scroll', () => 
-    {
-        if (window.scrollY > 50) 
-        {
-            header.classList.add('scrolled');
-        } 
-        else 
-        {
-            header.classList.remove('scrolled');
-        }
-    }
+<script>
+/* =========================
+   HEADER SCROLL EFFECT
+========================== */
+const header = document.querySelector(".header");
+if (header) 
+{   header.style.top = "0";
+    // Add or remove 'scrolled' class
+    function handleHeaderScrolled() 
+    {   if (window.scrollY > 20) {header.classList.add("scrolled");}
+        else {header.classList.remove("scrolled");}}
+    
+    window.addEventListener("scroll", () =>
+    {   handleHeaderScrolled();}
     );
+}
 </script>
 
 

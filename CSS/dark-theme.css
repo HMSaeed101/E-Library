@@ -1,6 +1,6 @@
 .dark-theme{
     background-color: var(--color-dark-bg);
-    background-image: radial-gradient(rgba(228, 231, 23, 0.113) 1px, transparent 3px);
+    background-image: radial-gradient(rgba(228, 231, 23, 0.126) 1px, transparent 2px);
     color: var(--color-dark-text);
     transition: background-color 0.01s ease, color 0.1s ease;
 }

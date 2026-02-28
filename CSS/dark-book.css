@@ -24,6 +24,18 @@
 .dark-theme .navigation-bar a.active::after {
     background: #ffcc00;
 }
+#darkmode-btn:hover{
+    transform: scale(1.3);
+}
+#darkmode-btn .sun{
+    display: none;
+}
+body.dark-theme #darkmode-btn .moon{
+    display: none;
+}
+body.dark-theme #darkmode-btn .sun{
+    display: inline;
+}
 
 
 /* Breadcrumb */
