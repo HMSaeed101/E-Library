@@ -234,16 +234,16 @@ h4 {
     object-fit: cover;
     padding : 0px;
 }
-.navigation-bar {
+.nav-bar {
     display: flex;
     gap: 36px;
 }
-.navigation-bar img {
+.nav-bar img {
     width : 25px; 
     height : 25px;
     padding : 10px 6px 0px 0px;
 }
-.navigation-bar a {
+.nav-bar a {
     font-weight: 450;
     letter-spacing: 0.02em;
     color: var(--color-white);
@@ -252,16 +252,16 @@ h4 {
     border-radius: 6px;
     padding: 0px 8px 2px 8px ;
 }
-.navigation-bar a:hover {
+.nav-bar a:hover {
     transform: scale(1.06);
     background: var(--color-accent);
     color : var(--color-primary);
     font-weight : 480;
 }
-.navigation-bar a.active {
+.nav-bar a.active {
     position: relative;
 }
-.navigation-bar a.active::after {
+.nav-bar a.active::after {
     content: '';
     position: absolute;
     bottom: -6px;
@@ -548,7 +548,6 @@ h4 {
     justify-content : left;
     align-items : center;
 }
-
 .categories-links,
 .footer-links,
 .newsletter form{
@@ -587,7 +586,7 @@ h4 {
     background-color: #b5e1e4c6;
     padding: 20px 20px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.701);
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -610,7 +609,7 @@ h4 {
     padding: 12px;
     border-radius: 8px;
     border: none;
-    /* background-color: var(--color-primary); */
+    background-color: var(--color-primary);
     color: var(--color-white);
     font-weight: 600;
     cursor: pointer;
@@ -622,13 +621,11 @@ h4 {
     background-color: var(--color-accent);
     transform: scale(1.06);
 }
-
 .signup-link {
     margin-top: 20px;
     font-size: 14px;
     color: #000000;
 }
-
 .signup-link a {
     color: #2563eb;
     text-decoration: none;
@@ -750,8 +747,7 @@ h4 {
 
 /* hero for all pages except main */
 .hero-pages
-{
-    background-image: url("../Pics/MultiBooks.jpg");
+{   background-image: url("../Pics/MultiBooks.jpg");
     background-position : top;
     padding: 60px 20px 40px;
     text-align: center;

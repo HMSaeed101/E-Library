@@ -14,14 +14,14 @@
 .dark-theme .header.scrolled {
     box-shadow: 0 10px 20px rgba(223, 216, 17, 0.164);
 }
-.dark-theme .navigation-bar a {
+.dark-theme .nav-bar a {
     color: var(--color-white);
 }
-.dark-theme .navigation-bar a:hover {
+.dark-theme .nav-bar a:hover {
     background: #ffcc00;
     color: #1f3c88;
 }
-.dark-theme .navigation-bar a.active::after {
+.dark-theme .nav-bar a.active::after {
     background: #ffcc00;
 }
 #darkmode-btn:hover{

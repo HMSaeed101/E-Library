@@ -7,14 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/dark-theme.css">
+    <script src="JavaScript/main.js" defer></script>
     <link rel="icon" type="image/svg" href="Pics/logo.svg">
+
+    <style>
+    body {
+    height : 100vh;
+    background-image: url("Pics/signup.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    }
+    .dark-theme{
+    background-color: var(--color-dark-bg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)), url("Pics/signup.jpg");
+    color: var(--color-dark-text);
+    transition: background-color 0.01s ease, color 0.1s ease;
+    }
+    </style>
 </head>
 
-<div id="navigation-bar"></div>
-
-
-<body>
-    
+<body>    
+    <div id="nav-bar"></div>
     <section class="login-page">
 
         <div class="login-container">
@@ -28,21 +42,16 @@
                 <input type="text" name="username" placeholder="User Name" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit">Sign Up</button>
-                
             </form>
-
             <p class="signup-link">
                 Already have an account? <a href="login.html">Login</a>
             </p>
-
         </div>
     </section>
 
 <script src="JavaScript/include.js"></script>
 <script>
-  includeHTML("navigation-bar", "navigation-bar.html");
-  includeHTML("footer", "footer.html");
+  includeHTML("nav-bar", "Extras/nav-bar.html");
 </script>
-<script src="JavaScript/main.js" defer></script>
 </body>
 </html>

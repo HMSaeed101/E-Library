@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
     // let currentFile = window.location.pathname.split("/").pop();
     // if (!currentFile) {currentFile = "index.html";}
-    // const navLinks = document.querySelectorAll(".navigation-bar a");
+    // const navLinks = document.querySelectorAll(".nav-bar a");
     // navLinks.forEach(link => 
     // {   const page = link.dataset.page;
     //     if (page === currentFile) {link.classList.add("active");}
