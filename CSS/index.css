@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 :root {
     /* Light theme palette */
     --color-bg: #f8fafc;
@@ -30,7 +31,6 @@
 }
 
 body {
-
     color: var(--color-text);
     font-size: 16px;
     font-family: 'Segoe UI', Roboto, Helvetica,Arial, sans-serif;
@@ -195,8 +195,7 @@ h4 {
    NAVIGATION Bar
 ================================================== */
 .header 
-{
-    position: fixed;
+{   position: fixed;
     top: 0;
     display: flex;
     flex-direction: row;
@@ -218,10 +217,10 @@ h4 {
 }
 #ee
 {
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size : 20px;
-    font-weight : 700;
-    letter-spacing: 0.04em;
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.07em;
 }
 .logo-area {
     display: flex;
@@ -455,6 +454,9 @@ h4 {
 /* ================================================
    BOOKS PAGE
 ================================================= */
+#books-hero-page{
+    background-image : url("../Pics/MultiBooks.jpg");
+}
 .books-page-grid {
     display: flex;
     flex-wrap: wrap;
@@ -481,6 +483,9 @@ h4 {
 /* ==============================================
    CATEGORIES
 ================================================== */
+#categories-hero-page{
+    background-image : url("../Pics/svg/logo.svg");
+}
 .categories-grid {
   display: flex;
   flex-wrap: wrap;
@@ -634,6 +639,9 @@ h4 {
 /* ===============================================
    CONTACT PAGE
 =============================================== */
+#contact-hero-page{
+    background-image : url("../Pics/svg/logo.svg");
+}
 .contact-page-form-section {
     background-color: #f4f6f8;
     padding: 20px 20px 10px 20px;
@@ -683,6 +691,9 @@ h4 {
 /* ================================================
    ABOUT PAGE
 ================================================ */
+#about-hero-page{
+    background-image : url("../Pics/svg/logo.svg");
+}
 .about-hug
 {   padding: 0px 40px 60px 0px;
     display: flex;
@@ -747,9 +758,7 @@ h4 {
 
 /* hero for all pages except main */
 .hero-pages
-{   background-image: url("../Pics/MultiBooks.jpg");
-    background-position : top;
-    padding: 60px 20px 40px;
+{   padding: 60px 20px 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
