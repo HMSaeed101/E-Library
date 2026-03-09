@@ -1,46 +1,64 @@
 # Electronic Library
 
-A simple PHP-based electronic library website (XAMPP-compatible) for browsing and reading books (PDF/EPUB). Includes a Books collection, categories, search UI, dark mode, and basic nav, and User Profile.
+A comprehensive electronic library website built with HTML, CSS, and JavaScript. It allows users to browse, search, and read books in PDF format, with features like categories, dark mode, and user interface enhancements.
 
 ## Features
-- Book pages with metadata and description
-- "Read Now" buttons that open PDFs from the [PDFs/](PDFs/)
-- Dark mode toggle implemented in [`toggleDarkMode`](JavaScript/main.js)
-- Browser nav helpers: [`goBack`](JavaScript/main.js), [`goForward`](JavaScript/main.js)
-- Basic auth pages: [login.html](login.html), [signup.html](signup.html), [profile.html](profile.html)
-- Main entry: [index.html](index.html)
 
-## Quick start (XAMPP)
-1. Place the project folder in XAMPP's `htdocs` (e.g. `d:\xampp\htdocs\Electronic Library`).
-2. Start Apache (and MySQL if needed) via XAMPP Control Panel.
-3. Open in browser: `http://localhost/Electronic%20Library/` or [index.html](index.html).
+- **Book Collection**: Extensive collection of books with individual pages containing metadata, descriptions, and "Read Now" buttons to open PDFs.
+- **Categories**: Organized book categories including Fiction, History, Science, etc.
+- **Search Functionality**: Search UI for finding books.
+- **Dark Mode**: Toggle between light and dark themes.
+- **Responsive Design**: CSS-based styling for various devices.
+- **Navigation**: Browser navigation helpers and active link highlighting.
+- **Contact Form**: Contact page (frontend only).
 
-## Project structure (key files & folders)
-- [index.html](index.html) — homepage  
-- [about.html](about.html), [contact.html](contact.html), [footer.html](footer.html), [nav-bar.html](nav-bar.html)  
-- [books.html](books.html), [categories.html](categories.html)  
-- [login.html](login.html), [signup.html](signup.html), [profile.html](profile.html)  
-- [JavaScript/main.js](JavaScript/main.js) — UI scripts (dark mode, search dropdown, active link highlighting)  
-- [CSS/](CSS/) — styles  
-- [PDFs/](PDFs/) — pdf files opened by "Read Now" buttons  
-- [Pics/](Pics/) — cover images  
-- [Books/](Books/) — individual book pages (examples below)
-  - [Books/animalfarm.html](Books/animalfarm.html)  
-  - [Books/MasterMargrita.html](Books/MasterMargrita.html)  
-  - [Books/language.html](Books/language.html)
-  - and many more ...
+## Technologies Used
 
-## Adding a new book
-1. Upload PDF to [PDFs/](PDFs/) and cover image to [Pics/books/](Pics/books/).  
-2. Create a book page under [Books/](Books/) (copy existing pattern from [`Books/animalfarm.html`](Books/animalfarm.html)).  
-3. Update any listing pages (e.g. [books.html](books.html)) if you maintain a manual index.
+- **Frontend**: HTML5, CSS3, JavaScript
 
-## Development notes
-- Active nav highlighting is driven by the logic in [`JavaScript/main.js`](JavaScript/main.js) that uses the current filename to set `.active` on `.nav-bar a`.
-- Search dropdown and "coming soon" alert are implemented in [`JavaScript/main.js`](JavaScript/main.js).
+## Quick Start
+
+1. Clone or download the project folder.
+2. Open [index.html](index.html) in your web browser to start browsing the library.
+
+## Project Structure
+
+- `index.html` — Homepage
+- `about.html`, `contact.html` — Static pages
+- `books.html` — Books listing page
+- `categories.html` — Categories page
+- `login.html`, `signup.html`, `profile.html` — Authentication pages (frontend only)
+- `Books/` — Individual book HTML pages
+- `Categories/` — Category-specific pages
+- `CSS/` — Stylesheets (including dark mode)
+- `JavaScript/` — Client-side scripts
+- `PDFs/` — PDF files for books
+- `Pics/` — Images and covers
+- `Extras/` — Reusable HTML components like nav-bar and footer
+- `PHP Actions/` — Placeholder for future server-side scripts
+
+## Adding a New Book
+
+1. Upload the PDF file to the `PDFs/` folder.
+2. Upload the book cover image to `Pics/books/` (organized by category if desired).
+3. Create a new HTML file in `Books/` based on an existing template (e.g., copy `Books/animalfarm.html`).
+4. Update the book's metadata, description, and "Read Now" link in the new HTML file.
+5. Optionally, update listing pages like `books.html` or category pages to include the new book.
+
+## Development Notes
+
+- Active navigation highlighting is handled in `JavaScript/main.js` using the current page filename.
+- Dark mode toggle is implemented in `JavaScript/main.js`.
+- Search functionality and alerts are also in `JavaScript/main.js`.
 
 ## Contributing
-- Fork, make changes, and open a PR. Keep server-side changes compatible with PHP 7.4+ (or your target runtime).
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Test locally by opening in a browser.
+5. Submit a pull request.
 
 ## License
-Add a LICENSE file if you plan to open-source this repo.
+
+This project is open-source. Please add an appropriate LICENSE file if distributing.
