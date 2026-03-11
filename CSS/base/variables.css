@@ -1,0 +1,32 @@
+/* ============================================================
+   VARIABLES — base/variables.css
+   All design tokens in one place.
+   Sections:
+     1. Light Theme Colors
+     2. Dark Theme Colors
+     3. Common Utility Colors
+============================================================ */
+
+:root {
+    /* ── 1. Light Theme Colors ─────────────────────────── */
+    --color-bg:           #f8fafc;
+    --color-text:         #1a202c;
+    --color-primary:      #1f3c88;
+    --color-primary-soft: #1f3c88ee;
+    --color-accent:       #ffcc00;
+    --color-surface:      #ffffff;
+    --color-surface-alt:  #f9f9f9;
+    --color-muted:        #6b7280;
+    --color-border-soft:  #e5e7eb;
+
+    /* ── 2. Dark Theme Colors ──────────────────────────── */
+    --color-dark-bg:      #121212;
+    --color-dark-surface: #1e1e1e;
+    --color-dark-text:    #e0e0e0;
+    --color-dark-muted:   #bbbbbb;
+    --color-dark-primary: #0f1f4c;
+
+    /* ── 3. Common Utility Colors ──────────────────────── */
+    --color-white: #ffffff;
+    --color-black: #000000;
+}

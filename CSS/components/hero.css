@@ -1,0 +1,77 @@
+/* ============================================================
+   HERO — components/hero.css
+   Sections:
+     1. Main Hero (home page)
+     2. Search Box & Dropdown
+     3. Hero for Inner Pages (.hero-pages)
+============================================================ */
+
+/* ── 1. Main Hero ──────────────────────────────────────── */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-image: url("../../Pics/Open_Book.jpg");
+    background-size: cover;
+    background-position: bottom;
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* ── 2. Search Box & Dropdown ──────────────────────────── */
+.search-box {
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+.search-box input {
+    min-width: 250px;
+    flex: 1;
+    padding: 12px;
+    width: 550px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: none;
+    margin-top: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.249);
+    max-height: 160px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.search-dropdown .item {
+    color: black;
+    font-size: 14px;
+    text-align: left;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+.search-dropdown .item:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* ── 3. Hero for Inner Pages ───────────────────────────── */
+.hero-pages {
+    padding: 60px 20px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

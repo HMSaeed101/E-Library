@@ -1,0 +1,49 @@
+/* ============================================================
+   BREADCRUMB — components/breadcrumb.css
+   Sections:
+     1. Breadcrumb Wrapper
+     2. Breadcrumb List & Items
+     3. Separator & Active State
+============================================================ */
+
+/* ── 1. Breadcrumb Wrapper ─────────────────────────────── */
+.breadcrumb {
+    position: fixed;
+    top: 60px;
+    left: 4px;
+    background-color: transparent;
+    font-size: 12px;
+    z-index: 1000;
+    padding: 12px 16px;
+}
+
+/* ── 2. Breadcrumb List & Items ────────────────────────── */
+.breadcrumb-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px;
+}
+.breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+}
+.breadcrumb-item a {
+    color: #2563eb;
+    text-decoration: none;
+    padding: 4px;
+}
+
+/* ── 3. Separator & Active State ───────────────────────── */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">>";
+    margin: 0 8px;
+    color: #9ca3af;
+    font-weight: bold;
+}
+.breadcrumb-item.active {
+    color: var(--color-text);
+    font-weight: 500;
+    pointer-events: none;
+}

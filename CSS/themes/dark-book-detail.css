@@ -1,60 +1,20 @@
+/* ============================================================
+   DARK THEME — BOOK DETAIL — themes/dark-book-detail.css
+   Dark overrides specific to the book detail page layout.
+   Sections:
+     1. Book Container & Header
+     2. Book Cover
+     3. Book Info & Meta
+     4. Genre Tags
+     5. Action Buttons
+     6. Description & Details
+     7. Details Grid
+============================================================ */
 
-.dark-theme {
-    background-color: var(--color-dark-bg);
-    color: var(--color-dark-text);
-    transition: background-color 0.01s ease, color 0.1s ease;
-}
-
-/* Header */
-.dark-theme .header {
-    background-color: var(--color-dark-primary);
-    color: var(--color-white);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
-}
-.dark-theme .header.scrolled {
-    box-shadow: 0 10px 20px rgba(223, 216, 17, 0.164);
-}
-.dark-theme .nav-bar a {
-    color: var(--color-white);
-}
-.dark-theme .nav-bar a:hover {
-    background: #ffcc00;
-    color: #1f3c88;
-}
-.dark-theme .nav-bar a.active::after {
-    background: #ffcc00;
-}
-#darkmode-btn:hover{
-    transform: scale(1.3);
-}
-#darkmode-btn .sun{
-    display: none;
-}
-body.dark-theme #darkmode-btn .moon{
-    display: none;
-}
-body.dark-theme #darkmode-btn .sun{
-    display: inline;
-}
-
-
-/* Breadcrumb */
-.dark-theme .breadcrumb-item + .breadcrumb-item::before {
-  color: #9ca3af;
-}
-.dark-theme .breadcrumb-item a{
-  color: #afa39c;
-}
-.dark-theme .breadcrumb-item.active {
-  color: #aabfeb;
-}
-
-/* Book Container */
+/* ── 1. Book Container & Header ────────────────────────── */
 .dark-theme .book-container {
     background-color: #121212;
 }
-
-/* Book Header: Dark card-like section */
 .dark-theme .book-header {
     background-color: #1e1e1e;
     border: 1px solid #333;
@@ -62,7 +22,7 @@ body.dark-theme #darkmode-btn .sun{
     transition: background-color 0.3s ease;
 }
 
-/* Book Cover */
+/* ── 2. Book Cover ─────────────────────────────────────── */
 .dark-theme .book-cover {
     border: 1px solid #121212;
     transition: transform 0.3s ease;
@@ -72,7 +32,7 @@ body.dark-theme #darkmode-btn .sun{
     box-shadow: 0 4px 16px #ebce101e;
 }
 
-/* Book Info */
+/* ── 3. Book Info & Meta ───────────────────────────────── */
 .dark-theme .book-info {
     color: #e0e0e0;
 }
@@ -82,8 +42,6 @@ body.dark-theme #darkmode-btn .sun{
 .dark-theme .book-author {
     color: #bbbbbb;
 }
-
-/* Meta Row */
 .dark-theme .meta-row {
     color: #bbbbbb;
 }
@@ -94,13 +52,13 @@ body.dark-theme #darkmode-btn .sun{
     color: #bbdefb;
 }
 
-/* Genre Tags */
+/* ── 4. Genre Tags ─────────────────────────────────────── */
 .dark-theme .genre-tag {
     background: #333;
     color: #e0e0e0;
 }
 
-/* Action Buttons */
+/* ── 5. Action Buttons ─────────────────────────────────── */
 .dark-theme .action-buttons .btn {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -130,7 +88,7 @@ body.dark-theme #darkmode-btn .sun{
     background: #333;
 }
 
-/* Description & Details */
+/* ── 6. Description & Details ──────────────────────────── */
 .dark-theme .book-description,
 .dark-theme .book-details-section {
     color: #e0e0e0;
@@ -139,7 +97,7 @@ body.dark-theme #darkmode-btn .sun{
     color: #a2cdf0;
 }
 
-/* Details Grid */
+/* ── 7. Details Grid ───────────────────────────────────── */
 .dark-theme .details-grid .detail-item {
     background: #1e1e1e;
     border: 1px solid #333;

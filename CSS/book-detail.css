@@ -1,0 +1,14 @@
+/* ============================================================
+   BOOK DETAIL PAGE — book-detail.css
+   Entry point for the book detail page ONLY.
+   Imports main.css first, then adds book-detail layout
+   and its dark theme overrides.
+
+   HOW TO USE:
+     In your book detail HTML, link THIS file instead of main.css:
+     <link rel="stylesheet" href="styles/book-detail.css">
+============================================================ */
+
+@import url("main.css");
+@import url("layouts/book-detail.css");
+@import url("themes/dark-book-detail.css");

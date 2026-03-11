@@ -1,0 +1,144 @@
+/* ============================================================
+   DARK THEME — COMPONENTS — themes/dark-components.css
+   Dark overrides for shared components (navbar, breadcrumb,
+   hero search, book cards, categories, footer, login).
+   Sections:
+     1. Navbar / Header
+     2. Breadcrumb
+     3. Hero Search
+     4. Book Cards (grid)
+     5. Categories
+     6. Footer
+     7. Login
+============================================================ */
+
+/* ── 1. Navbar / Header ────────────────────────────────── */
+.dark-theme .header {
+    background-color: var(--color-dark-primary);
+    color: var(--color-white);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+}
+.dark-theme .header.scrolled {
+    box-shadow: 0 10px 20px rgba(223, 216, 17, 0.164);
+}
+.dark-theme .nav-bar a {
+    color: var(--color-white);
+}
+.dark-theme .nav-bar a:hover {
+    background: #ffcc00;
+    color: #1f3c88;
+}
+.dark-theme .nav-bar a.active::after {
+    background: #ffcc00;
+}
+
+/* ── 2. Breadcrumb ─────────────────────────────────────── */
+.dark-theme .breadcrumb-item + .breadcrumb-item::before {
+    color: #888;
+}
+.dark-theme .breadcrumb-item a {
+    color: #bbdefb;
+}
+.dark-theme .breadcrumb-item a:hover,
+.dark-theme .breadcrumb-item a:focus {
+    color: #ffffff;
+    background: rgba(255, 196, 0, 0.3);
+}
+.dark-theme .breadcrumb-item.active {
+    color: #e0e0e0;
+}
+
+/* ── 3. Hero Search ────────────────────────────────────── */
+.dark-theme .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)), url("../Pics/Open_Book.jpg");
+    background-size: cover;
+    background-position: bottom;
+    color: #ffffff;
+}
+.dark-theme .search-box input {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+.dark-theme .search-dropdown {
+    background: #1e1e1e;
+    border: 1px solid #444;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.dark-theme .search-dropdown .item {
+    color: #e0e0e0;
+}
+.dark-theme .search-dropdown .item:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+
+/* ── 4. Book Cards (grid) ──────────────────────────────── */
+.dark-theme .featured-books {
+    background-color: #121212;
+}
+.dark-theme .book-card {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.dark-theme .book-card h3,
+.dark-theme .book-card p {
+    color: #bbdefb;
+}
+.dark-theme .book-card:hover {
+    box-shadow: 0 6px 10px rgba(235, 232, 19, 0.556);
+}
+
+/* ── 5. Categories ─────────────────────────────────────── */
+.dark-theme .category-card {
+    background-color: #0f1f4c;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+.dark-theme .category-card:hover {
+    box-shadow: 0 2px 4px #ffcc00;
+}
+
+/* ── 6. Footer ─────────────────────────────────────────── */
+.dark-theme .footer {
+    background-color: #0f1f4c;
+    color: #e0e0e0;
+}
+.dark-theme .footer h4 {
+    background: rgba(0, 0, 0, 0.5);
+}
+.dark-theme .input {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+.dark-theme .copyright {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── 7. Login ──────────────────────────────────────────── */
+.dark-theme .login-container {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+.dark-theme .login-container input {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+.dark-theme .login-container button {
+    background-color: #0f1f4c;
+}
+.dark-theme .login-container button:hover {
+    background-color: #ffcc00;
+    color: #1f3c88;
+}
+.dark-theme .signup-link {
+    color: #e0e0e0;
+}
+.dark-theme .signup-link a {
+    color: #bbdefb;
+}

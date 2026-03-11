@@ -1,0 +1,69 @@
+/* ============================================================
+   LOGIN PAGE — pages/login.css
+   Sections:
+     1. Login Page Wrapper
+     2. Login Card
+     3. Login Form Inputs & Button
+     4. Signup Link
+============================================================ */
+
+/* ── 1. Login Page Wrapper ─────────────────────────────── */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 10px;
+}
+
+/* ── 2. Login Card ─────────────────────────────────────── */
+.login-container {
+    background-color: #b5e1e4c6;
+    padding: 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.701);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: var(--color-white);
+    font-family: Arial, sans-serif;
+}
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ── 3. Login Form Inputs & Button ─────────────────────── */
+.login-container input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+.login-container button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.login-container button:hover {
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+    transform: scale(1.06);
+}
+
+/* ── 4. Signup Link ────────────────────────────────────── */
+.signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #000000;
+}
+.signup-link a {
+    color: #2563eb;
+    text-decoration: none;
+}

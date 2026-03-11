@@ -1,0 +1,36 @@
+/* ============================================================
+   BOOKS PAGE — pages/books.css
+   Sections:
+     1. Books Hero Background
+     2. Books Grid
+     3. Books Search Bar
+============================================================ */
+
+/* ── 1. Books Hero Background ──────────────────────────── */
+#books-hero-page {
+    background-image: url("../../Pics/MultiBooks.jpg");
+}
+
+/* ── 2. Books Grid ─────────────────────────────────────── */
+.books-page-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: var(--color-surface-alt);
+}
+
+/* ── 3. Books Search Bar ───────────────────────────────── */
+.search-books-page {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+.search-books-page input {
+    padding: 10px;
+    width: 400px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}

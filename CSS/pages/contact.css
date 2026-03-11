@@ -1,0 +1,67 @@
+/* ============================================================
+   CONTACT PAGE — pages/contact.css
+   Sections:
+     1. Contact Hero Background
+     2. Form Section Wrapper
+     3. Contact Form Card
+     4. Form Rows (label + input)
+     5. Submit Button
+============================================================ */
+
+/* ── 1. Contact Hero Background ────────────────────────── */
+#contact-hero-page {
+    background-image: url("../../Pics/svg/logo.svg");
+}
+
+/* ── 2. Form Section Wrapper ───────────────────────────── */
+.contact-page-form-section {
+    background-color: #f4f6f8;
+    padding: 20px 20px 10px 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ── 3. Contact Form Card ──────────────────────────────── */
+.contact-page-form {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--color-surface);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    padding: 40px 40px 35px 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ── 4. Form Rows ──────────────────────────────────────── */
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+.form-row label {
+    font-weight: 650;
+    font-size: 16px;
+    color: #1f3c88;
+    width: 100px;
+}
+.form-row input,
+.form-row textarea {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 12px;
+    outline: none;
+}
+
+/* ── 5. Submit Button ──────────────────────────────────── */
+#submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 10px 10px 0px 0px;
+}

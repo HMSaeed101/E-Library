@@ -1,0 +1,44 @@
+/* ============================================================
+   CATEGORIES PAGE — pages/categories.css
+   Sections:
+     1. Categories Hero Background
+     2. Categories Grid
+     3. Category Card
+============================================================ */
+
+/* ── 1. Categories Hero Background ─────────────────────── */
+#categories-hero-page {
+    background-image: url("../../Pics/svg/logo.svg");
+}
+
+/* ── 2. Categories Grid ────────────────────────────────── */
+.categories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px 40px 40px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* ── 3. Category Card ──────────────────────────────────── */
+.category-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 220px;
+    height: 110px;
+    background-color: #1f3c88;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.115);
+    transition: all 0.3s ease;
+}
+.category-card:hover {
+    transform: translateY(-6px);
+    font-weight: bold;
+    box-shadow: 0 6px 16px rgb(255, 196, 0);
+}
