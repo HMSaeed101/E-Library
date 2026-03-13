@@ -3,17 +3,17 @@
    Import order matters. Load this single file on ALL pages.
    ============================================================
    LOAD ORDER:
-     1. Base        — reset, variables, typography
-     2. Components  — navbar, breadcrumb, buttons, hero,
-                      book-card, footer
-     3. Pages       — home, books, categories, login,
-                      contact, about
-     4. Themes      — dark base → dark components →
-                      dark pages
+   1. Base        — reset, variables, typography
+   2. Components  — navbar, breadcrumb, buttons, hero,
+                    book-card, footer
+   3. Pages       — home, books, categories, login,
+                    contact, about
+   4. Themes      — dark base → dark components →
+                    dark pages
    ============================================================
    DO NOT import book-detail.css or profile.css here.
    Those are page-specific — import them only on those pages
-   via book-detail.css and profile.css entry points below.
+   via book.css and profile.css entry points below.
 ============================================================ */
 
 /* ── 1. Base ───────────────────────────────────────────── */
@@ -30,12 +30,12 @@
 @import url("components/footer.css");
 
 /* ── 3. Pages ──────────────────────────────────────────── */
-@import url("pages/home.css");
-@import url("pages/books.css");
-@import url("pages/categories.css");
-@import url("pages/login.css");
-@import url("pages/contact.css");
-@import url("pages/about.css");
+@import url("pages/home-page.css");
+@import url("pages/book-page.css");
+@import url("pages/categories-page.css");
+@import url("pages/login-page.css");
+@import url("pages/contact-page.css");
+@import url("pages/about-page.css");
 
 /* ── 4. Dark Theme ─────────────────────────────────────── */
 @import url("themes/dark-base.css");

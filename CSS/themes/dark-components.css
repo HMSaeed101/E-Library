@@ -1,15 +1,17 @@
 /* ============================================================
-   DARK THEME — COMPONENTS — themes/dark-components.css
-   Dark overrides for shared components (navbar, breadcrumb,
-   hero search, book cards, categories, footer, login).
-   Sections:
-     1. Navbar / Header
-     2. Breadcrumb
-     3. Hero Search
-     4. Book Cards (grid)
-     5. Categories
-     6. Footer
-     7. Login
+    DARK THEME — COMPONENTS — themes/dark-components.css
+    Dark overrides for shared components (navbar, breadcrumb,
+    hero search, book cards, categories, footer, login).
+    Sections:
+        1. Navbar / Header
+        2. Breadcrumb
+        3. Hero Search
+        4. Book Cards (grid)
+        5. Categories
+        6. Footer
+        7. Login
+        8. Testimonials
+        9. Stats
 ============================================================ */
 
 /* ── 1. Navbar / Header ────────────────────────────────── */
@@ -50,7 +52,7 @@
 
 /* ── 3. Hero Search ────────────────────────────────────── */
 .dark-theme .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)), url("../Pics/Open_Book.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("../../Pics/Open_Book.jpg");
     background-size: cover;
     background-position: bottom;
     color: #ffffff;
@@ -141,4 +143,15 @@
 }
 .dark-theme .signup-link a {
     color: #bbdefb;
+}
+
+/* ── 8. Testimonials ──────────────────────────────────────────── */
+.dark-theme .test-card{
+    background : var(--color-black);
+    color : var(--color-black);
+}
+
+/* ── 9. Stats ────────────────────────────────── */
+.dark-theme .stat-card{
+    background : var(--color-black);
 }

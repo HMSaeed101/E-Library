@@ -8,8 +8,7 @@
 
 /* ── 1. Main Hero ──────────────────────────────────────── */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    background-image: url("../../Pics/Open_Book.jpg");
+    background:  url("../../Pics/Open_Book.jpg");
     background-size: cover;
     background-position: bottom;
     height: 93vh;

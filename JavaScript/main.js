@@ -1,128 +1,92 @@
+/* ============================================================
+   MAIN.JS — Entry Point for All Pages
+   Imports all shared modules and initializes them.
+   This is the ONLY file you link in your HTML on every page.
+
+   Imports:
+     - darkmode.js        → dark theme logic
+     - include.js         → HTML injection utility
+     - formvalidation.js  → login/signup validation
+
+   Sections:
+     1. Imports
+     2. Dark Mode Init
+     3. Header Scroll Effect
+     4. Search Dropdown
+     5. Search Button Alert
+     6. Form Validation (Login / Signup)
+     7. Contact Form Submission
+     8. Browser Navigation Helpers (exposed to window for onclick)
+============================================================ */
+
+/* ── 1. Imports ─────────────────────────────────────────── */
+import { initDarkMode, toggleDarkMode } from "./darkmode.js";
+import { validateAuthForm } from "./form-val.js";
+
 document.addEventListener("DOMContentLoaded", () => {
-    /* =========================
-       FORM VALIDATION
-    ========================== */
-    const authForm = document.querySelector(".login-container form");
-    if (authForm)
-    {   authForm.addEventListener("submit", (e) => {
-            let errors = [];
-            const email = authForm.querySelector('input[name="email"]');
-            const password = authForm.querySelector('input[name="password"]');
-            const username = authForm.querySelector('input[name="username"]');
-            const fullName = authForm.querySelector('input[name="fullname"]');
+	/* ── 2. Dark Mode Init ──────────────────────────────── */
+	initDarkMode();
+	toggleDarkMode();
 
-            // Username validation
-            if (username) 
-            {   if (username.value.trim().length < 3) 
-                    {errors.push("Username must be at least 3 characters long.");
-                    username.style.border = "2px solid #ff4d4d";}
-                else {username.style.border = "";}
-            }
+	/* ── 3. Header Scroll Effect ────────────────────────── */
+	const header = document.querySelector(".header");
+	if (header) {
+		window.addEventListener("scroll", () => {
+			if (window.scrollY > 20) {
+				header.classList.add("scrolled");
+			} else {
+				header.classList.remove("scrolled");
+			}
+		});
+	}
 
-            // Email validation
-            if (email) 
-            {   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email.value)) 
-                {   errors.push("Please enter a valid email address.");
-                    email.style.border = "2px solid #ff4d4d";}
-                else {email.style.border = "";}
-            }
+	/* ── 4. Search Dropdown ─────────────────────────────── */
+	const searchInput = document.querySelector("#searchInput");
+	const searchDropdown = document.querySelector("#searchDropdown");
+	if (searchInput && searchDropdown) {
+		searchInput.addEventListener("focus", () => {
+			searchDropdown.style.display = "block";
+		});
+		searchInput.addEventListener("blur", () => {
+			setTimeout(() => {
+				searchDropdown.style.display = "none";
+			}, 200);
+		});
+	}
 
-            // Password validation
-            if (password)
-            {   if (password.value.length < 6) 
-                    {errors.push("Password must be at least 6 characters long.");
-                    password.style.border = "2px solid #ff4d4d";}
-                else {password.style.border = "";}
-            }
+	/* ── 5. Search Button Alert ─────────────────────────── */
+	const searchButton = document.querySelector(".button");
+	if (searchButton) {
+		searchButton.addEventListener("click", () => {
+			alert("Search Feature Coming Soon 🚧 ...");
+		});
+	}
 
-            // Full name validation
-            if (fullName) 
-            {   if (fullName.value.trim() === "")
-                {   errors.push("Full Name is required.");
-                    fullName.style.border = "2px solid #ff4d4d";}
-                else {fullName.style.border = "";}
-            }
+	/* ── 6. Form Validation (Login / Signup) ────────────── */
+	const authForm = document.querySelector(".login-container form");
+	if (authForm) {
+		authForm.addEventListener("submit", (e) => {
+			const errors = validateAuthForm(authForm);
+			if (errors.length > 0) {
+				e.preventDefault();
+				alert(errors.join("\n"));
+			}
+		});
+	}
 
-            if (errors.length > 0)
-            {   e.preventDefault();
-                alert(errors.join("\n"));}
-        });
-    }
+	/* ── 7. Contact Form Submission ─────────────────────── */
+	const contactForm = document.querySelector(".contact-page-form");
+	if (contactForm) {
+		contactForm.addEventListener("submit", function (e) {
+			e.preventDefault();
+			alert("Your message was sent successfully!");
+			this.submit();
+		});
+	}
 
-    /* =========================
-       HEADER SCROLL EFFECT
-    ========================== */
-    const header = document.querySelector(".header");
-    if (header) 
-    {   header.style.top = "0";
-        function handleHeaderScrolled() 
-        {   if (window.scrollY > 20) {header.classList.add("scrolled");}
-            else {header.classList.remove("scrolled");}}
-        window.addEventListener("scroll", () =>
-        {handleHeaderScrolled();});
-    }
-
-    /* =========================
-       CONTACT FORM POPUP
-    ========================== */
-    const contactForm = document.querySelector(".contact-page-form");
-    if (contactForm)
-    {   contactForm.addEventListener("submit", function (e) 
-        {   e.preventDefault();
-            alert("Your message was sent successfully!");
-            this.submit();
-        });
-    }
-
-    /* =========================
-       TOGGLE DARK MODE
-    ========================== */
-    const savedMode = localStorage.getItem("dark-mode");
-    if (savedMode === "true") {document.body.classList.add("dark-theme");}
-    window.toggleDarkMode = function ()
-    {   document.body.classList.toggle("dark-theme");
-        const isDark = document.body.classList.contains("dark-theme");
-        localStorage.setItem("dark-mode", isDark);
-    };
-
-    /* =========================
-       ACTIVE PAGE HIGHLIGHT
-    ========================= */
-    // let currentFile = window.location.pathname.split("/").pop();
-    // if (!currentFile) {currentFile = "index.html";}
-    // const navLinks = document.querySelectorAll(".nav-bar a");
-    // navLinks.forEach(link => 
-    // {   const page = link.dataset.page;
-    //     if (page === currentFile) {link.classList.add("active");}
-    // }
-    // );
-
-    /* =========================
-       SEARCH DROPDOWN
-    ========================== */
-    const input = document.querySelector("#searchInput");
-    const dropdown = document.querySelector("#searchDropdown");
-    if (input && dropdown) 
-    {   input.addEventListener("focus", () => 
-        {dropdown.style.display = "block";});
-
-        input.addEventListener("blur", () => 
-        {setTimeout(() => {dropdown.style.display = "none";}, 200);});
-    }
-
-    /* =========================
-       SEARCH BUTTON ALERT
-    ========================== */
-    const searchButton = document.querySelector(".button");
-    if (searchButton) 
-    {   searchButton.addEventListener("click", () => 
-        {alert("Search Feature Coming Soon 🚧 ...");}
-    );}
+	/* ── 8. Expose to window (needed for HTML onclick=) ─── */
+	// Because type="module" scopes everything, functions used in onclick="..." attributes must be attached to window.
+	window.toggleDarkMode = toggleDarkMode;
+	window.goBack = () => history.back();
+	window.goForward = () => history.forward();
 });
-
-/* =========================
-   BROWSER NAVIGATION
-========================== */
-function goBack() {history.back();}
-function goForward() {history.forward();}

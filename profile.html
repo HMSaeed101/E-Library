@@ -1,9 +1,9 @@
-<!-- 
+<!--
 <?php
 session_start();
 include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
 
-if (!isset($_SESSION['user_id'])) 
+if (!isset($_SESSION['user_id']))
 {
     header("Location: login.html");
     exit;
@@ -25,10 +25,10 @@ $user = mysqli_fetch_assoc($result);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/dark-theme.css">
+
     <link rel="stylesheet" href="CSS/profile.css">
-    <link rel="stylesheet" href="CSS/dark-profile.css">
-    <script src="JavaScript/main.js" defer></script>
+
+    <script type="module" src="JavaScript/main.js" defer></script>
 </head>
 
 <body>
