@@ -52,7 +52,7 @@
 
 /* ── 3. Hero Search ────────────────────────────────────── */
 .dark-theme .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("../../Pics/Open_Book.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("../../pics/Open_Book.jpg");
     background-size: cover;
     background-position: bottom;
     color: #ffffff;
@@ -155,3 +155,4 @@
 .dark-theme .stat-card{
     background : var(--color-black);
 }
+

@@ -8,7 +8,7 @@
 
 /* ── 1. Books Hero Background ──────────────────────────── */
 #books-hero-page {
-    background-image: url("../../Pics/MultiBooks.jpg");
+    background-image: url("../../pics/MultiBooks.jpg");
 }
 
 /* ── 2. Books Grid ─────────────────────────────────────── */
@@ -34,3 +34,4 @@
     border-radius: 4px;
     border: 1px solid #ccc;
 }
+

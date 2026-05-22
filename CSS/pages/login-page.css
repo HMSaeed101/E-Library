@@ -1,21 +1,36 @@
 /* ============================================================
-   LOGIN PAGE — pages/login.css
+   LOGIN & SIGNUP PAGES — pages/login-page.css
    Sections:
-     1. Login Page Wrapper
-     2. Login Card
-     3. Login Form Inputs & Button
-     4. Signup Link
+     1. Auth Page Wrapper (Login/Signup)
+     2. Login/Signup Card
+     3. Form Inputs & Buttons
+     4. Footer Links (Signup/Login)
+     5. Dark Theme Overrides
 ============================================================ */
 
-/* ── 1. Login Page Wrapper ─────────────────────────────── */
-.login-page {
+/* ── 1. Auth Page Wrapper ──────────────────────────────── */
+.login-page,
+.signup-page {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px 10px;
 }
 
-/* ── 2. Login Card ─────────────────────────────────────── */
+.login-page {
+    background-image: url("../../pics/login.jpg");
+    background-position: bottom;
+}
+
+.signup-page {
+    background-image: url("../../pics/signup.jpg");
+    background-position: center;
+}
+
+/* ── 2. Login/Signup Card ──────────────────────────────── */
 .login-container {
     background-color: #b5e1e4c6;
     padding: 20px 20px;
@@ -33,7 +48,7 @@
     gap: 20px;
 }
 
-/* ── 3. Login Form Inputs & Button ─────────────────────── */
+/* ── 3. Form Inputs & Buttons ─────────────────────────── */
 .login-container input {
     padding: 12px 15px;
     border-radius: 8px;
@@ -57,7 +72,7 @@
     transform: scale(1.06);
 }
 
-/* ── 4. Signup Link ────────────────────────────────────── */
+/* ── 4. Footer Links ───────────────────────────────────── */
 .signup-link {
     margin-top: 20px;
     font-size: 14px;
@@ -66,4 +81,27 @@
 .signup-link a {
     color: #2563eb;
     text-decoration: none;
+}
+
+/* ── 5. Error Highlighting ───────────────────────────── */
+.error-field {
+    border: 2px solid #ef4444 !important;
+    background-color: #fee2e2 !important;
+}
+
+/* ── 5. Dark Theme Overrides ───────────────────────────── */
+.dark-theme.login-page,
+.dark-theme.signup-page {
+    background-color: var(--color-dark-bg);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)),
+        url("../../pics/login.jpg"); /* Default to login.jpg for dark theme blend */
+    color: var(--color-dark-text);
+    transition: background-color 0.01s ease, color 0.1s ease;
+}
+
+.dark-theme.signup-page {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)),
+        url("../../pics/signup.jpg");
 }

@@ -28,28 +28,28 @@ A comprehensive electronic library website built with HTML, CSS, and JavaScript.
 - `books.html` — Books listing page
 - `categories.html` — Categories page
 - `login.html`, `signup.html`, `profile.html` — Authentication pages (frontend only)
-- `Books/` — Individual book HTML pages
-- `Categories/` — Category-specific pages
-- `CSS/` — Stylesheets (including dark mode)
-- `JavaScript/` — Client-side scripts
-- `PDFs/` — PDF files for books
-- `Pics/` — Images and covers
-- `Extras/` — Reusable HTML components like nav-bar and footer
-- `PHP Actions/` — Placeholder for future server-side scripts
+- `books/` — Individual book HTML pages
+- `categories/` — Category-specific pages
+- `css/` — Stylesheets (including dark mode)
+- `js/` — Client-side scripts
+- `pdfs/` — PDF files for books
+- `pics/` — Images and covers
+- `extras/` — Reusable HTML components like nav-bar and footer
+- `php-actions/` — Backend logic (login, signup, etc.)
 
 ## Adding a New Book
 
-1. Upload the PDF file to the `PDFs/` folder.
-2. Upload the book cover image to `Pics/books/` (organized by category if desired).
-3. Create a new HTML file in `Books/` based on an existing template (e.g., copy `Books/animalfarm.html`).
+1. Upload the PDF file to the `pdfs/` folder.
+2. Upload the book cover image to `pics/books/` (organized by category if desired).
+3. Create a new HTML file in `books/` based on an existing template (e.g., copy `books/animalfarm.html`).
 4. Update the book's metadata, description, and "Read Now" link in the new HTML file.
 5. Optionally, update listing pages like `books.html` or category pages to include the new book.
 
 ## Development Notes
 
-- Active navigation highlighting is handled in `JavaScript/main.js` using the current page filename.
-- Dark mode toggle is implemented in `JavaScript/main.js`.
-- Search functionality and alerts are also in `JavaScript/main.js`.
+- Active navigation highlighting is handled in `js/main.js` using the current page filename.
+- Dark mode toggle is implemented in `js/main.js`.
+- Search functionality and alerts are also in `js/main.js`.
 
 ## Contributing
 

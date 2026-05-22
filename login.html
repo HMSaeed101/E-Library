@@ -1,7 +1,7 @@
 <!-- <?php
 session_start();
 
-include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
+include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/php-actions/connections.html';
 
 $errorMessage = $_GET['error'] ?? '';
 ?> -->
@@ -12,36 +12,15 @@ $errorMessage = $_GET['error'] ?? '';
 		<meta charset="UTF-8" />
 		<title>E-Library | Login</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="CSS/index.css" />
+		<link rel="stylesheet" href="css/index.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="CSS/index.css" />
-		<link rel="icon" type="image/svg+xml" href="Pics/logo.svg" />
-		<script type="module" src="JavaScript/main.js" defer></script>
-		<style>
-			body {
-				top: 10px;
-				height: 100vh;
-				background-image: url("Pics/login.jpg");
-				background-size: cover;
-				background-position: bottom;
-				background-repeat: no-repeat;
-			}
-			.dark-theme {
-				background-color: var(--color-dark-bg);
-				background-image:
-					linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)),
-					url("Pics/login.jpg");
-				color: var(--color-dark-text);
-				transition:
-					background-color 0.01s ease,
-					color 0.1s ease;
-			}
-		</style>
+		<link rel="icon" type="image/svg+xml" href="pics/svg/logo.svg" />
+		<script type="module" src="js/main.js" defer></script>
 	</head>
 
 	<body>
@@ -52,7 +31,7 @@ $errorMessage = $_GET['error'] ?? '';
 				<form
 					method="post"
 					class="login-form"
-					action="PHP Actions/login-action.html"
+					action="php-actions/login-action.html"
 				>
 					<input
 						type="text"
@@ -80,9 +59,8 @@ $errorMessage = $_GET['error'] ?? '';
 			</div>
 		</section>
 
-		<script src="JavaScript/include.js"></script>
-		<script>
-			includeHTML("nav-bar", "Extras/nav-bar.html");
-		</script>
+		
 	</body>
 </html>
+
+

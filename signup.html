@@ -5,36 +5,15 @@
 		<meta charset="UTF-8" />
 		<title>E-Library | Sign Up</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="CSS/index.css" />
+		<link rel="stylesheet" href="css/index.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="CSS/index.css" />
-		<script type="module" src="JavaScript/main.js" defer></script>
-		<link rel="icon" type="image/svg" href="Pics/svg/logo.svg" />
-
-		<style>
-			body {
-				height: 100vh;
-				background-image: url("Pics/signup.jpg");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-			}
-			.dark-theme {
-				background-color: var(--color-dark-bg);
-				background-image:
-					linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)),
-					url("Pics/signup.jpg");
-				color: var(--color-dark-text);
-				transition:
-					background-color 0.01s ease,
-					color 0.1s ease;
-			}
-		</style>
+		<script type="module" src="js/main.js" defer></script>
+		<link rel="icon" type="image/svg" href="pics/svg/logo.svg" />
 	</head>
 
 	<body>
@@ -43,7 +22,7 @@
 			<div class="login-container">
 				<h2>Create Account</h2>
 
-				<form method="post" action="PHP Actions/signup-action.html">
+				<form method="post" action="php-actions/signup-action.html">
 					<input
 						type="text"
 						name="fullname"
@@ -76,9 +55,8 @@
 			</div>
 		</section>
 
-		<script src="JavaScript/include.js"></script>
-		<script>
-			includeHTML("nav-bar", "Extras/nav-bar.html");
-		</script>
+		
 	</body>
 </html>
+
+

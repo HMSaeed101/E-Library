@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg" href="../pics/svg/logo.svg" />
+		<title>Book Details | E-Library</title>
+		<link rel="stylesheet" href="../css/index.css" />
+		<script type="module" src="../js/book.js" defer></script>
+		<script type="module" src="../js/main.js" defer></script>
+	</head>
+	<body>
+		<div id="inner-nav-bar"></div>
+
+		<nav class="breadcrumb">
+			<ol class="breadcrumb-list">
+				<li class="breadcrumb-item">
+					<a href="../index.html">Home</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="../books.html">Books</a>
+				</li>
+				<li class="breadcrumb-item" id="breadcrumb-category">
+					<!-- Category will be injected here -->
+				</li>
+				<li
+					class="breadcrumb-item active"
+					aria-current="page"
+					id="breadcrumb-title"
+				>
+					Loading...
+				</li>
+			</ol>
+		</nav>
+
+		<main class="book-container">
+			<div class="book-header">
+				<div class="book-cover-wrapper">
+					<img src="" alt="Book Cover" class="book-cover" />
+				</div>
+
+				<div class="book-info">
+					<h1 class="book-title">Loading Title...</h1>
+					<p class="book-author">Loading Author...</p>
+
+					<div class="meta-row">
+						<!-- Meta items (published year, pages, language, rating) will be injected here -->
+					</div>
+
+					<div class="genres">
+						<!-- Genres will be injected here -->
+					</div>
+
+					<div class="action-buttons">
+						<button class="btn primary">Read Now</button>
+						<button class="btn secondary">Add to Favorites</button>
+						<button class="btn tertiary">Download PDF</button>
+					</div>
+				</div>
+			</div>
+
+			<section class="book-description">
+				<h2>Description</h2>
+				<p>Loading description...</p>
+			</section>
+
+			<section class="book-details-section">
+				<h2>Book Details</h2>
+				<div class="details-grid">
+					<!-- Detailed book info (publisher, ISBN, etc.) will be injected here -->
+				</div>
+			</section>
+		</main>
+
+		<div id="footer"></div>
+
+		
+	</body>
+</html>
+
+

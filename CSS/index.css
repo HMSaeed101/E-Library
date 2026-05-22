@@ -6,15 +6,12 @@
    1. Base        — reset, variables, typography
    2. Components  — navbar, breadcrumb, buttons, hero,
                     book-card, footer
-   3. Pages       — home, books, categories, login,
+   3. Layouts     — book-detail, profile
+   4. Pages       — home, books, categories, login,
                     contact, about
-   4. Themes      — dark base → dark components →
-                    dark pages
-   ============================================================
-   DO NOT import book-detail.css or profile.css here.
-   Those are page-specific — import them only on those pages
-   via book.css and profile.css entry points below.
-============================================================ */
+   5. Themes      — dark base → dark components →
+                    dark layouts → dark pages
+   ============================================================ */
 
 /* ── 1. Base ───────────────────────────────────────────── */
 @import url("base/variables.css");
@@ -29,7 +26,11 @@
 @import url("components/book-card.css");
 @import url("components/footer.css");
 
-/* ── 3. Pages ──────────────────────────────────────────── */
+/* ── 3. Layouts ────────────────────────────────────────── */
+@import url("layouts/book-detail.css");
+@import url("layouts/profile.css");
+
+/* ── 4. Pages ──────────────────────────────────────────── */
 @import url("pages/home-page.css");
 @import url("pages/book-page.css");
 @import url("pages/categories-page.css");
@@ -37,7 +38,9 @@
 @import url("pages/contact-page.css");
 @import url("pages/about-page.css");
 
-/* ── 4. Dark Theme ─────────────────────────────────────── */
+/* ── 5. Dark Theme ─────────────────────────────────────── */
 @import url("themes/dark-base.css");
 @import url("themes/dark-components.css");
+@import url("themes/dark-book-detail.css");
+@import url("themes/dark-profile.css");
 @import url("themes/dark-pages.css");

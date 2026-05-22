@@ -2,43 +2,22 @@
 
     <div class="logo-area">
         <div class="logo-img">
-            <img src="../Pics/svg/logo.svg" alt="Logo Image">
+            <img src="../pics/svg/logo.svg" alt="Logo Image">
         </div>
         <div id="ee"><a href="../index.html">E-Library</a></div>
     </div>
     
     <nav class="nav-bar">
 
-    <a href="../index.html"><img src="../Pics/svg/home.svg">Home</a>
-    <a href="../books.html"><img src="../Pics/svg/book.svg">Books</a>
-    <a href="../categories.html"><img src="../Pics/svg/categories.svg">Categories</a>
-    <a href="../profile.html"><img src="../Pics/svg/profile.svg">Profile</a>
+    <a href="../index.html"><img src="../pics/svg/home.svg">Home</a>
+    <a href="../books.html"><img src="../pics/svg/book.svg">Books</a>
+    <a href="../categories.html"><img src="../pics/svg/categories.svg">Categories</a>
+    <a href="../profile.html"><img src="../pics/svg/profile.svg">Profile</a>
 
     <button onclick="toggleDarkMode()" id="darkmode-btn">
         <span class="moon">🌙</span>
         <span class="sun">☀️</span>
     </button>
 
-</nav>
-
-
-<script>
-/* =========================
-   HEADER SCROLL EFFECT
-========================== */
-const header = document.querySelector(".header");
-if (header) 
-{   header.style.top = "0";
-    // Add or remove 'scrolled' class
-    function handleHeaderScrolled() 
-    {   if (window.scrollY > 20) {header.classList.add("scrolled");}
-        else {header.classList.remove("scrolled");}}
-    
-    window.addEventListener("scroll", () =>
-    {   handleHeaderScrolled();}
-    );
-}
-</script>
-
-
 </header>
+

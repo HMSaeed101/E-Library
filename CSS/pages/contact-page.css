@@ -10,7 +10,7 @@
 
 /* ── 1. Contact Hero Background ────────────────────────── */
 #contact-hero-page {
-    background-image: url("../../Pics/svg/logo.svg");
+    background-image: url("../../pics/svg/logo.svg");
 }
 
 /* ── 2. Form Section Wrapper ───────────────────────────── */
@@ -65,3 +65,4 @@
     justify-content: right;
     padding: 10px 10px 0px 0px;
 }
+

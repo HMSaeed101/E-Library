@@ -8,7 +8,7 @@
 
 /* ── 1. Main Hero ──────────────────────────────────────── */
 .hero {
-    background:  url("../../Pics/Open_Book.jpg");
+    background:  url("../../pics/Open_Book.jpg");
     background-size: cover;
     background-position: bottom;
     height: 93vh;
@@ -74,3 +74,4 @@
     justify-content: center;
     align-items: center;
 }
+

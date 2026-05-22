@@ -22,3 +22,4 @@ export function toggleDarkMode() {
     const isDark = document.body.classList.contains("dark-theme");
     localStorage.setItem("dark-mode", isDark);
 }
+

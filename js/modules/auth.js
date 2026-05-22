@@ -62,8 +62,10 @@ export function validateAuthForm(form) {
 
 /* ── Field Highlight Helpers ────────────────────────────── */
 export function markInvalid(field) {
-    field.style.border = "2px solid #ff4d4d";
+    // It's better to use CSS classes than inline styles
+    field.classList.add("error-field");
 }
 export function markValid(field) {
-    field.style.border = "";
+    field.classList.remove("error-field");
 }
+

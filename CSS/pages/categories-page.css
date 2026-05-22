@@ -8,7 +8,7 @@
 
 /* ── 1. Categories Hero Background ─────────────────────── */
 #categories-hero-page {
-    background-image: url("../../Pics/svg/logo.svg");
+    background-image: url("../../pics/svg/logo.svg");
 }
 
 /* ── 2. Categories Grid ────────────────────────────────── */
@@ -42,3 +42,4 @@
     font-weight: bold;
     box-shadow: 0 6px 16px rgb(255, 196, 0);
 }
+
