@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Library | User Profile</title>
+    <link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/index.css">
+
+    <script type="module" src="/assets/js/app.js"></script>
+</head>
+
+<body>
+
+<div id="nav-bar" data-include="/components/nav-bar.html"></div>
+
+<div class="profile-container">
+
+<div class="profile-header">
+
+    <div class="avatar-container">
+        <img src="/assets/img/people/saeed.jpg" class="profile-img" alt="User Avatar">
+    </div>
+
+    <div class="profile-info">
+        <h2>Saeed</h2>
+        <p class="username">@hms_aeed</p>
+        <p class="join-date">Member since July 2022 • Rawalpindi</p>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h3>120</h3>
+                <span>Books Read</span>
+            </div>
+            <div class="stat-box">
+                <h3>8</h3>
+                <span>Reading</span>
+            </div>
+            <div class="stat-box">
+                <h3>35</h3>
+                <span>Wishlist</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn primary">Follow</button>
+            <button class="btn outline">Message</button>
+            <button class="btn ghost">Edit Profile</button>
+        </div>
+
+    </div>
+</div>
+
+    <!-- Reading Dashboard -->
+    <div class="section">
+        <h3>Currently Reading</h3>
+
+        <div class="profile-book-grid">
+
+            <div class="book-card">
+                <h4>Atomic Habits</h4>
+                <div class="progress-bar">
+                    <div class="progress" style="width:90%"></div>
+                </div>
+                <span>90% Completed</span>
+            </div>
+
+            <div class="book-card">
+                <h4>Deep Work</h4>
+                <div class="progress-bar">
+                    <div class="progress" style="width:30%"></div>
+                </div>
+                <span>30% Completed</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Library Management Tabs -->
+    <div class="section">
+        <h3>My Library</h3>
+
+        <div class="tabs">
+            <button class="tab active" onclick="void(0)">To Read</button>
+            <button class="tab" onclick="void(0)">Favorites</button>
+            <button class="tab" onclick="void(0)">History</button>
+        </div>
+
+        <div class="profile-book-grid">
+
+            <div class="book-card"><a href="/pages/book-details.html?id=alchemist">
+                <h4>The Alchemist</h4>
+                <button class="action-btn">Read</button>
+            </a></div>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="footer" data-include="/components/footer.html"></div>
+
+</body>
+</html>

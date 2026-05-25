@@ -1,10 +1,13 @@
 <!doctype html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg" href="pics/svg/logo.svg" />
+	<link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg" />
 	<title>Electronic Library</title>
-	<link rel="stylesheet" href="css/index.css" />
+	
+	<!-- Optimized Stylesheet Architecture -->
+	<link rel="stylesheet" href="/assets/css/index.css" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,19 +18,18 @@
 </head>
 
 <body>
-	<div id="nav-bar"></div>
+	<!-- Declarative HTML Includes -->
+	<div id="nav-bar" data-include="/components/nav-bar.html"></div>
 
 	<section class="hero">
 		<h1 class="heading-container">
 			<span class="word" dir="rtl">بَيْتُ الْحِكْمَةِ</span>
 			<span class="word">House of Wisdom</span>
 			<span class="word">智 慧 之 家</span>
-			<!-- Zhì huì zhī jiā (jhuh-hway jir jyaa) -->
 			<span class="word" dir="rtl">حکمت کا گھر</span>
 			<span class="word">ज्ञान का घर</span>
 			<span class="word">Domus Sapientiae</span>
 			<span class="word">Дом Мудрости</span>
-			<!-- Dom Mudrosti (dom moo-dro-stee) -->
 		</h1>
 
 		<div class="search-box">
@@ -78,45 +80,28 @@
 	<div><h2>Explore by Categories</h2></div>
 
 	<div class="categories-grid">
-		<a href="categories/category.html?type=fiction" class="category-card"> FICTION </a>
-
-		<a href="categories/category.html?type=non-fiction" class="category-card">
-			NON-FICTION
-		</a>
-
-		<a href="categories/category.html?type=science" class="category-card"> SCIENCE </a>
-
-		<a href="categories/category.html?type=technology" class="category-card">
-			TECHNOLOGY
-		</a>
-
-		<a href="categories/category.html?type=nature" class="category-card"> NATURE </a>
-
-		<a href="categories/category.html?type=lifeandvalues" class="category-card">
-			LIFE & VALUES
-		</a>
-
-		<a href="categories/category.html?type=history" class="category-card"> HISTORY </a>
+		<a href="/pages/category.html?type=fiction" class="category-card"> FICTION </a>
+		<a href="/pages/category.html?type=non-fiction" class="category-card"> NON-FICTION </a>
+		<a href="/pages/category.html?type=science" class="category-card"> SCIENCE </a>
+		<a href="/pages/category.html?type=technology" class="category-card"> TECHNOLOGY </a>
+		<a href="/pages/category.html?type=nature" class="category-card"> NATURE </a>
+		<a href="/pages/category.html?type=lifeandvalues" class="category-card"> LIFE & VALUES </a>
+		<a href="/pages/category.html?type=history" class="category-card"> HISTORY </a>
 	</div>
 
 	<div class="test-section">
 		<div><h2>Testimonials</h2></div>
 		<div class="test-area">
 			<div class="test-card">Person 1</div>
-
 			<div class="test-card">Person 1</div>
-
 			<div class="test-card">Person 1</div>
-
 			<div class="test-card">Person 1</div>
 		</div>
 	</div>
 
-	<div id="footer"></div>
+	<div id="footer" data-include="/components/footer.html"></div>
 
-	<script type="module" src="js/main.js" defer></script>
-
-	
+	<!-- Optimized JS Module Entry -->
+	<script type="module" src="/assets/js/app.js" defer></script>
 </body>
-
-
+</html>

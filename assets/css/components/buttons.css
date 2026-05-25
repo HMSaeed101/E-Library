@@ -1,0 +1,76 @@
+/* ============================================================
+   BUTTONS — components/buttons.css
+   Sections:
+     1. Base .button (general purpose)
+     2. .btn (book/profile pages)
+     3. .btn Variants — primary, secondary, tertiary, outline, ghost
+============================================================ */
+
+/* ── 1. Base .button ───────────────────────────────────── */
+.button {
+    padding: 10px 18px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    max-width: 200px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    transform: scale(1.13);
+}
+
+/* ── 2. Base .btn ──────────────────────────────────────── */
+.btn {
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: none;
+}
+
+/* ── 3. .btn Variants ──────────────────────────────────── */
+.btn.primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+.btn.primary:hover {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    transform: scale(1.03);
+}
+.btn.secondary {
+    background: var(--color-surface-alt);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+.btn.secondary:hover {
+    background: var(--color-border);
+    transform: scale(1.02);
+}
+.btn.tertiary {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+.btn.tertiary:hover {
+    background: var(--color-border);
+}
+.btn.outline {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+.btn.outline:hover {
+    background: var(--grid-bg);
+}
+.btn.ghost {
+    background: transparent;
+    color: var(--color-muted);
+    border: none;
+}

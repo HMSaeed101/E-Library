@@ -1,0 +1,47 @@
+/* ============================================================
+   VARIABLES — assets/css/base/variables.css
+   All design tokens in one place with Theme Support.
+============================================================ */
+
+:root {
+    /* ── 1. Default (Light) Theme ──────────────────────── */
+    --color-bg:           #f8fafc;
+    --color-text:         #1a202c;
+    --color-primary:      #1f3c88;
+    --color-primary-soft: #1f3c88ee;
+    --color-accent:       #ffcc00;
+    --color-surface:      #ffffff;
+    --color-surface-alt:  #f3f4f6;
+    --color-muted:        #6b7280;
+    --color-border:       #e5e7eb;
+    
+    /* ── 2. Specialized Colors ──────────────────────────── */
+    --card-bg:            #ffffff;
+    --card-shadow:        rgba(0, 0, 0, 0.1);
+    --card-shadow-hover:  rgba(0, 0, 0, 0.2);
+    --grid-bg:            rgba(143, 166, 223, 0.16);
+    --body-pattern:       rgba(23, 110, 231, 0.26);
+
+    /* ── 3. Utility Colors ─────────────────────────────── */
+    --color-white: #ffffff;
+    --color-black: #000000;
+}
+
+/* ── 4. Dark Theme Override ────────────────────────────── */
+body.dark-mode {
+    --color-bg:           #121212;
+    --color-surface:      #1e1e1e;
+    --color-surface-alt:  #252525;
+    --color-text:         #e2e8f0;
+    --color-muted:        #94a3b8;
+    --color-primary:      #3b82f6;
+    --color-primary-soft: #1e3a8a;
+    --color-border:       #334155;
+    
+    /* ── 5. Specialized Dark Mode Colors ────────────────── */
+    --card-bg:            #1e1e1e;
+    --card-shadow:        rgba(0, 0, 0, 0.5);
+    --card-shadow-hover:  rgba(0, 0, 0, 0.8);
+    --grid-bg:            rgba(31, 61, 136, 0.3);
+    --body-pattern:       rgba(59, 130, 246, 0.1);
+}

@@ -40,7 +40,7 @@ A comprehensive electronic library website built with HTML, CSS, and JavaScript.
 ## Adding a New Book
 
 1. Upload the PDF file to the `pdfs/` folder.
-2. Upload the book cover image to `pics/books/` (organized by category if desired).
+2. Upload the book cover image to `/assets/img/books/`.
 3. Create a new HTML file in `books/` based on an existing template (e.g., copy `books/animalfarm.html`).
 4. Update the book's metadata, description, and "Read Now" link in the new HTML file.
 5. Optionally, update listing pages like `books.html` or category pages to include the new book.

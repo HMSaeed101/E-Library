@@ -1,0 +1,66 @@
+/* ============================================================
+   BOOK CARD — components/book-card.css
+   Reusable book card used in grids, featured, and profile.
+   Sections:
+     1. Book Grid Wrapper
+     2. Book Card Base
+     3. Book Card Image
+     4. Book Card Text
+============================================================ */
+
+/* ── 1. Book Grid Wrapper ──────────────────────────────── */
+.book-grid {
+    display: flex;
+    background-color: var(--grid-bg);
+    overflow-x: auto;
+    padding: 25px;
+    gap: 40px;
+    border-radius: 8px;
+}
+.book-grid::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── 2. Book Card Base ─────────────────────────────────── */
+.book-card {
+    color: var(--color-primary);
+    width: 200px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+}
+.book-card:hover {
+    transform: scale(1.04);
+    box-shadow: var(--card-shadow-hover);
+    background-color: var(--color-accent);
+    color: var(--color-black);
+}
+
+/* ── 3. Book Card Image ────────────────────────────────── */
+.book-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* ── 4. Book Card Text ─────────────────────────────────── */
+.book-card h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+.book-card p {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: var(--color-muted);
+}
+.book-card:hover p {
+    color: var(--color-black);
+}

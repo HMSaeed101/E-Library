@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg" />
+	<title>Category | E-Library</title>
+	<link rel="stylesheet" href="/assets/css/index.css" />
+	<script type="module" src="/assets/js/app.js"></script>
+</head>
+<body>
+	<div id="inner-nav-bar" data-include="/components/inner-nav-bar.html"></div>
+
+	<div class="nav-controls">
+		<button onclick="goBack()" class="nav-button" id="back-btn">← Back</button>
+		<button onclick="goForward()" class="nav-button" id="forward-btn">Forward →</button>
+	</div>
+
+	<nav class="breadcrumb">
+		<ol class="breadcrumb-list">
+			<li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+			<li class="breadcrumb-item"><a href="/pages/categories.html">Categories</a></li>
+			<li class="breadcrumb-item active" id="breadcrumb-category">Category</li>
+		</ol>
+	</nav>
+	<section class="hero-pages">
+		<h2 id="category-title">Category</h2>
+		<p id="category-description">Explore our collection of books.</p>
+	</section>
+
+	<section class="books-page-grid" id="category-books-grid">
+		<!-- Dynamic content will be injected here -->
+        <div class="loading">Loading books...</div>
+	</section>
+
+	<div id="footer" data-include="/components/footer.html"></div>
+</body>
+</html>

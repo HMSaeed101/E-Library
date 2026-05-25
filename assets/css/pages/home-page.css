@@ -1,0 +1,74 @@
+/* ============================================================
+   HOME PAGE — pages/home.css
+   Sections:
+     1. General Layout Utility
+     2. Stats & Testimonials Section
+     3. Featured Books Section
+============================================================ */
+
+/* ── 1. General Layout Utility ─────────────────────────── */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ── 2. Stats & Testimonials Section ───────────────────── */
+.test-section,
+.stats-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 40px 0;
+}
+.test-area,
+.stats-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    margin: 20px 0;
+}
+.stat-card {
+    width: 220px;
+    height: 160px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-border);
+}
+.stat-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.test-card {
+    width: 180px;
+    height: 180px;
+    background: var(--card-bg);
+    border: solid var(--color-border) 1px;
+    border-radius: 50%;
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ── 3. Featured Books Section ─────────────────────────── */
+.featured-books {
+    margin: 60px 0px;
+    text-align: center;
+}

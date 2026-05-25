@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>E-Library | Books</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg" />
+	<link rel="stylesheet" href="/assets/css/index.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet"
+	/>
+</head>
+
+<body>
+	<div id="nav-bar" data-include="/components/nav-bar.html"></div>
+
+	<section class="hero-pages" id="books-hero-page">
+		<h2>Multiverse of Books</h2>
+		<p>Explore our collection of books across all categories.</p>
+
+		<section class="search-books-page">
+			<div class="search-box">
+				<input
+					type="text"
+					id="searchInput"
+					placeholder="Search books, authors, topics"
+					autocomplete="off"
+				/>
+				<button class="button">Search</button>
+
+				<div class="search-dropdown" id="searchDropdown">
+					<!-- Dynamic content will be injected here by JavaScript -->
+				</div>
+			</div>
+		</section>
+	</section>
+
+	<section class="books-page-grid" id="booksGrid">
+		<!-- Dynamic book cards will be injected here -->
+	</section>
+
+	<div id="footer" data-include="/components/footer.html"></div>
+	
+	<script type="module" src="/assets/js/app.js" defer></script>
+</body>
+</html>

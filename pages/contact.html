@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg" href="/assets/img/svg/logo.svg" />
+
+	<title>E-Library | Contact Us</title>
+
+	<link rel="stylesheet" href="/assets/css/index.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet"
+	/>
+</head>
+<body>
+	<div id="nav-bar" data-include="/components/nav-bar.html"></div>
+
+	<section class="hero-pages" id="contact-hero-page">
+		<h2>Contact Us</h2>
+		<p>Have a question or suggestion? Reach out to us!</p>
+	</section>
+
+	<section class="contact-page-form-section">
+		<form
+			class="contact-page-form"
+			action="/php-actions/contact-action.php"
+			method="POST"
+		>
+			<div class="form-row">
+				<label for="name">Name</label>
+				<input
+					type="text"
+					id="name"
+					name="name"
+					placeholder="Enter your name"
+					required
+				/>
+			</div>
+
+			<div class="form-row">
+				<label for="email">Email</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					placeholder="Enter your email"
+					required
+				/>
+			</div>
+
+			<div class="form-row">
+				<label for="subject">Subject</label>
+				<input
+					type="text"
+					id="subject"
+					name="subject"
+					placeholder="Subject for message"
+					required
+				/>
+			</div>
+
+			<div class="form-row">
+				<label for="message">Message</label>
+				<textarea
+					id="message"
+					name="message"
+					rows="3"
+					placeholder="Write your message here"
+					required
+				></textarea>
+			</div>
+
+			<div class="form-row" id="submit-btn">
+				<button class="button" type="submit">Send Message</button>
+			</div>
+		</form>
+	</section>
+
+	<div id="footer" data-include="/components/footer.html"></div>
+	
+	<script type="module" src="/assets/js/app.js"></script>
+</body>
+</html>

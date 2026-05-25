@@ -1,0 +1,29 @@
+/* ============================================================
+   MAIN.CSS — assets/css/index.css
+   Master entry point for all styles.
+============================================================ */
+
+/* ── 1. Base Styles ────────────────────────────────────── */
+@import url("base/variables.css");
+@import url("base/reset.css");
+@import url("base/typography.css");
+
+/* ── 2. Components ─────────────────────────────────────── */
+@import url("components/navbar.css");
+@import url("components/breadcrumb.css");
+@import url("components/buttons.css");
+@import url("components/hero.css");
+@import url("components/book-card.css");
+@import url("components/footer.css");
+
+/* ── 3. Layouts ────────────────────────────────────────── */
+@import url("layouts/book-detail.css");
+@import url("layouts/profile.css");
+
+/* ── 4. Pages ──────────────────────────────────────────── */
+@import url("pages/home-page.css");
+@import url("pages/book-page.css");
+@import url("pages/categories-page.css");
+@import url("pages/login-page.css");
+@import url("pages/contact-page.css");
+@import url("pages/about-page.css");
