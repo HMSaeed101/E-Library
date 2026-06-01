@@ -26,43 +26,59 @@
 .stats-area {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
-    align-items: center;
+    align-items: stretch;
     gap: 30px;
-    padding: 0px 300px 30px 300px;
-    margin: 0px 50px 10px 50px;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .stat-card {
-    width: 220px;
-    height: 160px;
-    background: rgb(255, 255, 255);
+    flex: 1 1 200px;
+    max-width: 250px;
+    min-height: 160px;
+    background: var(--color-surface);
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.174);
-    padding: 20px;
+    box-shadow: var(--shadow-md);
+    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid var(--color-border);
 }
 .stat-text {
     text-align: center;
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-gray-600);
+}
+.stat-card p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 8px 0 0;
 }
 .test-card {
-    width: 180px;
-    height: 180px;
-    background: rgb(255, 255, 255);
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.174);
-    padding: 20px;
+    flex: 1 1 250px;
+    max-width: 300px;
+    min-height: 180px;
+    background: var(--color-surface);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    padding: 30px;
     display: flex;
-    border: solid black 1px;
-    border-radius: 1000px;
+    border: 1px solid var(--color-border);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+.test-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 /* ── 3. Featured Books Section ─────────────────────────── */

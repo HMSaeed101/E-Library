@@ -9,6 +9,8 @@
 /* ── 1. Books Hero Background ──────────────────────────── */
 #books-hero-page {
     background-image: url("/assets/img/MultiBooks.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 /* ── 2. Books Grid ─────────────────────────────────────── */
@@ -17,7 +19,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    padding: 40px 20px;
+    padding: 60px 20px;
     background-color: var(--color-surface-alt);
 }
 
@@ -25,13 +27,17 @@
 .search-books-page {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
-.search-books-page input {
-    padding: 10px;
-    width: 400px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+
+/* ── 4. Responsive Adjustments ────────────────────────── */
+@media (max-width: 600px) {
+    .books-page-grid {
+        gap: 20px;
+        padding: 40px 15px;
+    }
 }
 

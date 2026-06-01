@@ -1,80 +1,75 @@
 /* ============================================================
    TYPOGRAPHY — base/typography.css
-   Global font, body, headings, and text styles.
-   Sections:
-     1. Body
-     2. Anchors
-     3. Headings (h1–h4)
-     4. Animated Heading (word cycle)
+   Standardized brand hierarchy and text styles.
 ============================================================ */
 
-/* ── 1. Body ───────────────────────────────────────────── */
+/* ── 1. Global Reset & Body ────────────────────────────── */
 body {
     color: var(--color-text);
     background-color: var(--color-bg);
-    font-size: 16px;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    padding-top: 60px;
+    font-family: var(--font-secondary);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    font-weight: var(--weight-normal);
+    padding-top: var(--header-height);
     overflow-x: hidden;
-    background-image: radial-gradient(var(--body-pattern) 1px, transparent 2px);
-    background-size: 30px 30px;
-    cursor: default;
-}
-p {
-    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── 2. Anchors ────────────────────────────────────────── */
+/* ── 2. Headings Hierarchy ─────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+    line-height: var(--leading-tight);
+    font-weight: var(--weight-bold);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); text-align: center; }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ── 3. Body Text & Paragraphs ─────────────────────────── */
+p {
+    margin-bottom: 1.25rem;
+    color: var(--color-text);
+}
+
+.text-muted { color: var(--color-muted); }
+.text-small { font-size: var(--text-sm); }
+.text-xs { font-size: var(--text-xs); }
+
+/* ── 4. Anchors ────────────────────────────────────────── */
 a {
-    display: block;
     color: inherit;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 a:hover {
     color: var(--color-accent);
 }
 
-/* ── 3. Headings ───────────────────────────────────────── */
-h1 {
-    font-size: 48px;
-    color: var(--color-white);
-    background: radial-gradient(circle, rgba(31, 61, 136, 0.7) 70%, rgba(31, 61, 136, 0) 100%);
-    border-radius: 4px;
-    min-width: 600px;
-    min-height: 110px;
-}
-h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--color-primary);
-}
-h3 {
-    font-size: 24px;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin-bottom: 10px;
-}
-h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-/* ── 4. Animated Heading (word cycle) ──────────────────── */
+/* ── 5. Animated Heading (Hero Specific) ───────────────── */
 .heading-container {
-    font-size: 60px;
-    font-family: 'Cinzel', 'Scheherazade New', 'Tiro Devanagari Sanskrit', 'Noto Serif SC', serif;
-    font-weight: 700;
+    font-family: var(--font-primary);
+    font-size: var(--text-6xl);
+    font-weight: var(--weight-bold);
     letter-spacing: 0.03em;
-    margin: 30px;
+    margin: 20px auto;
     position: relative;
-    height: 4.5rem;
+    height: clamp(3.5rem, 10vw, 5rem);
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: hidden;
 }
+
 .word {
     position: absolute;
     top: 50%;
@@ -83,10 +78,9 @@ h4 {
     opacity: 0;
     white-space: nowrap;
     animation: wordCycle 14s infinite;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
-/* Each word delayed by 2 seconds (14s / 7 words = 2s each) */
+
+/* Animation timing remains the same */
 .word:nth-child(1) { animation-delay: 0s; }
 .word:nth-child(2) { animation-delay: 2s; }
 .word:nth-child(3) { animation-delay: 4s; }
@@ -102,4 +96,3 @@ h4 {
     14.28%  { opacity: 0; transform: translate(-50%, -50%) translateY(-20px); }
     100%    { opacity: 0; transform: translate(-50%, -50%) translateY(-20px); }
 }
-

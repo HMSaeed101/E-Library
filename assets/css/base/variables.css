@@ -22,9 +22,61 @@
     --grid-bg:            rgba(143, 166, 223, 0.16);
     --body-pattern:       rgba(23, 110, 231, 0.26);
 
-    /* ── 3. Utility Colors ─────────────────────────────── */
+    /* ── 3. Neutral Color Scale (NEW) ──────────────────── */
+    --color-gray-50:      #f9fafb;
+    --color-gray-100:     #f3f4f6;
+    --color-gray-200:     #e5e7eb;
+    --color-gray-300:     #d1d5db;
+    --color-gray-400:     #9ca3af;
+    --color-gray-500:     #6b7280;
+    --color-gray-600:     #4b5563;
+    --color-gray-700:     #374151;
+    --color-gray-800:     #1f2937;
+    --color-gray-900:     #111827;
+
+    /* ── 4. Utility Colors ─────────────────────────────── */
     --color-white: #ffffff;
     --color-black: #000000;
+
+    /* ── 5. Shadows ────────────────────────────────────── */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    /* ── 6. Breakpoints ────────────────────────────────── */
+    --breakpoint-sm: 600px;
+    --breakpoint-md: 1024px;
+    --breakpoint-lg: 1440px;
+
+    /* ── 5. Layout ─────────────────────────────────────── */
+    --header-height: 70px;
+
+    /* ── 6. Typography (NEW) ───────────────────────────── */
+    --font-primary:       'Libre Caslon Text', serif;
+    --font-secondary:     'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Font Sizes (Step-based) */
+    --text-xs:            0.75rem;   /* 12px */
+    --text-sm:            0.875rem;  /* 14px */
+    --text-base:          1rem;      /* 16px */
+    --text-lg:            1.125rem;  /* 18px */
+    --text-xl:            1.25rem;   /* 20px */
+    --text-2xl:           1.5rem;    /* 24px */
+    --text-3xl:           1.875rem;  /* 30px */
+    --text-4xl:           2.25rem;   /* 36px */
+    --text-5xl:           3rem;      /* 48px */
+    --text-6xl:           3.75rem;   /* 60px */
+
+    /* Font Weights */
+    --weight-normal:      400;
+    --weight-medium:      500;
+    --weight-semibold:    600;
+    --weight-bold:        700;
+
+    /* Line Heights */
+    --leading-tight:      1.2;
+    --leading-normal:     1.5;
+    --leading-relaxed:    1.625;
 }
 
 /* ── 4. Dark Theme Override ────────────────────────────── */

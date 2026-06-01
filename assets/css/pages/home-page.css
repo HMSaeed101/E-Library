@@ -8,7 +8,7 @@
 
 /* ── 1. General Layout Utility ─────────────────────────── */
 .container {
-    width: 90%;
+    width: 95%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -21,7 +21,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    padding: 40px 0;
+    padding: 60px 20px;
 }
 .test-area,
 .stats-area {
@@ -34,41 +34,112 @@
     gap: 30px;
     padding: 20px;
     margin: 20px 0;
+    width: 100%;
+    max-width: 1100px;
 }
 .stat-card {
-    width: 220px;
-    height: 160px;
+    width: clamp(200px, 40vw, 250px);
+    height: auto;
+    min-height: 160px;
     background: var(--card-bg);
     border-radius: 12px;
     box-shadow: var(--card-shadow);
-    padding: 20px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid var(--color-border);
+    transition: transform 0.3s ease;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
 }
 .stat-text {
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    margin-bottom: 10px;
+}
+.stat-card p {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--color-primary);
 }
 .test-card {
-    width: 180px;
-    height: 180px;
+    width: clamp(240px, 40vw, 300px);
+    height: auto;
+    min-height: 180px;
     background: var(--card-bg);
     border: solid var(--color-border) 1px;
-    border-radius: 50%;
-    box-shadow: var(--card-shadow);
-    padding: 20px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+.test-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 /* ── 3. Featured Books Section ─────────────────────────── */
 .featured-books {
-    margin: 60px 0px;
+    margin: 80px 0px;
     text-align: center;
+    padding: 0 20px;
+}
+
+/* ── 4. Responsive Styles ─────────────────────────────── */
+@media (max-width: 600px) {
+    .test-section, .stats-section {
+        padding: 40px 16px;
+    }
+
+    .stats-area {
+        gap: 16px;
+        padding: 0;
+        margin: 20px 0 0 0;
+    }
+    
+    .test-area {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 20px 16px;
+        margin: 0 -16px; /* Bleed edge-to-edge */
+        width: calc(100% + 32px);
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .test-area::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .stat-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px 16px;
+    }
+
+    .test-card {
+        flex: 0 0 260px; /* Fixed width for consistent horizontal feel */
+        max-width: 260px;
+        scroll-snap-align: center;
+        margin: 0;
+    }
+
+    .featured-books {
+        margin: 40px 0;
+        padding: 0 16px;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
 }

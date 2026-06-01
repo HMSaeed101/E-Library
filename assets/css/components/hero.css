@@ -8,10 +8,11 @@
 
 /* ── 1. Main Hero ──────────────────────────────────────── */
 .hero {
-    background:  url("/assets/img/Open_Book.jpg");
+    background: url("/assets/img/Open_Book.jpg");
     background-size: cover;
-    background-position: bottom;
-    height: 93vh;
+    background-position: center;
+    min-height: 80vh;
+    padding: 120px 20px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,58 +21,112 @@
     color: white;
 }
 
-/* ── 2. Search Box & Dropdown ──────────────────────────── */
-.search-box {
-    width: 90%;
-    max-width: 600px;
+/* ── 2. Animated Heading ──────────────────────────── */
+.heading-container {
+    margin-bottom: 40px;
+    height: clamp(3.5rem, 10vw, 5rem);
+    width: 95%;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
     position: relative;
+    overflow: hidden;
+}
+
+.heading-container .word {
+    font-size: var(--text-6xl);
+    font-family: var(--font-primary);
+    font-weight: var(--weight-bold);
+}
+
+/* ── 3. Search Box & Dropdown ──────────────────────────── */
+.search-box {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0; /* Changed to 0 for a unified look */
+    position: relative;
+    margin-top: 20px;
+    background: white;
+    padding: 6px;
+    border-radius: 60px;
+    box-shadow: var(--shadow-lg);
 }
 .search-box input {
-    min-width: 250px;
     flex: 1;
-    padding: 12px;
-    width: 550px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    min-width: 0;
+    padding: 12px 25px;
+    border: none;
+    background: transparent;
+    font-size: var(--text-lg);
+    color: var(--color-gray-800);
+}
+.search-box input:focus {
+    outline: none;
+}
+.search-box .button {
+    border-radius: 50px;
+    padding: 12px 30px;
 }
 .search-dropdown {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 15px);
+    left: 0;
     width: 100%;
-    max-width: 600px;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background: var(--color-surface);
+    border-radius: 16px;
     display: none;
-    margin-top: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.249);
-    max-height: 160px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-200);
+    max-height: 400px;
     overflow-y: auto;
-    overflow-x: hidden;
-}
-.search-dropdown .item {
-    color: black;
-    font-size: 14px;
-    text-align: left;
-    padding: 8px 20px;
-    cursor: pointer;
-}
-.search-dropdown .item:hover {
-    background-color: #f0f0f0;
-    color: #000;
+    z-index: 1000;
 }
 
 /* ── 3. Hero for Inner Pages ───────────────────────────── */
 .hero-pages {
-    padding: 60px 20px 40px;
+    padding: 80px 20px 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--grid-bg);
 }
 
+/* ── 4. Responsive Adjustments ────────────────────────── */
+@media (max-width: 600px) {
+    .hero {
+        min-height: 60vh;
+        padding: 100px 16px 40px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 12px;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .search-box input {
+        width: 100%;
+        background: white;
+        border-radius: 12px;
+        padding: 16px 20px;
+        font-size: var(--text-base);
+        box-shadow: var(--shadow-md);
+        height: 54px; /* Ergonomic touch target */
+    }
+
+    .search-box .button {
+        width: 100%;
+        border-radius: 12px;
+        padding: 16px;
+        font-size: var(--text-lg);
+        height: 54px;
+        box-shadow: var(--shadow-md);
+    }
+}

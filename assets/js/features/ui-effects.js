@@ -21,13 +21,24 @@ export function initHeaderScroll(selector = ".header") {
 }
 
 /**
+ * Mobile Menu Toggle: Toggles 'active' class on menu elements
+ */
+export function toggleMenu() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navContainer = document.querySelector(".nav-container");
+    
+    if (menuToggle && navContainer) {
+        menuToggle.classList.toggle("active");
+        navContainer.classList.toggle("active");
+    }
+}
+
+/**
  * Statistics Counter (Scalability Scope)
  * Automatically updates stats from book data
  * @param {Array} books 
  */
 export function updateStats(books) {
     const totalBooksEl = document.querySelector(".stat-card:nth-child(2) p");
-    if (totalBooksEl && books) {
-        totalBooksEl.textContent = books.length;
-    }
+    if (totalBooksEl && books) { totalBooksEl.textContent = books.length; }
 }

@@ -10,7 +10,6 @@
 
 /* ── 2. Components ─────────────────────────────────────── */
 @import url("components/navbar.css");
-@import url("components/breadcrumb.css");
 @import url("components/buttons.css");
 @import url("components/hero.css");
 @import url("components/book-card.css");

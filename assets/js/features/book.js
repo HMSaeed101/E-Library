@@ -21,29 +21,20 @@ export async function initBookDetails() {
         if (book) {
             // Inject Data into UI
             document.title = `${book.title} | E-Library`;
-            
+
             const titleEl = document.querySelector(".book-title");
             if (titleEl) titleEl.textContent = book.title;
-            
+
             const authorEl = document.querySelector(".book-author");
             if (authorEl) authorEl.textContent = book.author;
-            
+
             const descEl = document.querySelector(".book-description p");
             if (descEl) descEl.textContent = book.description;
-            
+
             const coverEl = document.querySelector(".book-cover");
             if (coverEl) {
                 coverEl.src = book.cover;
                 coverEl.alt = book.title;
-            }
-
-            // Update breadcrumbs
-            const breadcrumbTitle = document.getElementById("breadcrumb-title");
-            if (breadcrumbTitle) breadcrumbTitle.textContent = book.title;
-
-            const breadcrumbCategory = document.getElementById("breadcrumb-category");
-            if (breadcrumbCategory && book.category) {
-                breadcrumbCategory.innerHTML = `<a href="/pages/category.html?type=${book.category}">${book.category.replace(/-/g, ' ').toUpperCase()}</a>`;
             }
 
             // Update meta-row details

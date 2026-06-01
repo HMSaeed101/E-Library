@@ -3,9 +3,9 @@
    Sections:
      1. Header Bar
      2. Logo Area
-     3. Nav Links
-     4. Dark Mode Toggle Button
-     5. Nav Utility Buttons (back/forward/nav-button)
+     3. Nav Container & Links
+     4. Menu Toggle (Hamburger)
+     5. Dark Mode Toggle Button
 ============================================================ */
 
 /* ── 1. Header Bar ─────────────────────────────────────── */
@@ -16,27 +16,28 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 30px 10px 30px;
+    padding: 0 30px;
     width: 100%;
+    height: var(--header-height);
     background-color: var(--color-primary);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.446);
+    box-shadow: var(--shadow-md);
     color: white;
     z-index: 1000;
     transition: all 0.3s ease;
-    backdrop-filter: blur(0px);
 }
 .header.scrolled {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.853);
+    box-shadow: var(--shadow-lg);
     background: var(--color-primary-soft);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
 }
 
 /* ── 2. Logo Area ──────────────────────────────────────── */
 #ee {
-    font-family: "Libre Caslon Text", serif;
-    font-weight: 700;
+    font-family: var(--font-primary);
+    font-weight: var(--weight-bold);
     font-style: normal;
     letter-spacing: 0.07em;
+    font-size: var(--text-xl);
 }
 .logo-area {
     display: flex;
@@ -44,99 +45,178 @@
     gap: 10px;
 }
 .logo-img img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     object-fit: cover;
-    padding: 0px;
 }
 
-/* ── 3. Nav Links ──────────────────────────────────────── */
-.nav-bar {
+/* ── 3. Nav Container & Links ──────────────────────────── */
+.nav-container {
     display: flex;
+    align-items: center;
     gap: 36px;
 }
-.nav-bar img {
-    width: 25px;
-    height: 25px;
-    padding: 10px 6px 0px 0px;
+.nav-links {
+    display: flex;
+    gap: 30px;
 }
-.nav-bar a {
-    font-weight: 450;
+.nav-links a {
+    font-weight: var(--weight-medium);
     letter-spacing: 0.02em;
     color: var(--color-white);
-    display: inline-block;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     border-radius: 6px;
-    padding: 0px 8px 2px 8px;
+    padding: 4px 8px;
+    transition: all 0.2s ease;
 }
-.nav-bar a:hover {
-    transform: scale(1.06);
+.nav-links img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+.nav-links a:hover {
+    transform: translateY(-2px);
     background: var(--color-accent);
     color: var(--color-primary);
-    font-weight: 480;
 }
-.nav-bar a.active {
+.nav-links a.active {
     position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-accent);
 }
-.nav-bar a.active::after {
+.nav-links a.active::after {
     content: '';
     position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
+    bottom: 2px;
+    left: 8px;
+    right: 8px;
     height: 3px;
     background: var(--color-accent);
     border-radius: 2px;
 }
 
-/* ── 4. Dark Mode Toggle ───────────────────────────────── */
+/* ── 4. Menu Toggle (Hamburger) ────────────────────────── */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* ── 5. Dark Mode Toggle ───────────────────────────────── */
 #darkmode-btn {
     background-color: transparent;
     border: none;
     font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+body.dark-mode #darkmode-btn .moon { display: none; }
+body:not(.dark-mode) #darkmode-btn .sun { display: none; }
 
-/* Show sun when in dark mode, moon when in light mode */
-body.dark-mode #darkmode-btn .moon {
-    display: none;
-}
-body:not(.dark-mode) #darkmode-btn .sun {
-    display: none;
-}
-
-/* ── 5. Nav Utility Buttons ────────────────────────────── */
+/* ── 6. Nav Utility Buttons ────────────────────────────── */
 .nav-button {
-    padding: 3px 12px;
+    padding: 6px 16px;
     background-color: var(--color-primary);
     color: var(--color-white);
-    max-width: 200px;
-    font-weight: bold;
+    font-weight: var(--weight-bold);
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
 }
 .nav-button:hover {
-    background-color: rgb(255, 196, 0);
-    color: blue;
-    transform: scale(1.13);
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    transform: scale(1.05);
 }
-#back-btn {
-    top: 80px;
-    left: 20px;
-    position: fixed;
-    font-size: 16px;
-}
-#forward-btn {
-    top: 80px;
-    right: 20px;
-    position: fixed;
-    font-size: 16px;
+
+/* ── 7. Responsive Styles ─────────────────────────────── */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px; /* Improved drawer width */
+        height: 100vh;
+        background-color: var(--color-primary);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 120px; /* More space for top elements */
+        gap: 15px;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 40px rgba(0,0,0,0.4);
+    }
+
+    .nav-container.active {
+        right: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 25px;
+    }
+
+    .nav-links a {
+        font-size: var(--text-lg);
+        width: 100%;
+        justify-content: flex-start;
+        padding: 16px 20px; /* Standard touch target height */
+        border-radius: 10px;
+        border: 1px solid transparent;
+    }
+
+    .nav-links a:active {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: var(--color-accent);
+    }
+
+    .nav-links img {
+        width: 24px;
+        height: 24px;
+        margin-right: 18px;
+    }
+
+    #darkmode-btn {
+        margin: 30px 25px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        width: auto;
+        align-self: flex-start;
+    }
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
 }
 
