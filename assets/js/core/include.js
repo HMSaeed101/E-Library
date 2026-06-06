@@ -1,8 +1,38 @@
 /* ============================================================
    INCLUDE.JS — Declarative HTML Injection Utility
    Automatically finds elements with [data-include] and injects 
-   the specified HTML file using root-relative paths.
+   the specified HTML file.
 ============================================================ */
+
+/**
+ * Calculates the depth of the current page relative to the project root.
+ * Returns a string like "../" or "../../" or ""
+ */
+function getRootPrefix() {
+    const path = window.location.pathname;
+    // Count how many segments exist after the project root
+    // This is a heuristic. We look for 'pages/' and count nesting from there.
+    if (path.includes("/pages/auth/")) return "../../";
+    if (path.includes("/pages/")) return "../";
+    return "";
+}
+
+/**
+ * Adjusts relative paths in the injected HTML to be correct for the host page.
+ * @param {string} html - The raw HTML content
+ */
+function adjustPaths(html) {
+    const rootPrefix = getRootPrefix();
+    
+    // Regex to find src="..." and href="..."
+    // We target paths that look like they are relative to project root (assets/, pages/, index.html)
+    return html.replace(/(src|href)="([^"\/][^"]*)"/g, (match, attr, path) => {
+        if (path.startsWith("http") || path.startsWith("#") || path.startsWith("mailto:") || path.startsWith("tel:")) {
+            return match;
+        }
+        return `${attr}="${rootPrefix}${path}"`;
+    });
+}
 
 /**
  * Fetches and injects HTML into a single element.
@@ -12,22 +42,19 @@ async function injectElement(element) {
     const file = element.getAttribute("data-include");
     if (!file) return;
 
-    // Use root-relative path for the component itself
-    // We ensure the path starts with / for absolute reference
-    const adjustedFile = file.startsWith("/") ? file : `/${file}`;
-
     try {
-        const response = await fetch(adjustedFile);
-        if (!response.ok) throw new Error(`Could not fetch ${adjustedFile}`);
-        const html = await response.text();
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`Could not fetch ${file}`);
+        let html = await response.text();
+        
+        // Adjust paths based on host page depth
+        html = adjustPaths(html);
         
         element.innerHTML = html;
         element.removeAttribute("data-include"); 
-        
-        // No path fixing needed as we now use root-relative paths in components!
 
         element.dispatchEvent(new CustomEvent("contentLoaded", { 
-            detail: { file: adjustedFile },
+            detail: { file: file },
             bubbles: true 
         }));
 
@@ -35,7 +62,7 @@ async function injectElement(element) {
         await initIncludes(element);
     } catch (error) {
         console.error("HTML Injection Error:", error);
-        element.innerHTML = `<p style="color:red">Error loading component: ${file}</p>`;
+        element.innerHTML = `<p style="color:red; padding: 20px; text-align: center;">Error loading component: ${file}. Please ensure you are running this project on a local server (e.g., Live Server).</p>`;
     }
 }
 

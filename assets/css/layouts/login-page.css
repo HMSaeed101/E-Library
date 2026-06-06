@@ -21,12 +21,12 @@
 }
 
 .login-page {
-    background-image: url("/assets/img/login.jpg");
+    background-image: url("../../img/login.jpg");
     background-position: bottom;
 }
 
 .signup-page {
-    background-image: url("/assets/img/signup.jpg");
+    background-image: url("../../img/signup.jpg");
     background-position: center;
 }
 
@@ -95,7 +95,7 @@
     background-color: var(--color-dark-bg);
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)),
-        url("/assets/img/login.jpg"); /* Default to login.jpg for dark theme blend */
+        url("../../img/login.jpg"); /* Default to login.jpg for dark theme blend */
     color: var(--color-dark-text);
     transition: background-color 0.01s ease, color 0.1s ease;
 }
@@ -103,5 +103,5 @@
 .dark-mode.signup-page {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)),
-        url("/assets/img/signup.jpg");
+        url("../../img/signup.jpg");
 }

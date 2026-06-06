@@ -3,6 +3,16 @@
 ============================================================ */
 
 /**
+ * Calculates root prefix based on current path
+ */
+function getRootPrefix() {
+    const path = window.location.pathname;
+    if (path.includes("/pages/auth/")) return "../../";
+    if (path.includes("/pages/")) return "../";
+    return "";
+}
+
+/**
  * Initialize Book Detail page logic
  */
 export async function initBookDetails() {
@@ -14,7 +24,10 @@ export async function initBookDetails() {
     if (!bookContainer) return;
 
     try {
-        const res = await fetch("/assets/data/books.json");
+        const rootPrefix = getRootPrefix();
+        const dataPath = `${rootPrefix}assets/data/books.json`;
+
+        const res = await fetch(dataPath);
         const books = await res.json();
         const book = books.find((b) => b.id === bookId);
 
@@ -33,7 +46,9 @@ export async function initBookDetails() {
 
             const coverEl = document.querySelector(".book-cover");
             if (coverEl) {
-                coverEl.src = book.cover;
+                // Ensure cover path is relative to current page
+                const coverPath = book.cover.startsWith("/") ? book.cover.substring(1) : book.cover;
+                coverEl.src = rootPrefix + coverPath;
                 coverEl.alt = book.title;
             }
 
@@ -58,14 +73,16 @@ export async function initBookDetails() {
             // Update action buttons
             const readNowBtn = document.querySelector(".btn.primary");
             if (readNowBtn && book.pdf) {
-                readNowBtn.onclick = () => window.open(book.pdf, "_blank");
+                const pdfPath = book.pdf.startsWith("/") ? book.pdf.substring(1) : book.pdf;
+                readNowBtn.onclick = () => window.open(rootPrefix + pdfPath, "_blank");
             }
 
             const downloadBtn = document.querySelector(".btn.tertiary");
             if (downloadBtn && book.pdf) {
+                const pdfPath = book.pdf.startsWith("/") ? book.pdf.substring(1) : book.pdf;
                 downloadBtn.onclick = () => {
                     const link = document.createElement('a');
-                    link.href = book.pdf;
+                    link.href = rootPrefix + pdfPath;
                     link.download = `${book.title}.pdf`;
                     document.body.appendChild(link);
                     link.click();

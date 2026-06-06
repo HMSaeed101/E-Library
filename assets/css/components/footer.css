@@ -9,146 +9,231 @@
 
 /* ── 1. Footer Wrapper ─────────────────────────────────── */
 .footer {
-    background-color: var(--color-primary-soft);
-    color: var(--color-white);
-    padding: 40px 20px 20px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 120px 60px 60px;
+    border-top: 1px solid var(--color-border);
 }
+
 .footer h4 {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    font-weight: 450;
-    text-align: center;
-    padding: 8px;
-    border-radius: 6px;
-    margin-bottom: 15px;
+    font-family: var(--font-secondary);
+    font-size: 10px; /* Micro-typography for headers */
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: var(--weight-bold);
+    color: var(--color-muted);
+    margin-bottom: 32px;
 }
+
 .footer a {
-    color: var(--color-white);
-    opacity: 0.8;
-    padding: 5px 0;
-    transition: 0.3s;
+    color: var(--color-text);
+    opacity: 0.5;
+    padding: 4px 0;
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    transition: all 0.3s ease;
+    display: inline-block;
 }
+
 .footer a:hover {
     opacity: 1;
-    color: var(--color-accent);
-    padding-left: 5px;
+    transform: translateX(4px);
 }
 
 /* ── 2. Footer Content Grid ────────────────────────────── */
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 80px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding-bottom: 40px;
+    padding-bottom: 80px;
 }
-.footer-content div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 .outro {
-    text-align: center;
+    max-width: 300px;
 }
+
 .outro h3 {
-    font-size: 2rem;
-    color: var(--color-accent);
+    font-family: var(--font-primary);
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+    margin-bottom: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: var(--weight-normal);
+}
+
+.outro p {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    line-height: var(--leading-relaxed);
 }
 
 .categories-links,
 .footer-links {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 4px;
 }
 
 /* ── 3. Newsletter Input ───────────────────────────────── */
-.input {
-    padding: 10px 15px;
+.newsletter {
+    max-width: 320px;
+}
+
+.newsletter p {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    margin-bottom: 24px;
+    line-height: var(--leading-relaxed);
+}
+
+.newsletter .input-wrapper {
+    position: relative;
     width: 100%;
-    max-width: 300px;
-    background-color: var(--color-surface);
+}
+
+.input {
+    padding: 16px 0;
+    width: 100%;
+    background-color: transparent;
     color: var(--color-text);
     border: none;
-    border-radius: 50px;
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
     outline: none;
-    margin: 10px 0;
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.input:focus {
+    border-color: var(--color-primary);
+    padding-left: 8px;
+}
+
+.newsletter .input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.newsletter-btn {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-muted);
+    cursor: pointer;
+    padding: 16px 0 16px 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.newsletter-btn:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.input::placeholder {
+    color: var(--color-muted);
+    opacity: 0.5;
 }
 
 /* ── 4. Copyright Bar ──────────────────────────────────── */
 .copyright {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    font-family: var(--font-secondary);
+    font-size: 9px; /* Even smaller for maximum elegance */
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.6;
 }
 
-/* ── 5. Responsive Styles ─────────────────────────────── */
+.footer-socials {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-socials a {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    opacity: 1;
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+@media (max-width: 1200px) {
+    .footer {
+        padding: 100px 40px 40px;
+    }
+    .footer-content {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+}
+
 @media (max-width: 600px) {
     .footer {
-        padding: 40px 20px 30px;
+        padding: 48px 24px 32px;
     }
     
     .footer-content {
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-        text-align: left;
-    }
-
-    .footer-content div {
-        align-items: flex-start;
-        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 16px;
     }
 
     .outro {
-        text-align: left;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 20px;
-        margin-bottom: 0;
+        grid-column: 1 / -1;
+        max-width: 100%;
+        margin-bottom: 8px;
     }
 
-    .outro h3 {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
+    .footer-links {
+        grid-column: 1;
     }
 
-    .footer h4 {
-        text-align: left;
-        padding: 0;
-        background: transparent;
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--color-accent);
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-
-    .categories-links, .footer-links {
-        align-items: flex-start;
-        padding-left: 5px;
-    }
-
-    .footer a {
-        font-size: 1rem;
-        padding: 8px 0; /* Better touch target */
+    .categories-links {
+        grid-column: 2;
     }
 
     .newsletter {
-        background: rgba(255, 255, 255, 0.05);
-        padding: 20px;
-        border-radius: 12px;
-        width: 100%;
+        grid-column: 1 / -1;
+        max-width: 100%;
+        margin-top: 8px;
     }
 
-    .input {
-        max-width: 100%;
-        height: 48px; /* Standard mobile height */
-        margin-top: 15px;
-        font-size: 1rem;
+    .footer h4 {
+        margin-bottom: 16px;
+    }
+
+    .outro h3 {
+        font-size: var(--text-xl);
+        margin-bottom: 16px;
+    }
+    
+    .copyright {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        padding-top: 24px;
+        margin-top: 0;
     }
 }

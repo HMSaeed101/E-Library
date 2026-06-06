@@ -8,19 +8,21 @@
 
 /* ── 1. Books Hero Background ──────────────────────────── */
 #books-hero-page {
-    background-image: url("/assets/img/MultiBooks.jpg");
+    background-image: url("../../img/MultiBooks.jpg");
     background-size: cover;
     background-position: center;
 }
 
 /* ── 2. Books Grid ─────────────────────────────────────── */
 .books-page-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 60px 20px;
-    background-color: var(--color-surface-alt);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 100px 40px;
+    background-color: var(--color-bg);
+    max-width: 1400px;
+    margin: 0 auto;
+    transition: opacity 0.15s ease; /* For smooth filter transitions */
 }
 
 /* ── 3. Books Search Bar ───────────────────────────────── */
@@ -29,15 +31,74 @@
     justify-content: center;
     width: 100%;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 30px auto 0;
+    padding: 0 40px;
+}
+
+/* ── 3a. Filter Pills ───────────────────────────────────── */
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 900px;
+    margin: 40px auto 0;
     padding: 0 20px;
 }
 
+.filter-pill {
+    padding: 10px 22px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-secondary);
+    font-size: 11px;
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border-radius: 30px; /* Pill shape */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-pill:hover {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.filter-pill.active {
+    background: white;
+    color: var(--color-black) !important;
+    border-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode adjustments for cards when they are not in the hero (in case we reuse them) */
+body.dark-mode .filter-pill.active {
+    background: var(--color-primary);
+    color: var(--color-white) !important;
+    border-color: var(--color-primary);
+}
+
 /* ── 4. Responsive Adjustments ────────────────────────── */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .books-page-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        padding: 40px 15px;
+        padding: 60px 20px;
+    }
+
+    .filter-container {
+        gap: 8px;
+        margin-top: 30px;
+    }
+
+    .filter-pill {
+        padding: 8px 16px;
+        font-size: 10px;
     }
 }
 

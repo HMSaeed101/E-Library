@@ -10,13 +10,14 @@
 
 /* ── 1. Contact Hero Background ────────────────────────── */
 #contact-hero-page {
-    background-image: url("/assets/img/ui/logo.svg");
+    background-image: none;
+    background-color: var(--color-surface-alt);
 }
 
 /* ── 2. Form Section Wrapper ───────────────────────────── */
 .contact-page-form-section {
     background-color: var(--color-bg);
-    padding: 60px 20px;
+    padding: 100px 40px;
     display: flex;
     justify-content: center;
 }
@@ -24,58 +25,60 @@
 /* ── 3. Contact Form Card ──────────────────────────────── */
 .contact-page-form {
     width: 100%;
-    max-width: 600px;
-    background-color: var(--color-surface);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    border-radius: 16px;
+    max-width: 800px;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border: 1px solid var(--color-border);
+    gap: 40px;
+    border: none;
 }
 
 /* ── 4. Form Rows ──────────────────────────────────────── */
 .form-row {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 .form-row label {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-muted);
 }
 .form-row input,
 .form-row textarea {
     width: 100%;
-    padding: 12px 16px;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    font-size: 1rem;
+    padding: 16px 0;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
+    font-family: var(--font-secondary);
+    font-size: var(--text-base);
     outline: none;
     transition: border-color 0.3s ease;
-    background: var(--color-bg);
+    background: transparent;
     color: var(--color-text);
 }
 .form-row input:focus,
 .form-row textarea:focus {
-    border-color: var(--color-primary);
+    border-color: var(--color-accent);
 }
 
 /* ── 5. Submit Button ──────────────────────────────────── */
 #submit-btn {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
+    justify-content: flex-start;
+    margin-top: 20px;
 }
 
 /* ── 6. Responsive Styles ─────────────────────────────── */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .contact-page-form-section {
-        padding: 40px 15px;
-    }
-    .contact-page-form {
-        padding: 30px 20px;
+        padding: 60px 20px;
     }
 }

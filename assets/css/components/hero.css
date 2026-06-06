@@ -8,11 +8,12 @@
 
 /* ── 1. Main Hero ──────────────────────────────────────── */
 .hero {
-    background: url("/assets/img/Open_Book.jpg");
+    position: relative;
+    background: url("../../img/Open_Book.jpg");
     background-size: cover;
     background-position: center;
-    min-height: 80vh;
-    padding: 120px 20px 80px;
+    min-height: 90vh;
+    padding: 120px 40px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,66 +21,83 @@
     text-align: center;
     color: white;
 }
-
-/* ── 2. Animated Heading ──────────────────────────── */
-.heading-container {
-    margin-bottom: 40px;
-    height: clamp(3.5rem, 10vw, 5rem);
-    width: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.4), rgba(26, 26, 26, 0.6));
+    z-index: 1;
+}
+.hero > * {
     position: relative;
-    overflow: hidden;
+    z-index: 2;
 }
 
-.heading-container .word {
-    font-size: var(--text-6xl);
-    font-family: var(--font-primary);
-    font-weight: var(--weight-bold);
+/* ── 2. Animated Heading ──────────────────────────── */
+.hero .heading-container {
+    margin-bottom: 60px;
 }
 
 /* ── 3. Search Box & Dropdown ──────────────────────────── */
 .search-box {
     width: 100%;
-    max-width: 650px;
+    max-width: 600px;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 0; /* Changed to 0 for a unified look */
-    position: relative;
-    margin-top: 20px;
-    background: white;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 6px;
-    border-radius: 60px;
-    box-shadow: var(--shadow-lg);
+    border-radius: 2px;
+    margin-top: 20px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.search-box:focus-within {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 .search-box input {
     flex: 1;
-    min-width: 0;
-    padding: 12px 25px;
+    padding: 14px 24px;
     border: none;
     background: transparent;
-    font-size: var(--text-lg);
-    color: var(--color-gray-800);
-}
-.search-box input:focus {
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    color: white;
     outline: none;
+    letter-spacing: 0.02em;
+}
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 .search-box .button {
-    border-radius: 50px;
-    padding: 12px 30px;
+    padding: 14px 32px;
+    border-radius: 1px;
+    background-color: white;
+    color: var(--color-primary);
+    font-size: 10px;
 }
+.search-box .button:hover {
+    background-color: var(--color-accent);
+    color: white;
+}
+
 .search-dropdown {
     position: absolute;
-    top: calc(100% + 15px);
+    top: calc(100% + 12px);
     left: 0;
     width: 100%;
     background: var(--color-surface);
-    border-radius: 16px;
+    border-radius: 4px;
     display: none;
     box-shadow: var(--shadow-lg);
-    border: 1px solid var(--color-gray-200);
+    border: 1px solid var(--color-border);
     max-height: 400px;
     overflow-y: auto;
     z-index: 1000;
@@ -87,46 +105,113 @@
 
 /* ── 3. Hero for Inner Pages ───────────────────────────── */
 .hero-pages {
-    padding: 80px 20px 40px;
+    position: relative;
+    padding: 160px 40px 100px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--grid-bg);
+    background-color: var(--color-surface-alt);
+    background-size: cover;
+    background-position: center;
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+/* Subtle overlay for hero-pages when background image is present */
+.hero-pages.has-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 249, 246, 0.85); /* Matches off-white theme */
+    z-index: 1;
+}
+
+body.dark-mode .hero-pages.has-bg::before {
+    background: rgba(18, 18, 18, 0.85);
+}
+
+.hero-pages > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-pages h2 {
+    margin-top: 0;
+    font-size: var(--text-5xl);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.hero-pages p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--color-muted);
+    font-size: var(--text-lg);
+}
+
+/* Page Specific Header Backgrounds */
+#books-hero-page { background-image: url("../../img/MultiBooks.jpg"); }
+#categories-hero-page { background-image: url("../../img/ui/categories/fiction.jpg"); }
+#about-hero-page { background-image: url("../../img/ui/library-hero.jpg"); }
+#contact-hero-page { background-image: url("../../img/ui/logo.svg"); background-size: 200px; background-repeat: no-repeat; background-position: 90% 50%; }
+#profile-hero-page { background-image: url("../../img/ui/library-hero.jpg"); }
+
+/* Special styling for contact page logo background */
+#contact-hero-page::before { opacity: 0.95; }
+
+/* Styling for search dropdown items */
+.search-dropdown .item {
+    padding: 12px 24px;
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.search-dropdown .item:hover {
+    background-color: var(--color-surface-alt);
+    color: var(--color-accent);
+}
+.search-dropdown .item.no-results {
+    color: var(--color-muted);
+    cursor: default;
+    background: transparent;
 }
 
 /* ── 4. Responsive Adjustments ────────────────────────── */
 @media (max-width: 600px) {
     .hero {
-        min-height: 60vh;
-        padding: 100px 16px 40px;
+        min-height: 70vh;
+        padding: 100px 20px 60px;
     }
 
     .search-box {
-        flex-direction: column;
-        gap: 12px;
-        background: transparent;
-        box-shadow: none;
-        padding: 0;
+        max-width: 100%;
+        padding: 6px;
     }
-
     .search-box input {
-        width: 100%;
-        background: white;
-        border-radius: 12px;
-        padding: 16px 20px;
-        font-size: var(--text-base);
-        box-shadow: var(--shadow-md);
-        height: 54px; /* Ergonomic touch target */
+        padding: 10px 15px;
+        font-size: var(--text-sm);
+    }
+    .search-box .button {
+        padding: 10px 20px;
     }
 
-    .search-box .button {
-        width: 100%;
-        border-radius: 12px;
-        padding: 16px;
-        font-size: var(--text-lg);
-        height: 54px;
-        box-shadow: var(--shadow-md);
+    .hero-pages,
+    .hero-pages#about-hero-page {
+        padding: 120px 20px 60px !important;
+    }
+    .hero-pages h2,
+    .hero-pages#about-hero-page h1 {
+        font-size: var(--text-3xl) !important;
+    }
+    .hero-pages p {
+        font-size: var(--text-sm) !important;
+    }
+    #contact-hero-page {
+        background-image: none !important; /* Hide overlapping logo on mobile */
     }
 }

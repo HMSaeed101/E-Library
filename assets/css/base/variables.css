@@ -5,24 +5,24 @@
 
 :root {
     /* ── 1. Default (Light) Theme ──────────────────────── */
-    --color-bg:           #f8fafc;
-    --color-text:         #1a202c;
-    --color-primary:      #1f3c88;
-    --color-primary-soft: #1f3c88ee;
-    --color-accent:       #ffcc00;
+    --color-bg:           #faf9f6; /* Off-white / Cream */
+    --color-text:         #1a1a1a; /* Soft Charcoal */
+    --color-primary:      #2d3436; /* Deep Muted Blue/Gray */
+    --color-primary-soft: #2d3436ee;
+    --color-accent:       #4a90e2; /* Sophisticated Blue */
     --color-surface:      #ffffff;
-    --color-surface-alt:  #f3f4f6;
-    --color-muted:        #6b7280;
-    --color-border:       #e5e7eb;
+    --color-surface-alt:  #f2f1ef; /* Soft Paper Gray */
+    --color-muted:        #717171;
+    --color-border:       #e5e5e5;
     
     /* ── 2. Specialized Colors ──────────────────────────── */
     --card-bg:            #ffffff;
-    --card-shadow:        rgba(0, 0, 0, 0.1);
-    --card-shadow-hover:  rgba(0, 0, 0, 0.2);
-    --grid-bg:            rgba(143, 166, 223, 0.16);
-    --body-pattern:       rgba(23, 110, 231, 0.26);
+    --card-shadow:        rgba(0, 0, 0, 0.04);
+    --card-shadow-hover:  rgba(0, 0, 0, 0.08);
+    --grid-bg:            rgba(242, 241, 239, 0.5);
+    --body-pattern:       transparent;
 
-    /* ── 3. Neutral Color Scale (NEW) ──────────────────── */
+    /* ── 3. Neutral Color Scale ──────────────────── */
     --color-gray-50:      #f9fafb;
     --color-gray-100:     #f3f4f6;
     --color-gray-200:     #e5e7eb;
@@ -39,9 +39,9 @@
     --color-black: #000000;
 
     /* ── 5. Shadows ────────────────────────────────────── */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+    --shadow-lg: 0 12px 24px rgba(0,0,0,0.08);
 
     /* ── 6. Breakpoints ────────────────────────────────── */
     --breakpoint-sm: 600px;
@@ -49,23 +49,23 @@
     --breakpoint-lg: 1440px;
 
     /* ── 5. Layout ─────────────────────────────────────── */
-    --header-height: 70px;
+    --header-height: 80px; /* Slightly taller for editorial feel */
 
-    /* ── 6. Typography (NEW) ───────────────────────────── */
+    /* ── 6. Typography ───────────────────────────── */
     --font-primary:       'Libre Caslon Text', serif;
-    --font-secondary:     'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-secondary:     'Inter', system-ui, -apple-system, sans-serif;
     
-    /* Font Sizes (Step-based) */
-    --text-xs:            0.75rem;   /* 12px */
-    --text-sm:            0.875rem;  /* 14px */
-    --text-base:          1rem;      /* 16px */
-    --text-lg:            1.125rem;  /* 18px */
-    --text-xl:            1.25rem;   /* 20px */
-    --text-2xl:           1.5rem;    /* 24px */
-    --text-3xl:           1.875rem;  /* 30px */
-    --text-4xl:           2.25rem;   /* 36px */
-    --text-5xl:           3rem;      /* 48px */
-    --text-6xl:           3.75rem;   /* 60px */
+    /* Font Sizes (Editorial focus) */
+    --text-xs:            0.75rem;
+    --text-sm:            0.875rem;
+    --text-base:          1rem;
+    --text-lg:            1.125rem;
+    --text-xl:            1.25rem;
+    --text-2xl:           1.5rem;
+    --text-3xl:           2.25rem;
+    --text-4xl:           3rem;
+    --text-5xl:           4rem;
+    --text-6xl:           5rem;
 
     /* Font Weights */
     --weight-normal:      400;
@@ -74,26 +74,25 @@
     --weight-bold:        700;
 
     /* Line Heights */
-    --leading-tight:      1.2;
-    --leading-normal:     1.5;
-    --leading-relaxed:    1.625;
+    --leading-tight:      1.1;
+    --leading-normal:     1.6;
+    --leading-relaxed:    1.8;
 }
 
-/* ── 4. Dark Theme Override ────────────────────────────── */
+/* ── 4. Dark Theme Override (Soft Dark) ────────────────── */
 body.dark-mode {
     --color-bg:           #121212;
-    --color-surface:      #1e1e1e;
+    --color-surface:      #1c1c1c;
     --color-surface-alt:  #252525;
-    --color-text:         #e2e8f0;
-    --color-muted:        #94a3b8;
-    --color-primary:      #3b82f6;
-    --color-primary-soft: #1e3a8a;
-    --color-border:       #334155;
+    --color-text:         #e5e5e5;
+    --color-muted:        #a0a0a0;
+    --color-primary:      #fdfcfb;
+    --color-primary-soft: #fdfcfbaa;
+    --color-border:       #333333;
     
-    /* ── 5. Specialized Dark Mode Colors ────────────────── */
-    --card-bg:            #1e1e1e;
-    --card-shadow:        rgba(0, 0, 0, 0.5);
-    --card-shadow-hover:  rgba(0, 0, 0, 0.8);
-    --grid-bg:            rgba(31, 61, 136, 0.3);
-    --body-pattern:       rgba(59, 130, 246, 0.1);
+    --card-bg:            #1c1c1c;
+    --card-shadow:        rgba(0, 0, 0, 0.4);
+    --card-shadow-hover:  rgba(0, 0, 0, 0.6);
+    --grid-bg:            rgba(255, 255, 255, 0.02);
 }
+

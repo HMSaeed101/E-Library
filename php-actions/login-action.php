@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
+include __DIR__ . '/connections.php';
 
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
@@ -15,12 +15,12 @@ if ($user && password_verify($password, $user['password']))
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
 
-    header("Location: ../profile.html");
+    header("Location: ../pages/profile.html");
     exit;
 } 
 else 
 {
-    header("Location: login.html?error=Invalid credentials");
+    header("Location: ../pages/auth/login.html?error=Invalid%20credentials");
     exit;
 }
 ?>

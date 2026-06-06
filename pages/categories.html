@@ -4,47 +4,47 @@
 		<meta charset="UTF-8" />
 		<title>E-Library | Categories</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/assets/css/index.css" />
+		<link rel="stylesheet" href="../assets/css/index.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg" />
+		<link rel="icon" type="image/svg" href="../assets/img/ui/logo.svg" />
 	</head>
 	<body>
-		<div id="nav-bar" data-include="/components/nav-bar.html"></div>
+		<div id="nav-bar" data-include="../components/nav-bar.html"></div>
 
-		<section class="hero-pages" id="categories-hero-page">
+		<section class="hero-pages has-bg" id="categories-hero-page">
 			<h2>Book Categories</h2>
 			<p>Explore books organized by your favorite topics and genres.</p>
 		</section>
 
 		<div class="categories-grid">
-			<a href="/pages/category.html?type=fiction" class="category-card">
+			<a href="category.html?type=fiction" class="category-card cat-fiction">
 				FICTION
 			</a>
-			<a href="/pages/category.html?type=non-fiction" class="category-card">
+			<a href="category.html?type=non-fiction" class="category-card cat-non-fiction">
 				NON-FICTION
 			</a>
-			<a href="/pages/category.html?type=science" class="category-card">
+			<a href="category.html?type=science" class="category-card cat-science">
 				SCIENCE
 			</a>
-			<a href="/pages/category.html?type=technology" class="category-card">
+			<a href="category.html?type=technology" class="category-card cat-technology">
 				TECHNOLOGY
 			</a>
-			<a href="/pages/category.html?type=nature" class="category-card"> NATURE </a>
-			<a href="/pages/category.html?type=lifeandvalues" class="category-card">
+			<a href="category.html?type=nature" class="category-card cat-nature"> NATURE </a>
+			<a href="category.html?type=lifeandvalues" class="category-card cat-values">
 				LIFE & VALUES
 			</a>
-			<a href="/pages/category.html?type=history" class="category-card">
+			<a href="category.html?type=history" class="category-card cat-history">
 				HISTORY
 			</a>
 		</div>
 
-		<div id="footer" data-include="/components/footer.html"></div>
+		<div id="footer" data-include="../components/footer.html"></div>
 
-		<script type="module" src="/assets/js/app.js"></script>
+		<script type="module" src="../assets/js/app.js"></script>
 	</body>
 </html>

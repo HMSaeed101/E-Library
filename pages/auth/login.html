@@ -4,37 +4,31 @@
 		<meta charset="UTF-8" />
 		<title>E-Library | Login</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/assets/css/index.css" />
+		<link rel="stylesheet" href="../../assets/css/index.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg" />
-		<script type="module" src="/assets/js/app.js"></script>
+		<link rel="icon" type="image/svg" href="../../assets/img/ui/logo.svg" />
+		<script type="module" src="../../assets/js/app.js"></script>
 	</head>
 
 	<body>
-		<div id="nav-bar" data-include="/components/nav-bar.html"></div>
+		<div id="nav-bar" data-include="../../components/nav-bar.html"></div>
 		<section class="login-page">
 			<div class="login-container">
 				<h2>Welcome</h2>
 				<form
 					method="post"
 					class="login-form"
-					action="/php-actions/login-action.php"
+					action="../../php-actions/login-action.php"
 				>
 					<input
 						type="text"
 						name="username"
 						placeholder="User Name"
-						required
-					/>
-					<input
-						type="email"
-						name="email"
-						placeholder="Email"
 						required
 					/>
 					<input
@@ -46,11 +40,11 @@
 					<button type="submit">Login</button>
 				</form>
 				<p class="signup-link">
-					Don't have an account? <a href="/pages/auth/signup.html">Sign Up</a>
+					Don't have an account? <a href="signup.html">Sign Up</a>
 				</p>
 			</div>
 		</section>
 
-		<div id="footer" data-include="/components/footer.html"></div>
+		<div id="footer" data-include="../../components/footer.html"></div>
 	</body>
 </html>

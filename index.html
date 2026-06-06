@@ -3,23 +3,23 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg" />
+	<link rel="icon" type="image/svg" href="assets/img/ui/logo.svg" />
 	<title>Electronic Library</title>
 
 	<!-- Optimized Stylesheet Architecture -->
-	<link rel="stylesheet" href="/assets/css/index.css" />
+	<link rel="stylesheet" href="assets/css/index.css" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
 		rel="stylesheet"
 	/>
 </head>
 
-<body>
+<body class="home-page">
 	<!-- Declarative HTML Includes -->
-	<div id="nav-bar" data-include="/components/nav-bar.html"></div>
+	<div id="nav-bar" data-include="components/nav-bar.html"></div>
 
 	<section class="hero">
 		<h1 class="heading-container">
@@ -55,24 +55,53 @@
 		</div>
 	</section>
 
+	<section class="vision-section">
+		<div class="vision-content">
+			<h6>Our Vision</h6>
+			<h2>Preserving Knowledge for the Digital Age</h2>
+			<p>We believe that access to wisdom should be universal. Our curated collection brings together the world's most influential texts in a modern, accessible format.</p>
+			<a href="pages/about.html" class="button">Learn More</a>
+		</div>
+	</section>
+
 	<div class="stats-section">
-		<h2>Statistics</h2>
+		<h2>Library Impact</h2>
 		<div class="stats-area">
 			<div class="stat-card">
-				<div class="stat-text">Active Readers</div>
-				<p>210</p>
+				<div class="stat-icon-wrapper">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stat-icon"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+				</div>
+				<div class="stat-info">
+					<div class="stat-text">Active Readers</div>
+					<p class="stat-number">210</p>
+				</div>
+			</div>
+			<div class="stat-card stat-total-books">
+				<div class="stat-icon-wrapper">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stat-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+				</div>
+				<div class="stat-info">
+					<div class="stat-text">Total Books</div>
+					<p class="stat-number">67</p>
+				</div>
 			</div>
 			<div class="stat-card">
-				<div class="stat-text">Total Books</div>
-				<p>67</p>
+				<div class="stat-icon-wrapper">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stat-icon"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+				</div>
+				<div class="stat-info">
+					<div class="stat-text">Pages Read</div>
+					<p class="stat-number">21,350</p>
+				</div>
 			</div>
 			<div class="stat-card">
-				<div class="stat-text">Pages Read</div>
-				<p>21350</p>
-			</div>
-			<div class="stat-card">
-				<div class="stat-text">Global Reviews</div>
-				<p>12k+</p>
+				<div class="stat-icon-wrapper">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stat-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+				</div>
+				<div class="stat-info">
+					<div class="stat-text">Global Reviews</div>
+					<p class="stat-number">12k+</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -80,28 +109,45 @@
 	<h2>Explore by Categories</h2>
 
 	<div class="categories-grid">
-		<a href="/pages/category.html?type=fiction" class="category-card"> FICTION </a>
-		<a href="/pages/category.html?type=non-fiction" class="category-card"> NON-FICTION </a>
-		<a href="/pages/category.html?type=science" class="category-card"> SCIENCE </a>
-		<a href="/pages/category.html?type=technology" class="category-card"> TECHNOLOGY </a>
-		<a href="/pages/category.html?type=nature" class="category-card"> NATURE </a>
-		<a href="/pages/category.html?type=lifeandvalues" class="category-card"> LIFE & VALUES </a>
-		<a href="/pages/category.html?type=history" class="category-card"> HISTORY </a>
+		<a href="pages/category.html?type=fiction" class="category-card cat-fiction"> FICTION </a>
+		<a href="pages/category.html?type=non-fiction" class="category-card cat-non-fiction"> NON-FICTION </a>
+		<a href="pages/category.html?type=science" class="category-card cat-science"> SCIENCE </a>
+		<a href="pages/category.html?type=technology" class="category-card cat-technology"> TECHNOLOGY </a>
+		<a href="pages/category.html?type=nature" class="category-card cat-nature"> NATURE </a>
+		<a href="pages/category.html?type=lifeandvalues" class="category-card cat-values"> LIFE & VALUES </a>
+		<a href="pages/category.html?type=history" class="category-card cat-history"> HISTORY </a>
 	</div>
 
 	<div class="test-section">
-		<h2>Testimonials</h2>
+		<h6>Community Voices</h6>
+		<h2>Words from Our Readers</h2>
 		<div class="test-area">
-			<div class="test-card">Person 1</div>
-			<div class="test-card">Person 2</div>
-			<div class="test-card">Person 3</div>
-			<div class="test-card">Person 4</div>
+			<div class="test-card">
+				<img src="assets/img/ui/avatars/avatar1.jpg" alt="Reader 1" class="test-avatar">
+				<p>"E-Lib has completely transformed my research process. The curated collections are unparalleled."</p>
+				<span class="test-author">James R. — Researcher</span>
+			</div>
+			<div class="test-card">
+				<img src="assets/img/ui/avatars/avatar2.jpg" alt="Reader 2" class="test-avatar">
+				<p>"A beautifully designed sanctuary for digital wisdom. It's my go-to for finding rare philosophy texts."</p>
+				<span class="test-author">Elena S. — Student</span>
+			</div>
+			<div class="test-card">
+				<img src="assets/img/ui/avatars/avatar3.jpg" alt="Reader 3" class="test-avatar">
+				<p>"The minimalist approach makes reading and discovery a pure joy. Truly a House of Wisdom."</p>
+				<span class="test-author">Marcus T. — Historian</span>
+			</div>
+			<div class="test-card">
+				<img src="assets/img/ui/avatars/avatar4.jpg" alt="Reader 4" class="test-avatar">
+				<p>"High-quality visuals paired with a deep collection. This is the future of digital libraries."</p>
+				<span class="test-author">Sarah L. — Bibliophile</span>
+			</div>
 		</div>
 	</div>
 
-	<div id="footer" data-include="/components/footer.html"></div>
+	<div id="footer" data-include="components/footer.html"></div>
 
 	<!-- Optimized JS Module Entry -->
-	<script type="module" src="/assets/js/app.js" defer></script>
+	<script type="module" src="assets/js/app.js" defer></script>
 </body>
 </html>

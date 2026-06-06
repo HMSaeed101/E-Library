@@ -8,7 +8,7 @@
 
 /* ── 1. Categories Hero Background ─────────────────────── */
 #categories-hero-page {
-    background-image: url("/assets/img/ui/logo.svg");
+    background-image: url("../../img/ui/logo.svg");
 }
 
 /* ── 2. Categories Grid ────────────────────────────────── */
@@ -29,20 +29,19 @@
     justify-content: center;
     flex: 1 1 220px;
     height: 110px;
-    background-color: var(--color-primary);
-    color: var(--color-white) !important;
+    background-color: var(--color-surface-alt);
+    color: var(--color-primary) !important;
     font-size: var(--text-2xl);
     font-family: var(--font-primary);
     text-align: center;
-    border-radius: 12px;
-    box-shadow: var(--card-shadow);
-    transition: all 0.3s ease;
+    border-radius: 4px; /* Maintain editorial square feel */
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     border: 1px solid var(--color-border);
 }
 .category-card:hover {
     transform: translateY(-6px);
-    font-weight: var(--weight-bold);
-    box-shadow: var(--card-shadow-hover);
-    background-color: var(--color-accent);
-    color: var(--color-primary) !important;
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-primary);
+    color: var(--color-white) !important;
 }

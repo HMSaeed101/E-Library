@@ -10,7 +10,7 @@
 
 /* ── 1. About Hero Background ──────────────────────────── */
 #about-hero-page {
-    background-image: url("/assets/img/ui/logo.svg");
+    background-image: url("../../img/ui/logo.svg");
 }
 
 /* ── 2. About Layout ───────────────────────────────────── */

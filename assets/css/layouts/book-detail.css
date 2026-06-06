@@ -14,34 +14,31 @@
 
 /* ── 1. Page Container ─────────────────────────────────── */
 .book-container {
-	max-width: 1100px;
-	margin: 60px auto;
-	padding: 20px;
+	max-width: 1200px;
+	margin: 80px auto;
+	padding: 0 40px;
 }
 
 /* ── 2. Book Header ────────────────────────────────────── */
 .book-header {
 	display: flex;
-	background-color: var(--grid-bg);
-	border-radius: 15px;
-	gap: 40px;
-	margin-bottom: 50px;
-	padding: 40px;
-	border: 1px solid var(--color-border);
+	background-color: transparent;
+	gap: 60px;
+	margin-bottom: 80px;
+	padding: 0;
 }
 
 /* ── 3. Book Cover Image ───────────────────────────────── */
 .book-cover {
-	width: 260px;
-	height: 380px;
+	width: 300px;
+	height: 450px;
 	object-fit: cover;
-	border-radius: 12px;
-	box-shadow: var(--card-shadow);
-	border: 1px solid var(--color-border);
-	transition: 0.3s ease;
+	border-radius: 2px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+	transition: transform 0.4s ease;
 }
 .book-cover:hover {
-	transform: scale(1.02);
+	transform: translateY(-5px);
 }
 
 /* ── 4. Book Info & Meta ───────────────────────────────── */
@@ -49,26 +46,33 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
+	padding-top: 20px;
 }
 .book-title {
-	font-size: var(--text-4xl);
-	margin-bottom: 8px;
-	line-height: var(--leading-tight);
-    font-family: var(--font-primary);
+	font-family: var(--font-primary);
+	font-size: var(--text-5xl);
+	margin-bottom: 12px;
+	line-height: 1.1;
     color: var(--color-primary);
+    font-weight: var(--weight-normal);
 }
 .book-author {
-	font-size: var(--text-lg);
+	font-family: var(--font-primary);
+	font-size: var(--text-xl);
 	color: var(--color-muted);
-	margin-bottom: 20px;
-    font-weight: var(--weight-medium);
+	margin-bottom: 40px;
+    font-style: italic;
 }
 .meta-row {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px;
-	margin-bottom: 25px;
+	gap: 30px;
+	margin-bottom: 40px;
 	color: var(--color-muted);
+    font-family: var(--font-secondary);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 .meta-item {
 	display: flex;
@@ -78,16 +82,18 @@
 
 /* ── 5. Genre Tags & Rating ────────────────────────────── */
 .rating {
-	color: var(--color-primary);
-	font-weight: 600;
+	color: var(--color-accent);
+	font-weight: var(--weight-bold);
 }
 .genre-tag {
-	background: var(--grid-bg);
+	background: var(--color-surface-alt);
 	color: var(--color-text);
-	padding: 6px 14px;
-	border-radius: 999px;
-	font-size: var(--text-sm);
-	margin-right: 8px;
+	padding: 8px 16px;
+	border-radius: 0;
+	font-size: var(--text-xs);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-right: 12px;
 	border: 1px solid var(--color-border);
 }
 
@@ -95,57 +101,76 @@
 .action-buttons {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 12px;
-	margin-top: auto;
+	gap: 16px;
+	margin-top: 40px;
 }
 
 /* ── 7. Description & Details Sections ────────────────── */
-.book-description,
-.book-details-section {
-	margin-bottom: 40px;
-	padding: 20px;
+.book-description {
+	margin-bottom: 60px;
+    font-family: var(--font-secondary);
+    line-height: var(--leading-relaxed);
+    font-size: var(--text-lg);
+    color: var(--color-text);
+    max-width: 800px;
+}
+.book-details-section h2 {
+    text-align: left;
+    margin-top: 0;
+    font-size: var(--text-2xl);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 /* ── 8. Details Grid ───────────────────────────────────── */
 .details-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 30px;
 }
 .detail-item {
-	background: var(--card-bg);
-	padding: 20px;
-	border-radius: 12px;
-	border: 1px solid var(--color-border);
-	box-shadow: var(--card-shadow);
+	background: transparent;
+	padding: 0;
+	border: none;
+	box-shadow: none;
 }
 .label {
 	display: block;
+	font-family: var(--font-secondary);
 	font-size: var(--text-xs);
 	color: var(--color-muted);
-	margin-bottom: 6px;
+	margin-bottom: 8px;
 	text-transform: uppercase;
-	letter-spacing: 0.05em;
-    font-weight: var(--weight-semibold);
+	letter-spacing: 0.1em;
+    font-weight: var(--weight-bold);
 }
 .value {
-	font-weight: var(--weight-semibold);
+	font-family: var(--font-primary);
+	font-size: var(--text-lg);
 	color: var(--color-text);
 }
 
 /* ── 9. Responsive Adjustments ────────────────────────── */
 @media (max-width: 768px) {
+    .book-container {
+        padding: 0 20px;
+    }
 	.book-header {
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		padding: 30px 20px;
+		gap: 40px;
 	}
 	
 	.book-cover {
-		width: 220px;
-		height: 320px;
+		width: 240px;
+		height: 360px;
 	}
+    
+    .book-title {
+        font-size: var(--text-3xl);
+    }
 	
 	.meta-row {
 		justify-content: center;
@@ -154,4 +179,20 @@
 	.action-buttons {
 		justify-content: center;
 	}
+    @media (max-width: 600px) {
+        .action-buttons {
+            flex-direction: column;
+            width: 100%;
+        }
+        .action-buttons .btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .book-description {
+        font-size: var(--text-base);
+        text-align: center;
+        margin: 0 auto 60px;
+    }
 }

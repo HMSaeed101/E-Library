@@ -3,6 +3,16 @@
 ============================================================ */
 
 /**
+ * Calculates root prefix based on current path
+ */
+function getRootPrefix() {
+    const path = window.location.pathname;
+    if (path.includes("/pages/auth/")) return "../../";
+    if (path.includes("/pages/")) return "../";
+    return "";
+}
+
+/**
  * Renders a grid of books into a container.
  * @param {HTMLElement} container 
  * @param {Array} books 
@@ -15,23 +25,17 @@ export function renderBooksGrid(container, books) {
         return;
     }
 
-    // Use root-relative paths for absolute reliability
-    const assetPrefix = "/assets/";
-    const pagePrefix = "/pages/";
+    const rootPrefix = getRootPrefix();
 
     container.innerHTML = books.map(book => {
-        // Handle cover path - assume filename only in JSON or old path
-        let coverSrc = book.cover;
-        if (!coverSrc.startsWith("/")) {
-            // Clean up old path if present and make it root-relative
-            const filename = coverSrc.split("/").pop();
-            coverSrc = `${assetPrefix}img/covers/${filename}`;
-        }
+        // Fix cover path if it's relative to root
+        const coverSrc = book.cover.startsWith("/") ? book.cover.substring(1) : book.cover;
+        const bookDetailsHref = `${rootPrefix}pages/book-details.html?id=${book.id}`;
 
         return `
-            <a href="${pagePrefix}book-details.html?id=${book.id}">
+            <a href="${bookDetailsHref}">
                 <div class="book-card">
-                    <img src="${coverSrc}" alt="${book.title}" />
+                    <img src="${rootPrefix}${coverSrc}" alt="${book.title}" />
                     <div class="book-card-info">
                         <h3>${book.title}</h3>
                         <p>${book.author}</p>

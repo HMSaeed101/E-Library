@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Library | User Profile</title>
-    <link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg">
+    <link rel="icon" type="image/svg" href="../assets/img/ui/logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
 
-    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="../assets/js/app.js"></script>
 </head>
 
 <body>
 
-<div id="nav-bar" data-include="/components/nav-bar.html"></div>
+<div id="nav-bar" data-include="../components/nav-bar.html"></div>
+
+<section class="hero-pages has-bg" id="profile-hero-page">
+    <h2>User Profile</h2>
+    <p>Manage your account, reading history, and favorites.</p>
+</section>
 
 <div class="profile-container">
 
 <div class="profile-header">
 
     <div class="avatar-container">
-        <img src="/assets/img/people/saeed.jpg" class="profile-img" alt="User Avatar">
+        <img src="../assets/img/people/saeed.jpg" class="profile-img" alt="User Avatar">
     </div>
 
     <div class="profile-info">
@@ -59,7 +64,7 @@
     <div class="section">
         <h3>Currently Reading</h3>
 
-        <div class="profile-book-grid">
+        <div class="profile-book-grid" id="currently-reading-grid">
 
             <div class="book-card">
                 <h4>Atomic Habits</h4>
@@ -85,14 +90,14 @@
         <h3>My Library</h3>
 
         <div class="tabs">
-            <button class="tab active" onclick="void(0)">To Read</button>
-            <button class="tab" onclick="void(0)">Favorites</button>
-            <button class="tab" onclick="void(0)">History</button>
+            <button class="tab active" data-tab="to-read">To Read</button>
+            <button class="tab" data-tab="favorites">Favorites</button>
+            <button class="tab" data-tab="history">History</button>
         </div>
 
-        <div class="profile-book-grid">
+        <div class="profile-book-grid" id="library-grid">
 
-            <div class="book-card"><a href="/pages/book-details.html?id=alchemist">
+            <div class="book-card"><a href="book-details.html?id=alchemist">
                 <h4>The Alchemist</h4>
                 <button class="action-btn">Read</button>
             </a></div>
@@ -102,7 +107,7 @@
 
 </div>
 
-<div id="footer" data-include="/components/footer.html"></div>
+<div id="footer" data-include="../components/footer.html"></div>
 
 </body>
 </html>

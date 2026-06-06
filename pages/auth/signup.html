@@ -4,24 +4,24 @@
 		<meta charset="UTF-8" />
 		<title>E-Library | Sign Up</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/assets/css/index.css" />
+		<link rel="stylesheet" href="../../assets/css/index.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
 			rel="stylesheet"
 		/>
-		<script type="module" src="/assets/js/app.js"></script>
-		<link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg" />
+		<script type="module" src="../../assets/js/app.js"></script>
+		<link rel="icon" type="image/svg" href="../../assets/img/ui/logo.svg" />
 	</head>
 
 	<body>
-		<div id="nav-bar" data-include="/components/nav-bar.html"></div>
-		<section class="login-page">
+		<div id="nav-bar" data-include="../../components/nav-bar.html"></div>
+		<section class="signup-page">
 			<div class="login-container">
 				<h2>Create Account</h2>
 
-				<form method="post" action="/php-actions/signup-action.php">
+				<form method="post" action="../../php-actions/signup-action.php">
 					<input
 						type="text"
 						name="fullname"
@@ -49,11 +49,11 @@
 					<button type="submit">Sign Up</button>
 				</form>
 				<p class="signup-link">
-					Already have an account? <a href="/pages/auth/login.html">Login</a>
+					Already have an account? <a href="login.html">Login</a>
 				</p>
 			</div>
 		</section>
 
-		<div id="footer" data-include="/components/footer.html"></div>
+		<div id="footer" data-include="../../components/footer.html"></div>
 	</body>
 </html>

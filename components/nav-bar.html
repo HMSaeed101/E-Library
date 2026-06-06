@@ -4,10 +4,12 @@
 -->
 <header class="header">
     <div class="logo-area">
-        <div class="logo-img">
-            <img src="/assets/img/ui/logo.svg" alt="Logo Image">
-        </div>
-        <div id="ee"><a href="/index.html">E-Library</a></div>
+        <a href="index.html" class="logo-link" aria-label="E-Library Home">
+            <div class="logo-img">
+                <img src="assets/img/ui/logo.svg" alt="E-Library Logo">
+            </div>
+            <div id="ee">E-Library</div>
+        </a>
     </div>
 
     <!-- Hamburger Toggle for Mobile -->
@@ -19,15 +21,15 @@
     
     <nav class="nav-container">
         <div class="nav-links">
-            <a href="/index.html"><img src="/assets/img/ui/home.svg" alt="">Home</a>
-            <a href="/pages/books.html"><img src="/assets/img/ui/book.svg" alt="">Books</a>
-            <a href="/pages/categories.html"><img src="/assets/img/ui/categories.svg" alt="">Categories</a>
-            <a href="/pages/profile.html"><img src="/assets/img/ui/profile.svg" alt="">Profile</a>
+            <a href="index.html"><img src="assets/img/ui/home.svg" alt="" aria-hidden="true">Home</a>
+            <a href="pages/books.html"><img src="assets/img/ui/book.svg" alt="" aria-hidden="true">Books</a>
+            <a href="pages/categories.html"><img src="assets/img/ui/categories.svg" alt="" aria-hidden="true">Categories</a>
+            <a href="pages/profile.html"><img src="assets/img/ui/profile.svg" alt="" aria-hidden="true">Profile</a>
         </div>
 
-        <button onclick="toggleDarkMode()" id="darkmode-btn" aria-label="Toggle Dark Mode">
-            <span class="moon">🌙</span>
-            <span class="sun">☀️</span>
+        <button onclick="toggleDarkMode()" id="darkmode-btn" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+            <span class="moon" aria-hidden="true">🌙</span>
+            <span class="sun" aria-hidden="true">☀️</span>
         </button>
     </nav>
 </header>

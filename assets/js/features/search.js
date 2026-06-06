@@ -6,10 +6,20 @@
 let booksData = [];
 
 /**
+ * Calculates root prefix based on current path
+ */
+function getRootPrefix() {
+    const path = window.location.pathname;
+    if (path.includes("/pages/auth/")) return "../../";
+    if (path.includes("/pages/")) return "../";
+    return "";
+}
+
+/**
  * Load books data from central JSON
  * @param {string} dataPath - Optional path override for the books.json file
  */
-export async function loadSearchData(dataPath = "/assets/data/books.json") {
+export async function loadSearchData(dataPath = "assets/data/books.json") {
     try {
         const res = await fetch(dataPath);
         if (!res.ok) throw new Error("Failed to load books");
@@ -54,27 +64,34 @@ export function displaySearchResults(dropdown, results) {
         return;
     }
 
+    const rootPrefix = getRootPrefix();
+
     results.forEach((book) => {
         const item = document.createElement("div");
         item.classList.add("item");
         item.textContent = `${book.title} by ${book.author}`;
         item.addEventListener("click", () => {
-            // Root-relative path for book details
-            window.location.href = `/pages/book-details.html?id=${book.id}`;
+            // Correct relative path for book details
+            window.location.href = `${rootPrefix}pages/book-details.html?id=${book.id}`;
         });
         dropdown.appendChild(item);
     });
     dropdown.style.display = "block";
 }
 
-/**
- * Initialize search functionality on the page
- */
 export function initSearch() {
     const searchInput = document.getElementById("searchInput");
     const searchDropdown = document.getElementById("searchDropdown");
 
     if (!searchInput || !searchDropdown) return;
+
+    // Redirect handler helper
+    const executeSearch = (query) => {
+        const trimmed = query.trim();
+        if (!trimmed) return;
+        const rootPrefix = getRootPrefix();
+        window.location.href = `${rootPrefix}pages/books.html?search=${encodeURIComponent(trimmed)}`;
+    };
 
     searchInput.addEventListener("input", (e) => {
         const term = e.target.value;
@@ -85,6 +102,23 @@ export function initSearch() {
         const results = performSearch(term);
         displaySearchResults(searchDropdown, results);
     });
+
+    // Trigger search when pressing Enter key
+    searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            executeSearch(searchInput.value);
+        }
+    });
+
+    // Trigger search when clicking the sibling Search button
+    const searchButton = searchInput.parentElement?.querySelector("button");
+    if (searchButton) {
+        searchButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            executeSearch(searchInput.value);
+        });
+    }
 
     // Close dropdown when clicking outside
     document.addEventListener("click", (e) => {

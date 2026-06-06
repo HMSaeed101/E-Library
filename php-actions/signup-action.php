@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/ELECTRONIC LIBRARY/PHP Actions/connections.html';
+include __DIR__ . '/connections.php';
 
 
 $fullname     = $_POST['fullname'];
@@ -15,7 +15,7 @@ $sql = "INSERT INTO users (full_name, email, username, password)
 
 if (mysqli_query($conn, $sql)) 
 {
-    header("Location: login.html?msg=Account created");
+    header("Location: ../pages/auth/login.html?msg=Account%20created");
 } 
 else 
 {

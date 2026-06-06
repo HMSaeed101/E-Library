@@ -1,222 +1,287 @@
 /* ============================================================
    NAVBAR — components/navbar.css
    Sections:
-     1. Header Bar
-     2. Logo Area
-     3. Nav Container & Links
-     4. Menu Toggle (Hamburger)
-     5. Dark Mode Toggle Button
+     1. Header Bar (Main structure & Scroll logic)
+     2. Logo Area (Branding)
+     3. Nav Container & Links (Desktop layout)
+     4. Menu Toggle (Mobile Hamburger)
+     5. Dark Mode Toggle
+     6. Mobile Drawer Logic
+     7. Accessibility & Refinements
 ============================================================ */
 
 /* ── 1. Header Bar ─────────────────────────────────────── */
 .header {
     position: fixed;
     top: 0;
+    left: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 0 5%; /* Percentage based for better fluidity */
     width: 100%;
-    height: var(--header-height);
-    background-color: var(--color-primary);
-    box-shadow: var(--shadow-md);
-    color: white;
+    height: var(--header-height, 80px);
+    background: rgba(250, 249, 246, 0); /* Start transparent */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-bottom: 1px solid transparent;
+    color: var(--color-white); /* White for hero text contrast */
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* Scrolled state: Solid editorial background */
 .header.scrolled {
-    box-shadow: var(--shadow-lg);
-    background: var(--color-primary-soft);
-    backdrop-filter: blur(12px);
+    background: rgba(250, 249, 246, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--color-text);
+    height: 70px; /* Slim down slightly on scroll */
+}
+
+/* Specific styling for inner pages (non-hero) */
+body:not(.home-page) .header:not(.scrolled) {
+    background: rgba(250, 249, 246, 0.85);
+    backdrop-filter: blur(20px);
+    color: var(--color-text);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .header.scrolled,
+body.dark-mode:not(.home-page) .header:not(.scrolled) {
+    background: rgba(18, 18, 18, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--color-white);
 }
 
 /* ── 2. Logo Area ──────────────────────────────────────── */
-#ee {
-    font-family: var(--font-primary);
-    font-weight: var(--weight-bold);
-    font-style: normal;
-    letter-spacing: 0.07em;
-    font-size: var(--text-xl);
-}
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 10px;
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+.logo-link:hover {
+    transform: translateY(-1px);
+}
+#ee {
+    font-family: var(--font-primary);
+    font-weight: var(--weight-normal);
+    letter-spacing: 0.15em;
+    font-size: var(--text-base);
+    text-transform: uppercase;
+    color: inherit;
 }
 .logo-img img {
-    width: 35px;
-    height: 35px;
-    object-fit: cover;
+    width: 32px;
+    height: 32px;
+    transition: filter 0.5s ease;
+}
+
+/* Logo inversion logic */
+.header:not(.scrolled) .logo-img img {
+    filter: brightness(0) invert(1);
+}
+.header.scrolled .logo-img img,
+body:not(.home-page) .header:not(.scrolled) .logo-img img {
+    filter: grayscale(1) brightness(0.2);
+}
+body.dark-mode .header .logo-img img {
+    filter: brightness(0) invert(1) !important;
 }
 
 /* ── 3. Nav Container & Links ──────────────────────────── */
 .nav-container {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 50px;
 }
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 32px;
 }
 .nav-links a {
-    font-weight: var(--weight-medium);
-    letter-spacing: 0.02em;
-    color: var(--color-white);
+    font-family: var(--font-secondary);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: var(--weight-bold);
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    padding: 10px 0;
+    opacity: 0.8;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    text-decoration: none;
-    border-radius: 6px;
-    padding: 4px 8px;
-    transition: all 0.2s ease;
 }
 .nav-links img {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+    margin-right: 12px;
+    opacity: 0.6;
+    transition: all 0.5s ease;
+    filter: brightness(0) invert(1);
 }
-.nav-links a:hover {
-    transform: translateY(-2px);
-    background: var(--color-accent);
-    color: var(--color-primary);
+
+/* Icon inversion based on background */
+.header.scrolled .nav-links img,
+body:not(.home-page) .header:not(.scrolled) .nav-links img {
+    filter: grayscale(1) brightness(0.2);
 }
+body.dark-mode .header .nav-links img {
+    filter: brightness(0) invert(1) !important;
+}
+
+.nav-links a:hover,
 .nav-links a.active {
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--color-accent);
+    opacity: 1;
 }
-.nav-links a.active::after {
+
+.nav-links a::after {
     content: '';
     position: absolute;
-    bottom: 2px;
-    left: 8px;
-    right: 8px;
-    height: 3px;
-    background: var(--color-accent);
-    border-radius: 2px;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: currentColor;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
 }
 
 /* ── 4. Menu Toggle (Hamburger) ────────────────────────── */
 .menu-toggle {
     display: none;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 5px;
     width: 30px;
-    height: 21px;
+    height: 30px;
     background: transparent;
     border: none;
     cursor: pointer;
+    z-index: 1100;
     padding: 0;
-    z-index: 1001;
+    color: inherit;
 }
 .menu-toggle .bar {
     width: 100%;
-    height: 3px;
-    background-color: var(--color-white);
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    height: 1.5px;
+    background-color: currentColor;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ── 5. Dark Mode Toggle ───────────────────────────────── */
 #darkmode-btn {
     background-color: transparent;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
+    color: inherit;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    opacity: 0.7;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 32px;
+    height: 32px;
 }
+#darkmode-btn:hover {
+    opacity: 1;
+    transform: rotate(12deg) scale(1.1);
+}
+
+#darkmode-btn .sun { display: none; }
+body.dark-mode #darkmode-btn .sun { display: inline-block; }
 body.dark-mode #darkmode-btn .moon { display: none; }
-body:not(.dark-mode) #darkmode-btn .sun { display: none; }
 
-/* ── 6. Nav Utility Buttons ────────────────────────────── */
-.nav-button {
-    padding: 6px 16px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    font-weight: var(--weight-bold);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.nav-button:hover {
-    background-color: var(--color-accent);
-    color: var(--color-primary);
-    transform: scale(1.05);
+/* ── 6. Mobile Layout & Drawer ─────────────────────────── */
+@media (max-width: 1024px) {
+    .header { padding: 0 30px; }
+    .nav-container { gap: 30px; }
 }
 
-/* ── 7. Responsive Styles ─────────────────────────────── */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
+    .menu-toggle { display: flex; }
 
     .nav-container {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 300px; /* Improved drawer width */
+        width: 100%;
+        max-width: 400px;
         height: 100vh;
-        background-color: var(--color-primary);
+        background-color: var(--color-bg);
         flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 120px; /* More space for top elements */
-        gap: 15px;
-        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -10px 0 40px rgba(0,0,0,0.4);
+        justify-content: center;
+        padding: 80px 40px;
+        gap: 60px;
+        transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+        z-index: 1050;
     }
 
-    .nav-container.active {
-        right: 0;
+    body.dark-mode .nav-container {
+        background-color: var(--color-surface);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     }
+
+    .nav-container.active { right: 0; }
 
     .nav-links {
         flex-direction: column;
         align-items: flex-start;
+        gap: 30px;
         width: 100%;
-        padding: 0 25px;
     }
 
     .nav-links a {
-        font-size: var(--text-lg);
+        font-size: var(--text-2xl);
+        font-family: var(--font-primary);
+        text-transform: none;
+        letter-spacing: -0.01em;
+        font-weight: var(--weight-normal);
+        opacity: 1;
         width: 100%;
-        justify-content: flex-start;
-        padding: 16px 20px; /* Standard touch target height */
-        border-radius: 10px;
-        border: 1px solid transparent;
-    }
-
-    .nav-links a:active {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: var(--color-accent);
+        padding: 15px 0;
+        border-bottom: 1px solid var(--color-border);
     }
 
     .nav-links img {
         width: 24px;
         height: 24px;
-        margin-right: 18px;
+        margin-right: 20px;
+        opacity: 0.4;
+        filter: grayscale(1) brightness(0.2);
     }
 
+    body.dark-mode .nav-links img {
+        filter: brightness(0) invert(1) !important;
+    }
+
+    /* Animate hamburger to X */
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Dark mode toggle placement in mobile */
     #darkmode-btn {
-        margin: 30px 25px;
-        padding: 12px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        width: auto;
-        align-self: flex-start;
-    }
-    .menu-toggle.active .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-    .menu-toggle.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.active .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
+        margin-top: auto;
+        align-self: center;
+        font-size: 24px;
     }
 }
-

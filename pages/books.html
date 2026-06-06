@@ -4,20 +4,20 @@
 	<meta charset="UTF-8" />
 	<title>E-Library | Books</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg" href="/assets/img/ui/logo.svg" />
-	<link rel="stylesheet" href="/assets/css/index.css" />
+	<link rel="icon" type="image/svg" href="../assets/img/ui/logo.svg" />
+	<link rel="stylesheet" href="../assets/css/index.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
 		rel="stylesheet"
 	/>
 </head>
 
 <body>
-	<div id="nav-bar" data-include="/components/nav-bar.html"></div>
+	<div id="nav-bar" data-include="../components/nav-bar.html"></div>
 
-	<section class="hero-pages" id="books-hero-page">
+	<section class="hero-pages has-bg" id="books-hero-page">
 		<h2>Multiverse of Books</h2>
 		<p>Explore our collection of books across all categories.</p>
 
@@ -36,14 +36,25 @@
 				</div>
 			</div>
 		</section>
+
+		<div class="filter-container">
+			<button class="filter-pill active" data-category="all">All Collections</button>
+			<button class="filter-pill" data-category="fiction">Fiction</button>
+			<button class="filter-pill" data-category="non-fiction">Non-Fiction</button>
+			<button class="filter-pill" data-category="science">Science</button>
+			<button class="filter-pill" data-category="technology">Technology</button>
+			<button class="filter-pill" data-category="nature">Nature</button>
+			<button class="filter-pill" data-category="lifeandvalues">Life & Values</button>
+			<button class="filter-pill" data-category="history">History</button>
+		</div>
 	</section>
 
 	<section class="books-page-grid" id="booksGrid">
 		<!-- Dynamic book cards will be injected here -->
 	</section>
 
-	<div id="footer" data-include="/components/footer.html"></div>
+	<div id="footer" data-include="../components/footer.html"></div>
 	
-	<script type="module" src="/assets/js/app.js" defer></script>
+	<script type="module" src="../assets/js/app.js" defer></script>
 </body>
 </html>
