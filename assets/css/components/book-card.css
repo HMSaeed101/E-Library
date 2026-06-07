@@ -11,21 +11,34 @@
 /* ── 1. Book Grid Wrapper ──────────────────────────────── */
 .book-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     background-color: transparent;
-    padding: 20px 0;
-    gap: 40px;
-    justify-content: center;
+    padding: var(--space-lg) 0;
+    gap: var(--space-2xl);
+    justify-content: flex-start; /* Start for scroll flow */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.book-grid::-webkit-scrollbar {
+    display: none; /* Keep editorial look clean */
+}
+
+/* Ensure direct children of grid behave as flex items for snapping */
+.book-grid > * {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
 }
 
 /* ── 2. Book Card Base ─────────────────────────────────── */
 .book-card {
     color: var(--color-text);
-    width: clamp(160px, 45vw, 220px);
-    flex: 0 1 auto;
+    width: 220px;
     cursor: pointer;
     background: transparent;
-    border-radius: 0; /* Square for editorial feel */
+    border-radius: var(--radius-none); /* Square for editorial feel */
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     text-align: left;
@@ -42,7 +55,7 @@
     height: auto;
     aspect-ratio: 2/3;
     object-fit: cover;
-    border-radius: 2px;
+    border-radius: var(--radius-sm);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.4s ease;
 }
@@ -54,7 +67,7 @@
 .book-card h3 {
     font-family: var(--font-primary);
     font-size: var(--text-lg);
-    margin: 15px 0 5px;
+    margin: var(--space-md) 0 var(--space-xs);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -66,7 +79,7 @@
     font-size: var(--text-xs);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin: 5px 0;
+    margin: var(--space-xs) 0;
     color: var(--color-muted);
 }
 .book-card:hover h3 {
@@ -76,23 +89,11 @@
 /* ── 5. Responsive Grid ────────────────────────────────── */
 @media (max-width: 600px) {
     .book-grid {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 24px;
-        padding: 20px 0;
-        margin: 0;
-        width: 100%;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .book-grid::-webkit-scrollbar {
-        display: none;
+        gap: var(--space-lg);
+        padding: var(--space-lg) 0;
     }
 
     .book-card {
         flex: 0 0 180px;
-        scroll-snap-align: start;
     }
 }

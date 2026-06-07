@@ -1,6 +1,6 @@
 /* ============================================================
-   SEARCH.JS — Search Dropdown and Filtering Logic
-   Manages book search data, filtering, and UI updates.
+    SEARCH.JS — Search Dropdown and Filtering Logic
+    Manages book search data, filtering, and UI updates.
 ============================================================ */
 
 let booksData = [];
@@ -33,7 +33,7 @@ export async function loadSearchData(dataPath = "assets/data/books.json") {
 
 /**
  * Filter books based on search term
- * @param {string} term 
+ * @param {string} term
  */
 export function performSearch(term) {
     const searchTerm = term.toLowerCase().trim();
@@ -47,14 +47,14 @@ export function performSearch(term) {
 
 /**
  * Display search results in the dropdown
- * @param {HTMLElement} dropdown 
- * @param {Array} results 
+ * @param {HTMLElement} dropdown
+ * @param {Array} results
  */
 export function displaySearchResults(dropdown, results) {
     if (!dropdown) return;
-    
+
     dropdown.innerHTML = ""; // Clear previous results
-    
+
     if (results.length === 0) {
         const noResultsItem = document.createElement("div");
         noResultsItem.classList.add("item", "no-results");

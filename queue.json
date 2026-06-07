@@ -1,0 +1,492 @@
+[
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "filename": "1984.jpg"
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "filename": "sapiens.jpg"
+  },
+  {
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "filename": "briefhistorytime.jpg"
+  },
+  {
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "filename": "meditations.jpg"
+  },
+  {
+    "title": "Silent Spring",
+    "author": "Rachel Carson",
+    "filename": "silentspring.jpg"
+  },
+  {
+    "title": "The Innovators",
+    "author": "Walter Isaacson",
+    "filename": "innovators.jpg"
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "filename": "thinkingfastslow.jpg"
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "filename": "greatgatsby.jpg"
+  },
+  {
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "filename": "cosmos.jpg"
+  },
+  {
+    "title": "The Guns of August",
+    "author": "Barbara W. Tuchman",
+    "filename": "gunsaugust.jpg"
+  },
+  {
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "filename": "crimepunishment.jpg"
+  },
+  {
+    "title": "Mans Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "filename": "mansearchmeaning.jpg"
+  },
+  {
+    "title": "The Hidden Life of Trees",
+    "author": "Peter Wohlleben",
+    "filename": "hiddenlifetrees.jpg"
+  },
+  {
+    "title": "Algorithms to Live By",
+    "author": "Brian Christian and Tom Griffiths",
+    "filename": "algorithmsliveby.jpg"
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "filename": "atomichabits.jpg"
+  },
+  {
+    "title": "Being Digital",
+    "author": "Nicholas Negroponte",
+    "filename": "beingdigital.jpg"
+  },
+  {
+    "title": "Gödel, Escher, Bach",
+    "author": "Douglas Hofstadter",
+    "filename": "geb.jpg"
+  },
+  {
+    "title": "Collapse",
+    "author": "Jared Diamond",
+    "filename": "collapse.jpg"
+  },
+  {
+    "title": "Orientalism",
+    "author": "Edward W. Said",
+    "filename": "orientalism.jpg"
+  },
+  {
+    "title": "The Wealth of Nations",
+    "author": "Adam Smith",
+    "filename": "wealthofnations.jpg"
+  },
+  {
+    "title": "Philosophiae Naturalis Principia Mathematica",
+    "author": "Isaac Newton",
+    "filename": "principia.jpg"
+  },
+  {
+    "title": "The Republic",
+    "author": "Plato",
+    "filename": "republic.jpg"
+  },
+  {
+    "title": "Beyond Good and Evil",
+    "author": "Friedrich Nietzsche",
+    "filename": "beyondgoodandevil.jpg"
+  },
+  {
+    "title": "The Social Contract",
+    "author": "Jean-Jacques Rousseau",
+    "filename": "socialcontract.jpg"
+  },
+  {
+    "title": "Leviathan",
+    "author": "Thomas Hobbes",
+    "filename": "leviathan.jpg"
+  },
+  {
+    "title": "The Prince",
+    "author": "Niccolo Machiavelli",
+    "filename": "prince.jpg"
+  },
+  {
+    "title": "Ulysses",
+    "author": "James Joyce",
+    "filename": "ulysses.jpg"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "filename": "mockingbird.jpg"
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "filename": "pride.jpg"
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "filename": "hobbit.jpg"
+  },
+  {
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "filename": "warpeace.jpg"
+  },
+  {
+    "title": "The Odyssey",
+    "author": "Homer",
+    "filename": "odyssey.jpg"
+  },
+  {
+    "title": "A Brief History of Everything",
+    "author": "Ken Wilber",
+    "filename": "everything.jpg"
+  },
+  {
+    "title": "The Structure of Scientific Revolutions",
+    "author": "Thomas S. Kuhn",
+    "filename": "structure.jpg"
+  },
+  {
+    "title": "The Second World War",
+    "author": "Winston Churchill",
+    "filename": "ww2.jpg"
+  },
+  {
+    "title": "The Rise and Fall of the Third Reich",
+    "author": "William L. Shirer",
+    "filename": "thirdreich.jpg"
+  },
+  {
+    "title": "The History of the Decline and Fall of the Roman Empire",
+    "author": "Edward Gibbon",
+    "filename": "declinefall.jpg"
+  },
+  {
+    "title": "The Clash of Civilizations and the Remaking of World Order",
+    "author": "Samuel P. Huntington",
+    "filename": "clash.jpg"
+  },
+  {
+    "title": "The Civil War: A Narrative",
+    "author": "Shelby Foote",
+    "filename": "civilwar.jpg"
+  },
+  {
+    "title": "The Age of Extremes",
+    "author": "Eric Hobsbawm",
+    "filename": "extremes.jpg"
+  },
+  {
+    "title": "Postwar: A History of Europe Since 1945",
+    "author": "Tony Judt",
+    "filename": "postwar.jpg"
+  },
+  {
+    "title": "The Making of the English Working Class",
+    "author": "E. P. Thompson",
+    "filename": "workingclass.jpg"
+  },
+  {
+    "title": "The Wretched of the Earth",
+    "author": "Frantz Fanon",
+    "filename": "wretched.jpg"
+  },
+  {
+    "title": "The Soul of a New Machine",
+    "author": "Tracy Kidder",
+    "filename": "soulmachine.jpg"
+  },
+  {
+    "title": "The Age of Spiritual Machines",
+    "author": "Ray Kurzweil",
+    "filename": "spiritualmachines.jpg"
+  },
+  {
+    "title": "Hackers: Heroes of the Computer Revolution",
+    "author": "Steven Levy",
+    "filename": "hackers.jpg"
+  },
+  {
+    "title": "The Mythical Man-Month",
+    "author": "Frederick P. Brooks Jr.",
+    "filename": "manmonth.jpg"
+  },
+  {
+    "title": "The Omnivores Dilemma",
+    "author": "Michael Pollan",
+    "filename": "omnivore.jpg"
+  },
+  {
+    "title": "A Walk in the Woods",
+    "author": "Bill Bryson",
+    "filename": "walkwoods.jpg"
+  },
+  {
+    "title": "Desert Solitaire",
+    "author": "Edward Abbey",
+    "filename": "desertsolitaire.jpg"
+  },
+  {
+    "title": "The Peregrine",
+    "author": "J. A. Baker",
+    "filename": "peregrine.jpg"
+  },
+  {
+    "title": "Nicomachean Ethics",
+    "author": "Aristotle",
+    "filename": "ethics.jpg"
+  },
+  {
+    "title": "Capital",
+    "author": "Karl Marx",
+    "filename": "capital.jpg"
+  },
+  {
+    "title": "The Interpretation of Dreams",
+    "author": "Sigmund Freud",
+    "filename": "dreams.jpg"
+  },
+  {
+    "title": "The Protestant Ethic and the Spirit of Capitalism",
+    "author": "Max Weber",
+    "filename": "protestantethic.jpg"
+  },
+  {
+    "title": "The Art of Loving",
+    "author": "Erich Fromm",
+    "filename": "artofloving.jpg"
+  },
+  {
+    "title": "The Power of Now",
+    "author": "Eckhart Tolle",
+    "filename": "powerofnow.jpg"
+  },
+  {
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "filename": "sevenhabits.jpg"
+  },
+  {
+    "title": "The Road Less Traveled",
+    "author": "M. Scott Peck",
+    "filename": "roadlesstraveled.jpg"
+  },
+  {
+    "title": "The Prophet",
+    "author": "Kahlil Gibran",
+    "filename": "prophet.jpg"
+  },
+  {
+    "title": "The Four Agreements",
+    "author": "Don Miguel Ruiz",
+    "filename": "fouragreements.jpg"
+  },
+  {
+    "title": "Man and His Symbols",
+    "author": "Carl Jung",
+    "filename": "jungsymbols.jpg"
+  },
+  {
+    "title": "The Book: On the Taboo Against Knowing Who You Are",
+    "author": "Alan Watts",
+    "filename": "alanwattsbook.jpg"
+  },
+  {
+    "title": "The Varieties of Religious Experience",
+    "author": "William James",
+    "filename": "religious-exp.jpg"
+  },
+  {
+    "title": "Zero to One: Notes on Startups, or How to Build the Future",
+    "author": "Peter Thiel",
+    "filename": "zerotoone.jpg"
+  },
+  {
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "filename": "leanstartup.jpg"
+  },
+  {
+    "title": "Superintelligence: Paths, Dangers, Strategies",
+    "author": "Nick Bostrom",
+    "filename": "superintelligence.jpg"
+  },
+  {
+    "title": "Life 3.0: Being Human in the Age of Artificial Intelligence",
+    "author": "Max Tegmark",
+    "filename": "life3.jpg"
+  },
+  {
+    "title": "The Master Algorithm",
+    "author": "Pedro Domingos",
+    "filename": "masteralgorithm.jpg"
+  },
+  {
+    "title": "Lab Girl",
+    "author": "Hope Jahren",
+    "filename": "labgirl.jpg"
+  },
+  {
+    "title": "The Invention of Nature",
+    "author": "Andrea Wulf",
+    "filename": "humboldt.jpg"
+  },
+  {
+    "title": "The Unsettling of America",
+    "author": "Wendell Berry",
+    "filename": "unsettling.jpg"
+  },
+  {
+    "title": "The Second Machine Age",
+    "author": "Erik Brynjolfsson and Andrew McAfee",
+    "filename": "machineage.jpg"
+  },
+  {
+    "title": "The Industries of the Future",
+    "author": "Alec Ross",
+    "filename": "futureindustries.jpg"
+  },
+  {
+    "title": "The Age of Surveillance Capitalism",
+    "author": "Shoshana Zuboff",
+    "filename": "surveillance.jpg"
+  },
+  {
+    "title": "The Shallows: What the Internet Is Doing to Our Brains",
+    "author": "Nicholas Carr",
+    "filename": "shallows.jpg"
+  },
+  {
+    "title": "Weapons of Math Destruction",
+    "author": "Cathy O'Neil",
+    "filename": "mathdestruction.jpg"
+  },
+  {
+    "title": "The Fourth Industrial Revolution",
+    "author": "Klaus Schwab",
+    "filename": "schwab4.jpg"
+  },
+  {
+    "title": "The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future",
+    "author": "Kevin Kelly",
+    "filename": "kellyinevitable.jpg"
+  },
+  {
+    "title": "The Black Swan",
+    "author": "Nassim Nicholas Taleb",
+    "filename": "blackswan.jpg"
+  },
+  {
+    "title": "Thinking Statistically",
+    "author": "Uri Bram",
+    "filename": "statsbram.jpg"
+  },
+  {
+    "title": "The Self-Taught Programmer",
+    "author": "Cory Althoff",
+    "filename": "selftaught.jpg"
+  },
+  {
+    "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+    "author": "Robert C. Martin",
+    "filename": "cleancode.jpg"
+  },
+  {
+    "title": "The Pragmatic Programmer: Your Journey to Mastery",
+    "author": "Andrew Hunt and David Thomas",
+    "filename": "pragmatic.jpg"
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "filename": "dataintensive.jpg"
+  },
+  {
+    "title": "Structure and Interpretation of Computer Programs",
+    "author": "Harold Abelson and Gerald Jay Sussman",
+    "filename": "sicp.jpg"
+  },
+  {
+    "title": "The Immortal Life of Henrietta Lacks",
+    "author": "Rebecca Skloot",
+    "filename": "henrietta.jpg"
+  },
+  {
+    "title": "The Man Who Mistook His Wife for a Hat",
+    "author": "Oliver Sacks",
+    "filename": "sacks-wife.jpg"
+  },
+  {
+    "title": "Braiding Sweetgrass: Indigenous Wisdom, Scientific Knowledge and the Teachings of Plants",
+    "author": "Robin Wall Kimmerer",
+    "filename": "sweetgrass.jpg"
+  },
+  {
+    "title": "H is for Hawk",
+    "author": "Helen Macdonald",
+    "filename": "hhawk.jpg"
+  },
+  {
+    "title": "Entangled Life: How Fungi Make Our Worlds, Change Our Minds & Shape Our Futures",
+    "author": "Merlin Sheldrake",
+    "filename": "entangled.jpg"
+  },
+  {
+    "title": "The Overstory",
+    "author": "Richard Powers",
+    "filename": "overstory.jpg"
+  },
+  {
+    "title": "The Spell of the Sensuous",
+    "author": "David Abram",
+    "filename": "spell-sensuous.jpg"
+  },
+  {
+    "title": "The Land of the Midnight Sun",
+    "author": "Paul Du Chaillu",
+    "filename": "midnight-sun.jpg"
+  },
+  {
+    "title": "The Wild Trees: A Story of Passion and Daring",
+    "author": "Richard Preston",
+    "filename": "wildtrees.jpg"
+  },
+  {
+    "title": "The Botany of Desire",
+    "author": "Michael Pollan",
+    "filename": "botanydesire.jpg"
+  },
+  {
+    "title": "A Sand County Almanac",
+    "author": "Aldo Leopold",
+    "filename": "sandcounty.jpg"
+  },
+  {
+    "title": "The Man Who Planted Trees",
+    "author": "Jean Giono",
+    "filename": "manplantedtrees.jpg"
+  }
+]

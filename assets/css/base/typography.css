@@ -3,7 +3,7 @@
    Standardized brand hierarchy and text styles.
 ============================================================ */
 
-/* ── 1. Global Reset & Body ────────────────────────────── */
+/* ── 1. Global Reset & Body Type ────────────────────────── */
 body {
     color: var(--color-text);
     background-color: var(--color-bg);
@@ -11,11 +11,11 @@ body {
     font-size: var(--text-base);
     line-height: var(--leading-normal); /* 1.6 for readability */
     font-weight: var(--weight-normal);
-    padding-top: var(--header-height);
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: -0.01em; /* Tighten sans-serif body text slightly */
+
+    /* NOTE: Move layout-specific padding-top and overflow rules to layout.css */
 }
 
 /* ── 2. Headings Hierarchy ─────────────────────────────── */
@@ -23,52 +23,65 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
     color: var(--color-primary);
     line-height: var(--leading-tight);
-    font-weight: var(--weight-normal); /* Editorial often uses regular weight for serifs */
-    margin-bottom: 1.5rem;
+    font-weight: var(--weight-normal); /* Editorial regular weight for serifs */
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
     letter-spacing: -0.02em;
 }
 
 h1 { font-size: var(--text-6xl); }
-h2 { font-size: var(--text-4xl); text-align: center; margin-top: 4rem; }
 h3 { font-size: var(--text-2xl); }
 h4 { font-size: var(--text-xl); }
 h5 { font-size: var(--text-lg); }
-h6 { 
+
+/* Global default h2 — unopinionated alignment */
+h2 {
+    font-size: var(--text-4xl);
+    margin-top: var(--space-3xl);
+    margin-bottom: var(--space-3xl);
+    text-align: center;
+}
+
+h6 {
     font-family: var(--font-secondary);
-    font-size: var(--text-xs); 
-    text-transform: uppercase; 
-    letter-spacing: 0.1em; 
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     font-weight: var(--weight-bold);
     color: var(--color-muted);
 }
 
 /* ── 3. Body Text & Paragraphs ─────────────────────────── */
 p {
-    margin-bottom: 1.5rem;
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
     color: var(--color-text);
 }
 
-.text-muted { color: var(--color-muted); }
-.text-small { font-size: var(--text-sm); letter-spacing: 0; }
-.text-xs { font-size: var(--text-xs); letter-spacing: 0.05em; text-transform: uppercase; }
+/* Typography Utility Helpers */
+.text-center { text-align: center; }
+.text-muted  { color: var(--color-muted); }
+.text-small  { font-size: var(--text-sm); letter-spacing: 0; }
+.text-xs     { font-size: var(--text-xs); letter-spacing: 0.05em; text-transform: uppercase; }
 
 /* ── 4. Anchors ────────────────────────────────────────── */
 a {
     color: inherit;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: color 0.25s ease-in-out; /* Targeted performance transition */
 }
+
 a:hover {
     color: var(--color-accent);
 }
 
-/* ── 5. Animated Heading (Hero Specific) ───────────────── */
+/* ── 5. Animated Heading (Hero Specific Layout) ───────── */
 .heading-container {
     font-family: var(--font-primary);
     font-size: var(--text-6xl);
     font-weight: var(--weight-normal);
     letter-spacing: -0.03em;
-    margin: 40px auto;
+    margin: var(--space-2xl) auto;
     position: relative;
     height: clamp(4rem, 12vw, 6rem);
     width: 95%;
@@ -86,10 +99,10 @@ a:hover {
     transform: translate(-50%, -50%);
     opacity: 0;
     white-space: nowrap;
-    animation: wordCycle 21s infinite; /* Slower for more "wisdom" feel */
+    animation: wordCycle 21s infinite; /* Slower for intentional, premium execution */
 }
 
-/* Animation timing remains the same */
+/* Animation Delays */
 .word:nth-child(1) { animation-delay: 0s; }
 .word:nth-child(2) { animation-delay: 2s; }
 .word:nth-child(3) { animation-delay: 4s; }
@@ -98,10 +111,10 @@ a:hover {
 .word:nth-child(6) { animation-delay: 10s; }
 .word:nth-child(7) { animation-delay: 12s; }
 
-/* ── 6. Responsive Typography scaling ────────────────── */
+/* ── 6. Responsive Typography Scaling ────────────────── */
 @media (max-width: 768px) {
     h1 { font-size: var(--text-4xl); }
-    h2 { font-size: var(--text-2xl); margin-top: 2.5rem; }
+    h2 { font-size: var(--text-3xl); margin-top: var(--space-2xl); margin-bottom: var(--space-2xl); }
     h3 { font-size: var(--text-xl); }
     h4 { font-size: var(--text-lg); }
     h5 { font-size: var(--text-base); }
@@ -109,14 +122,15 @@ a:hover {
     .heading-container {
         font-size: var(--text-3xl);
         height: clamp(3rem, 15vw, 4.5rem);
-        margin: 20px auto;
+        margin: var(--space-md) auto;
     }
 }
 
+/* Smooth directional translation scale */
 @keyframes wordCycle {
-    0%      { opacity: 0; transform: translate(-50%, -50%) translateY(20px); }
+    0%      { opacity: 0; transform: translate(-50%, -40%) translateY(15px); }
     3.57%   { opacity: 1; transform: translate(-50%, -50%) translateY(0); }
     10.71%  { opacity: 1; transform: translate(-50%, -50%) translateY(0); }
-    14.28%  { opacity: 0; transform: translate(-50%, -50%) translateY(-20px); }
-    100%    { opacity: 0; transform: translate(-50%, -50%) translateY(-20px); }
+    14.28%  { opacity: 0; transform: translate(-50%, -60%) translateY(-15px); }
+    100%    { opacity: 0; transform: translate(-50%, -60%) translateY(-15px); }
 }

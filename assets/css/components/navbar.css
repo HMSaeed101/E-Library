@@ -21,13 +21,13 @@
     justify-content: space-between;
     padding: 0 5%; /* Percentage based for better fluidity */
     width: 100%;
-    height: var(--header-height, 80px);
+    height: var(--header-height);
     background: rgba(250, 249, 246, 0); /* Start transparent */
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
     border-bottom: 1px solid transparent;
-    color: var(--color-white); /* White for hero text contrast */
-    z-index: 1000;
+    color: var(--color-text);
+    z-index: var(--z-nav);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -38,7 +38,7 @@
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     color: var(--color-text);
-    height: 70px; /* Slim down slightly on scroll */
+    height: calc(var(--header-height) - 10px); /* Slim down slightly on scroll */
 }
 
 /* Specific styling for inner pages (non-hero) */
@@ -65,7 +65,7 @@ body.dark-mode:not(.home-page) .header:not(.scrolled) {
 .logo-link {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: var(--space-md);
     color: inherit;
     text-decoration: none;
     transition: transform 0.3s ease;
@@ -103,11 +103,11 @@ body.dark-mode .header .logo-img img {
 .nav-container {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: var(--space-xl);
 }
 .nav-links {
     display: flex;
-    gap: 32px;
+    gap: var(--space-xl);
 }
 .nav-links a {
     font-family: var(--font-secondary);
@@ -118,16 +118,16 @@ body.dark-mode .header .logo-img img {
     color: inherit;
     text-decoration: none;
     position: relative;
-    padding: 10px 0;
+    padding: var(--space-sm) 0;
     opacity: 0.8;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
 }
 .nav-links img {
-    width: 15px;
-    height: 15px;
-    margin-right: 12px;
+    width: 12px;
+    height: 12px;
+    margin-right: var(--space-sm);
     opacity: 0.6;
     transition: all 0.5s ease;
     filter: brightness(0) invert(1);
@@ -167,13 +167,13 @@ body.dark-mode .header .nav-links img {
     display: none;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: var(--space-xs);
     width: 30px;
     height: 30px;
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 1100;
+    z-index: var(--z-overlay);
     padding: 0;
     color: inherit;
 }
@@ -211,8 +211,8 @@ body.dark-mode #darkmode-btn .moon { display: none; }
 
 /* ── 6. Mobile Layout & Drawer ─────────────────────────── */
 @media (max-width: 1024px) {
-    .header { padding: 0 30px; }
-    .nav-container { gap: 30px; }
+    .header { padding: 0 var(--space-xl); }
+    .nav-container { gap: var(--space-xl); }
 }
 
 @media (max-width: 768px) {
@@ -223,16 +223,16 @@ body.dark-mode #darkmode-btn .moon { display: none; }
         top: 0;
         right: -100%;
         width: 100%;
-        max-width: 400px;
-        height: 100vh;
-        background-color: var(--color-bg);
+        max-width: 100%;
+        height: 50vh;
+        background-color: var(--color-gray-200);
         flex-direction: column;
         justify-content: center;
-        padding: 80px 40px;
-        gap: 60px;
+        padding: var(--header-height) var(--space-2xl);
+        gap: var(--space-3xl);
         transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
-        z-index: 1050;
+        z-index: var(--z-drawer);
     }
 
     body.dark-mode .nav-container {
@@ -245,26 +245,26 @@ body.dark-mode #darkmode-btn .moon { display: none; }
     .nav-links {
         flex-direction: column;
         align-items: flex-start;
-        gap: 30px;
+        gap: var(--space-md);
         width: 100%;
     }
 
     .nav-links a {
-        font-size: var(--text-2xl);
+        font-size: var(--text-lg);
         font-family: var(--font-primary);
         text-transform: none;
         letter-spacing: -0.01em;
         font-weight: var(--weight-normal);
         opacity: 1;
         width: 100%;
-        padding: 15px 0;
+        padding: var(--space-sm) 0;
         border-bottom: 1px solid var(--color-border);
     }
 
     .nav-links img {
-        width: 24px;
-        height: 24px;
-        margin-right: 20px;
+        width: 20px;
+        height: 20px;
+        margin-right: var(--space-lg);
         opacity: 0.4;
         filter: grayscale(1) brightness(0.2);
     }

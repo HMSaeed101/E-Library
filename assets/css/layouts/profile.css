@@ -14,30 +14,29 @@
 /* ── 1. Profile Container ──────────────────────────────── */
 .profile-container {
     max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 40px;
+    margin: var(--header-height) auto;
+    padding: 0 var(--space-2xl);
 }
 
 /* ── 2. Profile Header Card ────────────────────────────── */
 .profile-header {
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--color-border);
-    padding: 0 0 60px 0;
+    padding: 0 0 var(--space-3xl) 0;
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: var(--space-3xl);
     box-shadow: none;
-    margin-bottom: 60px;
+    margin-bottom: var(--space-xl);
 }
 
 /* ── 3. Profile Image ──────────────────────────────────── */
 .profile-img {
     width: 200px;
     height: 200px;
-    border-radius: 2px; /* Editorial square feel */
+    border-radius: var(--radius-sm); /* Editorial square feel */
     object-fit: cover;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
 }
 
@@ -51,16 +50,16 @@
     font-size: var(--text-5xl);
     font-weight: var(--weight-normal);
     color: var(--color-primary);
-    margin: 0 0 8px 0;
+    margin: 0 0 var(--space-sm) 0;
 }
 .username {
-    margin: 0 0 8px 0;
+    margin: 0 0 var(--space-sm) 0;
     font-family: var(--font-secondary);
     font-size: var(--text-lg);
     color: var(--color-muted);
 }
 .join-date {
-    margin: 0 0 30px 0;
+    margin: 0 0 var(--space-xl) 0;
     font-family: var(--font-secondary);
     font-size: var(--text-xs);
     color: var(--color-muted);
@@ -71,14 +70,14 @@
 /* ── 5. Stats Boxes ────────────────────────────────────── */
 .stats {
     display: flex;
-    gap: 40px;
-    margin: 30px 0;
+    gap: var(--space-2xl);
+    margin: var(--space-sm) 0;
 }
 .stat-box {
     text-align: left;
 }
 .stat-box h3 {
-    margin: 0 0 4px 0;
+    margin: 0 0 var(--space-xs) 0;
     font-family: var(--font-primary);
     font-size: var(--text-3xl);
     color: var(--color-primary);
@@ -95,38 +94,37 @@
 /* ── 6. Action Buttons ─────────────────────────────────── */
 .actions {
     display: flex;
-    gap: 16px;
-    margin-top: 30px;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
 }
 
 /* ── 7. Content Sections ───────────────────────────────── */
 .section {
-    padding: 60px 0;
+    padding: var(--space-xl) 0;
     margin-top: 0;
-    border-top: 1px solid var(--color-border);
 }
 .section h3 {
     font-family: var(--font-primary);
     font-size: var(--text-2xl);
-    margin-bottom: 40px;
+    margin-bottom: var(--space-xl);
 }
 
 /* ── 8. Profile Book Grid ──────────────────────────────── */
 .profile-book-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 30px;
+    gap: var(--space-xl);
 }
 
 /* ── 8a. Mini Book Card (Progress Style) ────────────────── */
 .profile-book-grid .book-card {
     background: var(--color-surface);
-    padding: 24px;
+    padding: var(--space-lg);
     border: 1px solid var(--color-border);
-    border-radius: 4px;
+    border-radius: var(--radius-md);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--space-md);
     transition: all 0.3s ease;
 }
 .profile-book-grid .book-card:hover {
@@ -162,12 +160,12 @@
 
 /* ── 8b. Library Action Button ──────────────────────────── */
 .action-btn {
-    margin-top: 10px;
-    padding: 8px 16px;
+    margin-top: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
     background: var(--color-primary);
     color: white;
     border: none;
-    border-radius: 2px;
+    border-radius: var(--radius-sm);
     font-size: var(--text-xs);
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -180,13 +178,13 @@
 
 /* ── 9. Tabs ──────────────────────────────────────────── */
 .tabs {
-    margin-bottom: 40px;
+    margin-bottom: var(--space-2xl);
     display: flex;
-    gap: 30px;
+    gap: var(--space-xl);
     border-bottom: 1px solid var(--color-border);
 }
 .tab {
-    padding: 12px 0;
+    padding: var(--space-md) 0;
     border: none;
     background: transparent;
     color: var(--color-muted);
@@ -215,37 +213,37 @@
 /* ── 13. Responsive Adjustments ────────────────────────── */
 @media (max-width: 768px) {
     .profile-container {
-        padding: 0 20px;
-        margin-top: 40px;
+        padding: 0 var(--space-lg);
+        margin-top: var(--space-xl);
     }
 
     .profile-header {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
-        padding-bottom: 40px;
+        gap: var(--space-xl);
+        padding-bottom: var(--space-2xl);
     }
-    
+
     .profile-info h2 {
         text-align: center;
         font-size: var(--text-3xl);
     }
-    
+
     .stats {
         justify-content: center;
-        gap: 24px;
+        gap: var(--space-lg);
     }
-    
+
     .actions {
         justify-content: center;
     }
 
     .profile-book-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: var(--space-lg);
     }
     .profile-book-grid .book-card {
-        padding: 16px; /* Reduced padding for compact layout */
+        padding: var(--space-md); /* Reduced padding for compact layout */
     }
 }
 

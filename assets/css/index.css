@@ -4,7 +4,7 @@
 ============================================================ */
 
 /* ── 1. Base Styles ────────────────────────────────────── */
-@import url("base/variables.css");
+@import url("base/rules.css");
 @import url("base/reset.css");
 @import url("base/typography.css");
 

@@ -1,0 +1,138 @@
+/* ============================================================
+   RULES — assets/css/base/rules.css
+   Global Design Tokens and Standardized Variables.
+============================================================ */
+
+:root {
+    /* Browser UI Optimization */
+    color-scheme: light;
+
+    /* ── 1. Raw Channels (For dynamic alpha matching) ── */
+    --raw-primary:        45, 52, 54;     /* #2d3436 */
+    --raw-accent:         74, 144, 226;   /* #4a90e2 */
+    --raw-shadow:         0, 0, 0;
+
+    /* ── 2. Color Palette (Light Theme UI) ────────────────── */
+    --color-bg:           #faf9f6; /* Off-white / Cream */
+    --color-text:         #1a1a1a; /* Soft Charcoal */
+    --color-primary:      rgb(var(--raw-primary));
+    --color-primary-soft: rgba(var(--raw-primary), 0.93);
+    --color-accent:       rgb(var(--raw-accent));  /* Sophisticated Blue */
+    --color-accent-soft:  rgba(var(--raw-accent), 0.1);  /* Soft accent backgrounds */
+    --color-surface:      #ffffff;
+    --color-surface-alt:  #f2f1ef; /* Soft Paper Gray */
+    --color-muted:        #717171;
+    --color-border:       #e5e5e5;
+
+    /* ── 3. Specialized Component Tokens ─────────────────── */
+    --card-bg:            var(--color-surface);
+    --card-shadow:        rgba(var(--raw-shadow), 0.04);
+    --card-shadow-hover:  rgba(var(--raw-shadow), 0.08);
+    --grid-bg:            rgba(242, 241, 239, 0.5);
+    --body-pattern:       transparent;
+
+    /* ── 4. Neutral Color Scale ──────────────────── */
+    --color-gray-50:      #f9fafb;
+    --color-gray-100:     #f3f4f6;
+    --color-gray-200:     #e5e7eb;
+    --color-gray-300:     #d1d5db;
+    --color-gray-400:     #9ca3af;
+    --color-gray-500:     #6b7280;
+    --color-gray-600:     #4b5563;
+    --color-gray-700:     #374151;
+    --color-gray-800:     #1f2937;
+    --color-gray-900:     #111827;
+    --color-white:        #ffffff;
+    --color-black:        #000000;
+
+    /* ── 5. Typography ───────────────────────────── */
+    --font-primary:       'Libre Caslon Text', serif;
+    --font-secondary:     'Inter', system-ui, -apple-system, sans-serif;
+
+    --text-xs:            0.75rem;
+    --text-sm:            0.875rem;
+    --text-base:          1rem;
+    --text-lg:            1.125rem;
+    --text-xl:            1.25rem;
+    --text-2xl:           1.5rem;
+    --text-3xl:           2.25rem;
+    --text-4xl:           3rem;
+    --text-5xl:           4rem;
+    --text-6xl:           5rem;
+
+    --weight-normal:      400;
+    --weight-medium:      500;
+    --weight-semibold:    600;
+    --weight-bold:        700;
+
+    --leading-tight:      1.1;
+    --leading-normal:     1.6;
+    --leading-relaxed:    1.8;
+
+    /* ── 6. Spacing System ───────────────────────── */
+    --space-unit:         8px;
+    --space-xs:           calc(var(--space-unit) * 0.5); /* 4px */
+    --space-sm:           var(--space-unit);             /* 8px */
+    --space-md:           calc(var(--space-unit) * 2);   /* 16px */
+    --space-lg:           calc(var(--space-unit) * 3);   /* 24px */
+    --space-xl:           calc(var(--space-unit) * 4);   /* 32px */
+    --space-2xl:          calc(var(--space-unit) * 6);   /* 48px */
+    --space-3xl:          calc(var(--space-unit) * 8);   /* 64px */
+
+    /* ── 7. Border Radius ───────────────────────── */
+    --radius-none:        0px;
+    --radius-sm:          2px;
+    --radius-md:          4px;
+    --radius-lg:          8px;
+    --radius-xl:          16px;
+    --radius-full:        9999px;
+
+    /* ── 8. Global Dynamic Shadows ───────────────────────── */
+    --shadow-sm:          0 2px 4px var(--card-shadow);
+    --shadow-md:          0 4px 12px var(--card-shadow-hover);
+    --shadow-lg:          0 12px 24px rgba(var(--raw-shadow), 0.08);
+
+    /* ── 9. Layout & Z-Index ───────────────────────────── */
+    --header-height:      80px;
+    --z-nav:              1000;
+    --z-drawer:           1050;
+    --z-overlay:          1100;
+    --z-modal:            1200;
+
+    /* ── 10. Breakpoints ────────────────────────────────── */
+    --breakpoint-sm:      600px;
+    --breakpoint-md:      1024px;
+    --breakpoint-lg:      1440px;
+}
+
+/* ============================================================
+   ── 11. Fully Adaptive Dark Theme Override ──────────────────
+============================================================ */
+body.dark-mode {
+    color-scheme: dark;
+
+    /* 1. Swap Raw Core Channels */
+    --raw-primary:        253, 252, 251;  /* Brightened Cream / Near White */
+    --raw-accent:         94, 164, 242;   /* Shifted to a lighter, high-contrast blue */
+    --raw-shadow:         0, 0, 0;        /* Deep shadows for dark UI layers */
+
+    /* 2. Primary Theme Colors */
+    --color-bg:           #121212;        /* True deep gray base */
+    --color-surface:      #1c1c1c;        /* Elevated card/section base */
+    --color-surface-alt:  #252525;        /* Secondary input/accent field */
+    --color-text:         #e5e5e5;        /* Soft crisp readable gray */
+    --color-muted:        #a0a0a0;        /* Accessible low-emphasis text */
+    --color-border:       #2a2a2a;        /* Subtle divider contrast */
+
+    /* 3. Automatic Channel Calculations */
+    --color-primary:      rgb(var(--raw-primary));
+    --color-primary-soft: rgba(var(--raw-primary), 0.15); /* Becomes a subtle glow layer */
+    --color-accent:       rgb(var(--raw-accent));
+    --color-accent-soft:  rgba(var(--raw-accent), 0.15);
+
+    /* 4. Specialized Component Adaptations */
+    --card-bg:            var(--color-surface);
+    --card-shadow:        rgba(var(--raw-shadow), 0.35); /* Heavy black alpha to step off dark bg */
+    --card-shadow-hover:  rgba(var(--raw-shadow), 0.55);
+    --grid-bg:            rgba(255, 255, 255, 0.02);    /* Inverted line rules */
+}
