@@ -6,7 +6,7 @@
 import { initDarkMode, toggleDarkMode } from "./core/theme.js";
 import { initIncludes } from "./core/include.js";
 import { loadSearchData, initSearch } from "./features/search.js";
-import { initHeaderScroll, updateStats, toggleMenu, initTabs, highlightActiveNavLink, initNavInteractions } from "./features/ui-effects.js";
+import { updateStats, toggleMenu, initTabs, highlightActiveNavLink, initNavInteractions } from "./features/ui-effects.js";
 import { renderBooksGrid } from "./features/books.js";
 import { initAuth } from "./core/auth.js";
 import { initBookDetails } from "./features/book.js";
@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     initNavInteractions();
 
     // 4. Initialize UI Effects
-    initHeaderScroll(".header");
     initTabs();
 
     // 5. Initialize Auth (if on auth page)

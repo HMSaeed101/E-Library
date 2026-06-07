@@ -126,8 +126,25 @@
     --breakpoint-lg:      1440px;
 }
 
+/* ── 13. Global Layout Utilities ────────────────────────── */
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+section, .section {
+    padding: 100px var(--space-xl);
+}
+
+@media (max-width: 768px) {
+    section, .section {
+        padding: 60px var(--space-lg);
+    }
+}
+
 /* ============================================================
-   ── 13. Fully Adaptive Dark Theme Override ──────────────────
+   ── 14. Fully Adaptive Dark Theme Override ──────────────────
 ============================================================ */
 body.dark-mode {
     color-scheme: dark;

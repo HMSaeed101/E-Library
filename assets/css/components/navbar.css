@@ -22,12 +22,10 @@
     padding: 0 5%;
     width: 100%;
     height: var(--header-height);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(20px);
     z-index: var(--z-nav);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    background: var(--color-bg);
+    background: var(--color-surface);
     color: var(--color-text);
+    border-bottom: 1px solid var(--color-border);
 }
 
 /* ── 2. Logo Area ──────────────────────────────────────── */
@@ -57,8 +55,7 @@
 .logo-img img {
     width: 32px;
     height: 32px;
-    transition: filter var(--transition-slow);
-    filter: grayscale(1) brightness(0.2);
+    filter: brightness(0);
 }
 
 body.dark-mode .logo-img img {
@@ -85,8 +82,6 @@ body.dark-mode .logo-img img {
     text-decoration: none;
     position: relative;
     padding: var(--space-sm) 0;
-    opacity: 0.8;
-    transition: all var(--transition-base);
     display: flex;
     align-items: center;
 }
@@ -94,18 +89,11 @@ body.dark-mode .logo-img img {
     width: 12px;
     height: 12px;
     margin-right: var(--space-sm);
-    opacity: 0.6;
-    transition: all var(--transition-slow);
     filter: brightness(0);
 }
 
 body.dark-mode .header .nav-links img {
     filter: brightness(0) invert(1);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    opacity: 1;
 }
 
 .nav-links a::after {
@@ -226,8 +214,7 @@ body.dark-mode #darkmode-btn .moon { display: none; }
         width: 20px;
         height: 20px;
         margin-right: var(--space-lg);
-        opacity: 0.4;
-        filter: grayscale(1) brightness(0.2);
+        filter: brightness(0);
     }
 
 

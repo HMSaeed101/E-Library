@@ -8,15 +8,6 @@
 ============================================================ */
 
 /* ── 1. General Layout Utility ─────────────────────────── */
-.container {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-section {
-    padding: 100px var(--space-2xl);
-}
 
 /* ── 2. Stats & Testimonials Section ───────────────────── */
 .stats-section {
@@ -201,7 +192,7 @@ section {
 
 /* ── 4. Featured Books Section ─────────────────────────── */
 .featured-books {
-    padding: var(--space-xl) var(--space-3xl);
+    padding: 0px var(--space-3xl);
     text-align: center;
 }
 
@@ -211,7 +202,6 @@ section {
     background: url("../../img/MultiBooks.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax effect */
     padding: 160px var(--space-2xl);
     color: white;
     text-align: center;

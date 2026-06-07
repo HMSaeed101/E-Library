@@ -4,26 +4,6 @@
 ============================================================ */
 
 /**
- * Header Scroll Effect: Transitions navbar from transparent to solid
- * Also handles initial state based on page type.
- */
-export function initHeaderScroll(selector = ".header") {
-    const header = document.querySelector(selector);
-    if (!header) return;
-
-    const handleScroll = () => {
-        if (window.scrollY > 40) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check immediately on load
-}
-
-/**
  * Mobile Menu Toggle: Orchestrates the drawer and overlay
  */
 export function toggleMenu() {

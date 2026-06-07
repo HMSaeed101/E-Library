@@ -17,7 +17,6 @@
     padding: var(--space-lg) 0;
     gap: var(--space-2xl);
     justify-content: flex-start; /* Start for scroll flow */
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     width: 100%;
 }
@@ -26,10 +25,9 @@
     display: none; /* Keep editorial look clean */
 }
 
-/* Ensure direct children of grid behave as flex items for snapping */
+/* Ensure direct children of grid behave as flex items */
 .book-grid > * {
     flex: 0 0 auto;
-    scroll-snap-align: start;
 }
 
 /* ── 2. Book Card Base ─────────────────────────────────── */
