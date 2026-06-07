@@ -5,9 +5,11 @@
 
 import { initDarkMode, toggleDarkMode } from "./core/theme.js";
 import { initIncludes } from "./core/include.js";
-import { loadSearchData, initSearch } from "./features/search.js";
-import { updateStats, toggleMenu, initTabs, highlightActiveNavLink, initNavInteractions } from "./features/ui-effects.js";
-import { renderBooksGrid } from "./features/books.js";
+import { getRootPrefix } from "./core/utils.js";
+import { getBooks } from "./core/data.js";
+import { initSearch } from "./features/search.js";
+import { updateStats, toggleMenu, initTabs, highlightActiveNavLink, initNavInteractions, initScrollProgress } from "./features/ui-effects.js";
+import { renderBooksGrid, renderSkeletons } from "./features/books.js";
 import { initAuth } from "./core/auth.js";
 import { initBookDetails } from "./features/book.js";
 
@@ -17,16 +19,6 @@ initDarkMode();
 // 2. Expose helpers to window
 window.toggleDarkMode = toggleDarkMode;
 window.toggleMenu = toggleMenu;
-
-/**
- * Calculates the depth of the current page relative to the project root.
- */
-function getRootPrefix() {
-    const path = window.location.pathname;
-    if (path.includes("/pages/auth/")) return "../../";
-    if (path.includes("/pages/")) return "../";
-    return "";
-}
 
 /**
  * Handles logic for the category detail page
@@ -79,25 +71,35 @@ function handleCategoryPage(books) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // 3. Initialize Declarative Includes (Navbar, Footer, etc.)
-    await initIncludes();
+    // 3. Trigger initial skeletons as early as possible (before async calls)
+    const featuredGrid = document.querySelector(".featured-books .book-grid");
+    const booksGrid = document.getElementById("booksGrid");
+    const categoryGrid = document.getElementById("category-books-grid");
 
-    // Highlight current page in nav
-    highlightActiveNavLink();
-    initNavInteractions();
+    if (featuredGrid) renderSkeletons(featuredGrid, 6);
+    if (booksGrid) renderSkeletons(booksGrid, 12);
+    if (categoryGrid) renderSkeletons(categoryGrid, 8);
 
-    // 4. Initialize UI Effects
-    initTabs();
-
-    // 5. Initialize Auth (if on auth page)
-    initAuth();
-
-    // 6. Load Data and Initialize Features
-    const rootPrefix = getRootPrefix();
-    const dataPath = `${rootPrefix}assets/data/books.json`;
+    // 4. Initialize UI State
+    document.body.classList.add("fade-in");
 
     try {
-        const books = await loadSearchData(dataPath);
+        // Initialize Declarative Includes (Navbar, Footer, etc.)
+        await initIncludes();
+
+        // Highlight current page in nav
+        highlightActiveNavLink();
+        initNavInteractions();
+        initScrollProgress();
+
+        // 5. Initialize UI Effects
+        initTabs();
+
+        // 6. Initialize Auth (if on auth page)
+        initAuth();
+
+        // 7. Load Data and Initialize Features
+        const books = await getBooks();
 
         // Initialize Search UI
         initSearch();
@@ -108,16 +110,25 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Handle Category Page
         handleCategoryPage(books);
 
+        // Surprise Me Logic
+        const surpriseMeBtn = document.getElementById("surpriseMeBtn");
+        if (surpriseMeBtn && books.length > 0) {
+            surpriseMeBtn.addEventListener("click", () => {
+                const randomIndex = Math.floor(Math.random() * books.length);
+                const randomBook = books[randomIndex];
+                const rootPrefix = getRootPrefix();
+                window.location.href = `${rootPrefix}pages/book-details.html?id=${randomBook.id}`;
+            });
+        }
+
         // Dynamically render featured books if on home page
-        const featuredGrid = document.querySelector(".featured-books .book-grid");
         if (featuredGrid) {
-            renderBooksGrid(featuredGrid, books.slice(0, 12));
+            renderBooksGrid(featuredGrid, books.slice(0, 12), true); // Enabled infinite loop
             updateStats(books);
         }
 
         // Dynamically render and filter full books grid if on books page
-        const fullGrid = document.getElementById("booksGrid");
-        if (fullGrid) {
+        if (booksGrid) {
             const params = new URLSearchParams(window.location.search);
             const searchParam = params.get("search");
             const categoryParam = params.get("category");
@@ -185,10 +196,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
 
                 // Apply opacity transition
-                fullGrid.style.opacity = 0;
+                booksGrid.style.opacity = 0;
                 setTimeout(() => {
-                    renderBooksGrid(fullGrid, booksToRender);
-                    fullGrid.style.opacity = 1;
+                    renderBooksGrid(booksGrid, booksToRender);
+                    booksGrid.style.opacity = 1;
                 }, 100);
             };
 
@@ -215,5 +226,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     } catch (error) {
         console.error("Initialization Error:", error);
+    } finally {
+        // ALWAYS trigger page fade-in, even on error
+        document.body.classList.add("loaded");
     }
 });

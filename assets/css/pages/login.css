@@ -86,6 +86,10 @@
 .login-container input:focus {
     border-color: var(--color-accent);
 }
+.login-container input.error-field {
+    border-color: var(--color-error);
+    background: var(--color-error-bg);
+}
 .login-container button {
     margin-top: var(--space-lg);
     padding: var(--space-md);

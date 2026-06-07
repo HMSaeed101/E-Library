@@ -14,6 +14,7 @@
 @import url("components/hero.css");
 @import url("components/book-card.css");
 @import url("components/footer.css");
+@import url("components/modal.css");
 
 /* ── 3. Pages & Views ──────────────────────────────────── */
 @import url("pages/home.css");

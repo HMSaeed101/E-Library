@@ -1,59 +1,48 @@
 /* ============================================================
    CONTACT PAGE — pages/contact.css
    Sections:
-     1. Contact Hero Background
-     2. Form Section Wrapper
-     3. Contact Form Card
-     4. Form Rows (label + input)
-     5. Submit Button
+     1. Contact Hero
+     2. Form Layout (mobile first)
+     3. Tablet/Desktop Overrides
 ============================================================ */
 
-/* ── 1. Contact Hero Background ────────────────────────── */
+/* ── 1. Contact Hero ────────────────────────────────────── */
 #contact-hero-page {
-    background-image: none;
     background-color: var(--color-surface-alt);
 }
 
-/* ── 2. Form Section Wrapper ───────────────────────────── */
+/* ── 2. Form Layout (Mobile First) ──────────────────────── */
 .contact-page-form-section {
     background-color: var(--color-bg);
-    padding: 100px 40px;
     display: flex;
     justify-content: center;
 }
 
-/* ── 3. Contact Form Card ──────────────────────────────── */
 .contact-page-form {
     width: 100%;
     max-width: 800px;
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0;
-    border-radius: 0;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    border: none;
+    gap: var(--space-xl);
 }
 
-/* ── 4. Form Rows ──────────────────────────────────────── */
 .form-row {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--space-sm);
 }
 .form-row label {
     font-family: var(--font-secondary);
     font-weight: var(--weight-bold);
-    font-size: var(--text-xs);
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     color: var(--color-muted);
 }
 .form-row input,
 .form-row textarea {
     width: 100%;
-    padding: 16px 0;
+    padding: var(--space-md) 0;
     border: none;
     border-bottom: 1px solid var(--color-border);
     border-radius: 0;
@@ -69,16 +58,19 @@
     border-color: var(--color-accent);
 }
 
-/* ── 5. Submit Button ──────────────────────────────────── */
 #submit-btn {
     display: flex;
     justify-content: flex-start;
-    margin-top: 20px;
+    margin-top: var(--space-lg);
 }
 
-/* ── 6. Responsive Styles ─────────────────────────────── */
-@media (max-width: 768px) {
-    .contact-page-form-section {
-        padding: 60px 20px;
+/* ── 3. Tablet/Desktop Overrides (min-width: 768px) ──── */
+@media (min-width: 768px) {
+    .contact-page-form {
+        gap: var(--space-2xl);
+    }
+    .form-row input,
+    .form-row textarea {
+        padding: var(--space-lg) 0;
     }
 }

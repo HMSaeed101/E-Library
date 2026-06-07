@@ -15,8 +15,14 @@ export function toggleMenu() {
         const isActive = menuToggle.classList.toggle("active");
         navContainer.classList.toggle("active");
 
-        // Prevent scrolling when menu is open
-        body.style.overflow = isActive ? "hidden" : "";
+        // Prevent background scrolling when menu is open
+        if (isActive) {
+            body.style.overflow = "hidden";
+            body.style.touchAction = "none";
+        } else {
+            body.style.overflow = "";
+            body.style.touchAction = "";
+        }
     }
 }
 
@@ -100,5 +106,20 @@ export function initTabs() {
                 tab.classList.add("active");
             });
         });
+    });
+}
+
+/**
+ * Scroll Progress Bar logic
+ */
+export function initScrollProgress() {
+    const progressBar = document.getElementById("scroll-progress");
+    if (!progressBar) return;
+
+    window.addEventListener("scroll", () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+        progressBar.style.width = scrolled + "%";
     });
 }

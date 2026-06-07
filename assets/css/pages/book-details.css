@@ -1,199 +1,224 @@
 /* ============================================================
-	BOOK DETAIL PAGE — layouts/book-detail.css
+	BOOK DETAIL PAGE — pages/book-details.css
 	Layout for the individual book detail page.
 	Sections:
-	1. Page Container
+	1. Page Container (mobile first)
 	2. Book Header (cover + info)
-	3. Book Cover Image
-	4. Book Info & Meta
-	5. Genre Tags & Rating
-	6. Action Buttons Row
-	7. Description & Details Sections
-	8. Details Grid
+	3. Book Info & Meta
+	4. Action Buttons
+	5. Description & Details
+	6. Tablet/Desktop Overrides
 ============================================================ */
 
 /* ── 1. Page Container ─────────────────────────────────── */
 .book-container {
 	max-width: 1200px;
-	margin: 80px auto;
-	padding: 0 var(--space-xl);
+	margin: var(--header-height) auto 0;
+	padding: var(--space-2xl) var(--space-xl);
 }
 
-/* ── 2. Book Header ────────────────────────────────────── */
+/* ── 2. Book Header & Cover ────────────────────────────── */
 .book-header {
 	display: flex;
-	background-color: transparent;
-	gap: var(--space-3xl);
-	margin-bottom: 80px;
-	padding: 0;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: var(--space-2xl);
+	margin-bottom: var(--space-3xl);
 }
-
-/* ── 3. Book Cover Image ───────────────────────────────── */
 .book-cover {
-	width: 300px;
-	height: 450px;
+	width: 220px;
+	height: 330px;
 	object-fit: cover;
 	border-radius: var(--radius-xs);
 	box-shadow: var(--shadow-md);
-	transition: transform var(--transition-base);
-}
-.book-cover:hover {
-	transform: translateY(-5px);
 }
 
-
-/* ── 4. Book Info & Meta ───────────────────────────────── */
+/* ── 3. Book Info & Meta ───────────────────────────────── */
 .book-info {
-	flex: 1;
 	display: flex;
 	flex-direction: column;
-	padding-top: 20px;
 }
 .book-title {
 	font-family: var(--font-primary);
-	font-size: var(--text-5xl);
-	margin-bottom: 12px;
-	line-height: 1.1;
-    color: var(--color-primary);
+	font-size: var(--text-3xl);
+	color: var(--color-primary);
+	margin-bottom: var(--space-sm);
     font-weight: var(--weight-normal);
 }
 .book-author {
 	font-family: var(--font-primary);
-	font-size: var(--text-xl);
+	font-size: var(--text-lg);
 	color: var(--color-muted);
-	margin-bottom: 40px;
+	margin-bottom: var(--space-xl);
     font-style: italic;
 }
 .meta-row {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 30px;
-	margin-bottom: 40px;
-	color: var(--color-muted);
+	justify-content: center;
+	gap: var(--space-lg);
+	margin-bottom: var(--space-2xl);
     font-family: var(--font-secondary);
     font-size: var(--text-xs);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
-.meta-item {
-	display: flex;
-	align-items: center;
-	gap: 8px;
+
+.meta-item.time {
+    color: var(--color-accent);
+    font-weight: var(--weight-bold);
 }
 
-/* ── 5. Genre Tags & Rating ────────────────────────────── */
-.rating {
-	color: var(--color-accent);
-	font-weight: var(--weight-bold);
-}
 .genre-tag {
 	background: var(--color-surface-alt);
-	color: var(--color-text);
-	padding: 8px 16px;
-	border-radius: 0;
-	font-size: var(--text-xs);
+	padding: var(--space-xs) var(--space-md);
+	font-size: 10px;
 	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	margin-right: 12px;
 	border: 1px solid var(--color-border);
 }
 
-/* ── 6. Action Buttons Row ─────────────────────────────── */
+/* ── 4. Action Buttons ─────────────────────────────────── */
 .action-buttons {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 16px;
-	margin-top: 40px;
+	flex-direction: column;
+	gap: var(--space-md);
 }
 
-/* ── 7. Description & Details Sections ────────────────── */
+/* ── 5. Description & Details ────────────────────────── */
 .book-description {
-	margin-bottom: 60px;
+	margin-bottom: var(--space-3xl);
     font-family: var(--font-secondary);
     line-height: var(--leading-relaxed);
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     color: var(--color-text);
-    max-width: 800px;
 }
 .book-details-section h2 {
-    text-align: left;
-    margin-top: 0;
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
     border-bottom: 1px solid var(--color-border);
-    padding-bottom: 20px;
-    margin-bottom: 40px;
+    padding-bottom: var(--space-md);
+    margin-bottom: var(--space-xl);
 }
 
-/* ── 8. Details Grid ───────────────────────────────────── */
 .details-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-	gap: 30px;
-}
-.detail-item {
-	background: transparent;
-	padding: 0;
-	border: none;
-	box-shadow: none;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--space-lg);
 }
 .label {
-	display: block;
 	font-family: var(--font-secondary);
-	font-size: var(--text-xs);
+	font-size: 9px;
 	color: var(--color-muted);
-	margin-bottom: 8px;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
     font-weight: var(--weight-bold);
 }
 .value {
 	font-family: var(--font-primary);
-	font-size: var(--text-lg);
-	color: var(--color-text);
+	font-size: var(--text-base);
 }
 
-/* ── 9. Responsive Adjustments ────────────────────────── */
-@media (max-width: 768px) {
-    .book-container {
-        padding: 0 20px;
-    }
-	.book-header {
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		gap: 40px;
-	}
-	
-	.book-cover {
-		width: 240px;
-		height: 360px;
-	}
-    
-    .book-title {
-        font-size: var(--text-3xl);
-    }
-	
-	.meta-row {
-		justify-content: center;
-	}
-	
-	.action-buttons {
-		justify-content: center;
-	}
-    @media (max-width: 600px) {
-        .action-buttons {
-            flex-direction: column;
-            width: 100%;
-        }
-        .action-buttons .btn {
-            width: 100%;
-            text-align: center;
-        }
-    }
+/* ── 6. Tablet/Desktop Overrides (min-width: 768px) ──── */
+@media (min-width: 768px) {
+    .book-container { padding: var(--space-4xl) var(--space-2xl); }
 
-    .book-description {
-        font-size: var(--text-base);
-        text-align: center;
-        margin: 0 auto 60px;
+    .book-header {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--space-4xl);
     }
+    .book-cover { width: 300px; height: 450px; }
+    .book-title { font-size: var(--text-5xl); }
+    .meta-row { justify-content: flex-start; }
+    .action-buttons { flex-direction: row; }
+    .book-description { font-size: var(--text-lg); max-width: 800px; }
+    .book-details-section h2 { font-size: var(--text-2xl); }
+    .details-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+}
+
+/* ── 7. Sanctuary Mode (Focus Mode) ────────────────────── */
+body.sanctuary-mode {
+    background-color: var(--color-bg);
+    overflow-x: hidden;
+}
+
+body.sanctuary-mode .header,
+body.sanctuary-mode #footer,
+body.sanctuary-mode .book-cover-wrapper,
+body.sanctuary-mode .genres,
+body.sanctuary-mode .book-details-section,
+body.sanctuary-mode .action-buttons > *:not(#sanctuaryToggle):not(.primary) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute; /* Take out of flow to prevent gaps */
+}
+
+body.sanctuary-mode .book-container {
+    margin-top: 0;
+    padding-top: var(--space-5xl);
+    max-width: 700px; /* Narrower for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.8s var(--transition-base);
+}
+
+body.sanctuary-mode .book-title {
+    font-size: var(--text-5xl);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+}
+
+body.sanctuary-mode .book-author {
+    text-align: center;
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3xl);
+    color: var(--color-muted);
+    font-style: italic;
+}
+
+body.sanctuary-mode .meta-row {
+    justify-content: center;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-xl);
+    margin-bottom: var(--space-4xl);
+}
+
+body.sanctuary-mode .book-description {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--color-text);
+    text-align: justify;
+}
+
+body.sanctuary-mode .action-buttons {
+    margin-top: var(--space-4xl);
+    justify-content: center;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-2xl);
+}
+
+body.sanctuary-mode .action-buttons .btn.primary {
+    padding: var(--space-md) var(--space-3xl);
+    font-size: var(--text-base);
+    letter-spacing: 0.2em;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+body.sanctuary-mode #sanctuaryToggle {
+    position: fixed;
+    bottom: var(--space-xl);
+    right: var(--space-xl);
+    z-index: 1000;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-lg);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    border: 1px solid var(--color-border);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-full);
 }

@@ -3,47 +3,8 @@
     Manages book search data, filtering, and UI updates.
 ============================================================ */
 
-let booksData = [];
-
-/**
- * Calculates root prefix based on current path
- */
-function getRootPrefix() {
-    const path = window.location.pathname;
-    if (path.includes("/pages/auth/")) return "../../";
-    if (path.includes("/pages/")) return "../";
-    return "";
-}
-
-/**
- * Load books data from central JSON
- * @param {string} dataPath - Optional path override for the books.json file
- */
-export async function loadSearchData(dataPath = "assets/data/books.json") {
-    try {
-        const res = await fetch(dataPath);
-        if (!res.ok) throw new Error("Failed to load books");
-        booksData = await res.json();
-        return booksData;
-    } catch (e) {
-        console.error("Search Data Load Error:", e);
-        return [];
-    }
-}
-
-/**
- * Filter books based on search term
- * @param {string} term
- */
-export function performSearch(term) {
-    const searchTerm = term.toLowerCase().trim();
-    if (!searchTerm) return [];
-    return booksData.filter(
-        (book) =>
-            book.title.toLowerCase().includes(searchTerm) ||
-            book.author.toLowerCase().includes(searchTerm)
-    );
-}
+import { getRootPrefix } from "../core/utils.js";
+import { getBooks, filterBooks } from "../core/data.js";
 
 /**
  * Display search results in the dropdown
@@ -93,13 +54,13 @@ export function initSearch() {
         window.location.href = `${rootPrefix}pages/books.html?search=${encodeURIComponent(trimmed)}`;
     };
 
-    searchInput.addEventListener("input", (e) => {
+    searchInput.addEventListener("input", async (e) => {
         const term = e.target.value;
         if (!term) {
             searchDropdown.style.display = "none";
             return;
         }
-        const results = performSearch(term);
+        const results = await filterBooks({ search: term });
         displaySearchResults(searchDropdown, results);
     });
 

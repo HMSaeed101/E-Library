@@ -2,20 +2,14 @@
    BOOK.JS — Book Detail Page Logic
 ============================================================ */
 
-/**
- * Calculates root prefix based on current path
- */
-function getRootPrefix() {
-    const path = window.location.pathname;
-    if (path.includes("/pages/auth/")) return "../../";
-    if (path.includes("/pages/")) return "../";
-    return "";
-}
+import { getRootPrefix } from "../core/utils.js";
+import { getBookById } from "../core/data.js";
 
 /**
  * Initialize Book Detail page logic
+ * @param {Array} booksData - DEPRECATED: Uses core/data.js internally
  */
-export async function initBookDetails() {
+export async function initBookDetails(booksData = null) {
     const params = new URLSearchParams(window.location.search);
     const bookId = params.get("id");
     if (!bookId) return;
@@ -25,11 +19,7 @@ export async function initBookDetails() {
 
     try {
         const rootPrefix = getRootPrefix();
-        const dataPath = `${rootPrefix}assets/data/books.json`;
-
-        const res = await fetch(dataPath);
-        const books = await res.json();
-        const book = books.find((b) => b.id === bookId);
+        const book = await getBookById(bookId);
 
         if (book) {
             // Inject Data into UI
@@ -55,13 +45,55 @@ export async function initBookDetails() {
             // Update meta-row details
             const metaRow = document.querySelector(".meta-row");
             if (metaRow) {
+                // Calculate Reading Time (assuming 250 words per page, 200 words per minute)
+                let readingTimeStr = "";
+                if (book.pages) {
+                    const pageCount = parseInt(book.pages);
+                    if (!isNaN(pageCount)) {
+                        const totalMinutes = Math.round((pageCount * 250) / 200);
+                        const hours = Math.floor(totalMinutes / 60);
+                        const mins = totalMinutes % 60;
+                        readingTimeStr = hours > 0 ? `${hours}h ${mins}m read` : `${mins}m read`;
+                    }
+                }
+
                 metaRow.innerHTML = `
                     ${book.published_year ? `<span class="meta-item">${book.published_year}</span>` : ''}
-                    ${book.published_info ? `<span class="meta-item">${book.published_info}</span>` : ''}
                     ${book.pages ? `<span class="meta-item">${book.pages}</span>` : ''}
+                    ${readingTimeStr ? `<span class="meta-item time">${readingTimeStr}</span>` : ''}
                     ${book.language ? `<span class="meta-item">${book.language}</span>` : ''}
                     ${book.rating ? `<span class="meta-item rating">${book.rating}</span>` : ''}
                 `;
+            }
+
+            // Sanctuary Mode Logic
+            const sanctuaryToggle = document.getElementById("sanctuaryToggle");
+            
+            const updateSanctuaryUI = (active) => {
+                if (active) {
+                    document.body.classList.add("sanctuary-mode");
+                    if (sanctuaryToggle) {
+                        sanctuaryToggle.innerHTML = `<span class="icon">🏛️</span> Leave Sanctuary`;
+                    }
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                    document.body.classList.remove("sanctuary-mode");
+                    if (sanctuaryToggle) {
+                        sanctuaryToggle.innerHTML = `<span class="icon">🌿</span> Sanctuary Mode`;
+                    }
+                }
+            };
+
+            // Restore sanctuary state from localStorage
+            const isSanctuaryActive = localStorage.getItem("sanctuary-mode") === "true";
+            if (isSanctuaryActive) updateSanctuaryUI(true);
+
+            if (sanctuaryToggle) {
+                sanctuaryToggle.addEventListener("click", () => {
+                    const isActive = document.body.classList.toggle("sanctuary-mode");
+                    localStorage.setItem("sanctuary-mode", isActive);
+                    updateSanctuaryUI(isActive);
+                });
             }
 
             // Update genres

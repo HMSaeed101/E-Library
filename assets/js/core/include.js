@@ -4,18 +4,7 @@
    the specified HTML file.
 ============================================================ */
 
-/**
- * Calculates the depth of the current page relative to the project root.
- * Returns a string like "../" or "../../" or ""
- */
-function getRootPrefix() {
-    const path = window.location.pathname;
-    // Count how many segments exist after the project root
-    // This is a heuristic. We look for 'pages/' and count nesting from there.
-    if (path.includes("/pages/auth/")) return "../../";
-    if (path.includes("/pages/")) return "../";
-    return "";
-}
+import { getRootPrefix } from "./utils.js";
 
 /**
  * Adjusts relative paths in the injected HTML to be correct for the host page.
@@ -25,9 +14,13 @@ function adjustPaths(html) {
     const rootPrefix = getRootPrefix();
     
     // Regex to find src="..." and href="..."
-    // We target paths that look like they are relative to project root (assets/, pages/, index.html)
     return html.replace(/(src|href)="([^"\/][^"]*)"/g, (match, attr, path) => {
-        if (path.startsWith("http") || path.startsWith("#") || path.startsWith("mailto:") || path.startsWith("tel:")) {
+        if (path.startsWith("http") || 
+            path.startsWith("#") || 
+            path.startsWith("mailto:") || 
+            path.startsWith("tel:") ||
+            path.startsWith(".")
+        ) {
             return match;
         }
         return `${attr}="${rootPrefix}${path}"`;
@@ -40,7 +33,9 @@ function adjustPaths(html) {
  */
 async function injectElement(element) {
     const file = element.getAttribute("data-include");
-    if (!file) return;
+    if (!file || element.getAttribute("data-processing")) return;
+
+    element.setAttribute("data-processing", "true");
 
     try {
         const response = await fetch(file);
@@ -52,6 +47,7 @@ async function injectElement(element) {
         
         element.innerHTML = html;
         element.removeAttribute("data-include"); 
+        element.removeAttribute("data-processing"); 
 
         element.dispatchEvent(new CustomEvent("contentLoaded", { 
             detail: { file: file },
@@ -63,6 +59,7 @@ async function injectElement(element) {
     } catch (error) {
         console.error("HTML Injection Error:", error);
         element.innerHTML = `<p style="color:red; padding: 20px; text-align: center;">Error loading component: ${file}. Please ensure you are running this project on a local server (e.g., Live Server).</p>`;
+        element.removeAttribute("data-processing");
     }
 }
 

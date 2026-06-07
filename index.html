@@ -45,6 +45,23 @@
 				<!-- Dynamic content will be injected here by JavaScript -->
 			</div>
 		</div>
+
+		<div class="trending-tags">
+			<span>Trending:</span>
+			<a href="pages/books.html?search=Philosophy">Philosophy</a>
+			<a href="pages/books.html?search=History">History</a>
+			<a href="pages/books.html?search=Science">Science</a>
+		</div>
+	</section>
+
+	<section class="daily-scroll">
+		<div class="quote-container">
+			<span class="scroll-label">The Daily Scroll</span>
+			<blockquote>
+				"The only true wisdom is in knowing you know nothing."
+			</blockquote>
+			<cite>— Socrates</cite>
+		</div>
 	</section>
 
 	<section class="featured-books">
@@ -52,6 +69,33 @@
 
 		<div class="book-grid">
 			<div class="loading">Loading featured books...</div>
+		</div>
+	</section>
+
+	<section class="curated-collections">
+		<div class="section-header">
+			<h2>Curated Collections</h2>
+			<p>Hand-picked journeys through the archives.</p>
+		</div>
+		<div class="collections-grid">
+			<a href="pages/books.html?category=philosophy" class="collection-card col-stoic">
+				<div class="collection-overlay">
+					<span class="label">Volume I</span>
+					<h3>The Stoic Path</h3>
+				</div>
+			</a>
+			<a href="pages/books.html?category=science" class="collection-card col-physics">
+				<div class="collection-overlay">
+					<span class="label">Volume II</span>
+					<h3>Foundations of Physics</h3>
+				</div>
+			</a>
+			<a href="pages/books.html?category=fiction" class="collection-card col-classic">
+				<div class="collection-overlay">
+					<span class="label">Volume III</span>
+					<h3>Classic Narratives</h3>
+				</div>
+			</a>
 		</div>
 	</section>
 
@@ -108,13 +152,13 @@
 	<h2>Explore by Categories</h2>
 
 	<div class="categories-grid">
-		<a href="pages/category.html?type=fiction" class="category-card cat-fiction"> FICTION </a>
-		<a href="pages/category.html?type=non-fiction" class="category-card cat-non-fiction"> NON-FICTION </a>
-		<a href="pages/category.html?type=science" class="category-card cat-science"> SCIENCE </a>
-		<a href="pages/category.html?type=technology" class="category-card cat-technology"> TECHNOLOGY </a>
-		<a href="pages/category.html?type=nature" class="category-card cat-nature"> NATURE </a>
-		<a href="pages/category.html?type=lifeandvalues" class="category-card cat-values"> LIFE & VALUES </a>
-		<a href="pages/category.html?type=history" class="category-card cat-history"> HISTORY </a>
+		<a href="pages/category.html?type=fiction" class="category-card cat-fiction"><span>FICTION</span></a>
+		<a href="pages/category.html?type=non-fiction" class="category-card cat-non-fiction"><span>NON-FICTION</span></a>
+		<a href="pages/category.html?type=science" class="category-card cat-science"><span>SCIENCE</span></a>
+		<a href="pages/category.html?type=technology" class="category-card cat-technology"><span>TECHNOLOGY</span></a>
+		<a href="pages/category.html?type=nature" class="category-card cat-nature"><span>NATURE</span></a>
+		<a href="pages/category.html?type=lifeandvalues" class="category-card cat-values"><span>LIFE & VALUES</span></a>
+		<a href="pages/category.html?type=history" class="category-card cat-history"><span>HISTORY</span></a>
 	</div>
 
 	<div class="test-section">
@@ -140,8 +184,40 @@
 				<p>"High-quality visuals paired with a deep collection. This is the future of digital libraries."</p>
 				<span class="test-author">Sarah L. — Bibliophile</span>
 			</div>
+			<!-- Duplicate for Infinite Loop -->
+			<div class="test-card">
+				<img src="assets/img/ui/avatars/avatar1.jpg" alt="Reader 1" class="test-avatar">
+				<p>"E-Lib has completely transformed my research process. The curated collections are unparalleled."</p>
+				<span class="test-author">James R. — Researcher</span>
+			</div>
+			<div class="test-card">
+				<img src="assets/img/ui/avatars/avatar2.jpg" alt="Reader 2" class="test-avatar">
+				<p>"A beautifully designed sanctuary for digital wisdom. It's my go-to for finding rare philosophy texts."</p>
+				<span class="test-author">Elena S. — Student</span>
+			</div>
+			<div class="test-card">
+				<img src="assets/img/ui/avatars/avatar3.jpg" alt="Reader 3" class="test-avatar">
+				<p>"The minimalist approach makes reading and discovery a pure joy. Truly a House of Wisdom."</p>
+				<span class="test-author">Marcus T. — Historian</span>
+			</div>
+			<div class="test-card">
+				<img src="assets/img/ui/avatars/avatar4.jpg" alt="Reader 4" class="test-avatar">
+				<p>"High-quality visuals paired with a deep collection. This is the future of digital libraries."</p>
+				<span class="test-author">Sarah L. — Bibliophile</span>
+			</div>
 		</div>
 	</div>
+
+	<section class="newsletter-section">
+		<div class="newsletter-content">
+			<h2>The Wisdom Newsletter</h2>
+			<p>Join our circle of readers to receive curated monthly archives and exclusive literary insights.</p>
+			<form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the circle!');">
+				<input type="email" placeholder="Email Address" required />
+				<button type="submit" class="button">Join the Circle</button>
+			</form>
+		</div>
+	</section>
 
 	<div id="footer" data-include="components/footer.html"></div>
 

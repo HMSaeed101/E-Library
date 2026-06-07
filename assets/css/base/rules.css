@@ -25,6 +25,8 @@
     --color-border:       #e5e5e5;
 
     /* ── 3. Semantic Colors ──────────────────────────────── */
+    --color-on-primary:   var(--color-white);
+    --color-on-accent:    var(--color-white);
     --color-success:      #10b981;
     --color-success-bg:   #ecfdf5;
     --color-warning:      #f59e0b;
@@ -81,16 +83,21 @@
     --leading-relaxed:    1.8;
 
     /* ── 7. Spacing System ───────────────────────── */
-    --space-unit:         8px;
-    --space-3xs:          calc(var(--space-unit) * 0.25); /* 2px */
-    --space-2xs:          calc(var(--space-unit) * 0.375); /* 3px */
-    --space-xs:           calc(var(--space-unit) * 0.5); /* 4px */
-    --space-sm:           var(--space-unit);             /* 8px */
-    --space-md:           calc(var(--space-unit) * 2);   /* 16px */
-    --space-lg:           calc(var(--space-unit) * 3);   /* 24px */
-    --space-xl:           calc(var(--space-unit) * 4);   /* 32px */
-    --space-2xl:          calc(var(--space-unit) * 6);   /* 48px */
-    --space-3xl:          calc(var(--space-unit) * 8);   /* 64px */
+    --space-unit:         0.5rem;
+    --space-3xs:          0.125rem; /* 2px  */
+    --space-2xs:          0.1875rem;/* 3px  */
+    --space-xs:           0.25rem;  /* 4px  */
+    --space-sm:           0.5rem;   /* 8px  (Base Unit) */
+    --space-ms:           0.75rem;  /* 12px */
+    --space-md:           1rem;     /* 16px */
+    --space-lg:           1.5rem;   /* 24px */
+    --space-xl:           2rem;     /* 32px */
+    --space-2xl:          3rem;     /* 48px */
+    --space-3xl:          4rem;     /* 64px */
+    --space-4xl:          5rem;     /* 8px * 10 = 80px */
+    --space-5xl:          6rem;     /* 8px * 12 = 96px */
+    --space-6xl:          7rem;     /* 8px * 14 = 112px */
+    --space-7xl:          8rem;     /* 8px * 16 = 128px */
 
     /* ── 8. Border Radius ───────────────────────── */
     --radius-none:        0px;
@@ -114,8 +121,9 @@
     --shadow-lg:          0 12px 24px rgba(var(--raw-shadow), 0.08);
 
     /* ── 11. Layout & Z-Index ───────────────────────────── */
-    --header-height:      80px;
+    --header-height:      64px;
     --z-nav:              1000;
+    --z-dropdown:         1010;
     --z-drawer:           1050;
     --z-overlay:          1100;
     --z-modal:            1200;
@@ -124,22 +132,32 @@
     --breakpoint-sm:      600px;
     --breakpoint-md:      1024px;
     --breakpoint-lg:      1440px;
+
+    /* ── 13. Skeleton Tokens ────────────────────────────── */
+    --skeleton-bg-start:  var(--color-gray-200);
+    --skeleton-bg-end:    var(--color-gray-100);
 }
 
 /* ── 13. Global Layout Utilities ────────────────────────── */
 .container {
-    width: 90%;
+    width: 92%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 section, .section {
-    padding: 100px var(--space-xl);
+    padding: 60px var(--space-lg);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     section, .section {
-        padding: 60px var(--space-lg);
+        padding: 100px var(--space-xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --header-height: 80px;
     }
 }
 
@@ -163,6 +181,8 @@ body.dark-mode {
     --color-border:       #2a2a2a;        /* Subtle divider contrast */
 
     /* 3. Semantic Colors (Dark Mode Adjustments) */
+    --color-on-primary:   var(--color-black);
+    --color-on-accent:    var(--color-white);
     --color-success-bg:   rgba(16, 185, 129, 0.1);
     --color-warning-bg:   rgba(245, 158, 11, 0.1);
     --color-error-bg:     rgba(239, 68, 68, 0.1);
@@ -180,5 +200,22 @@ body.dark-mode {
     --card-shadow-hover:  rgba(var(--raw-shadow), 0.55);
     --grid-bg:            rgba(255, 255, 255, 0.02);    /* Inverted line rules */
     --bg-overlay:         rgba(0, 0, 0, 0.7);
+
+    --skeleton-bg-start: var(--color-surface-alt);
+    --skeleton-bg-end: var(--color-surface);
+}
+
+/* ── 15. Global Animations & Transitions ──────────────────── */
+/* Removed risky body opacity for stability */
+
+/* Skeleton Loading Animation */
+@keyframes skeleton-loading {
+    0% { background-color: var(--skeleton-bg-start); }
+    100% { background-color: var(--skeleton-bg-end); }
+}
+
+.skeleton {
+    background-color: var(--skeleton-bg-start);
+    animation: skeleton-loading 1s linear infinite alternate;
 }
 

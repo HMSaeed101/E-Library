@@ -11,8 +11,17 @@
 /* ── Restore Saved Preference on Load ──────────────────── */
 export function initDarkMode() {
     const savedMode = localStorage.getItem("dark-mode");
-    if (savedMode === "true") {
-        document.body.classList.add("dark-mode");
+    
+    if (savedMode !== null) {
+        if (savedMode === "true") {
+            document.body.classList.add("dark-mode");
+        }
+    } else {
+        // Fallback to system preference
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (prefersDark) {
+            document.body.classList.add("dark-mode");
+        }
     }
 }
 

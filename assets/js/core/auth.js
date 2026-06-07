@@ -77,6 +77,14 @@ export function initAuth() {
     const form = document.querySelector(".login-container form");
     if (!form) return;
 
+    // Clear errors on input
+    const inputs = form.querySelectorAll("input");
+    inputs.forEach(input => {
+        input.addEventListener("input", () => {
+            markValid(input);
+        });
+    });
+
     form.addEventListener("submit", (e) => {
         const errors = validateAuthForm(form);
         if (errors.length > 0) {

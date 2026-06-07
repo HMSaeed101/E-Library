@@ -1,104 +1,86 @@
 /* ============================================================
    BOOKS PAGE — pages/books.css
    Sections:
-     1. Books Hero Background
-     2. Books Grid
-     3. Books Search Bar
+     1. Books Hero
+     2. Books Grid (mobile first)
+     3. Search & Filter Pills
+     4. Tablet/Desktop Overrides
 ============================================================ */
 
-/* ── 1. Books Hero Background ──────────────────────────── */
+/* ── 1. Books Hero ────────────────────────────────────── */
 #books-hero-page {
     background-image: url("../../img/MultiBooks.jpg");
-    background-size: cover;
-    background-position: center;
 }
 
-/* ── 2. Books Grid ─────────────────────────────────────── */
+/* ── 2. Books Grid (Mobile First) ───────────────────────── */
 .books-page-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 40px;
-    padding: 100px 40px;
+    grid-template-columns: repeat(2, 1fr); /* Default 2 columns for mobile */
+    gap: var(--space-md);
+    padding: 40px var(--space-md); /* Reduced padding */
     background-color: var(--color-bg);
     max-width: 1400px;
     margin: 0 auto;
-    transition: opacity 0.15s ease; /* For smooth filter transitions */
-}
-
-/* ── 3. Books Search Bar ───────────────────────────────── */
-.search-books-page {
-    display: flex;
-    justify-content: center;
+    transition: opacity 0.15s ease;
     width: 100%;
-    max-width: 600px;
-    margin: 30px auto 0;
-    padding: 0 40px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-/* ── 3a. Filter Pills ───────────────────────────────────── */
+/* ── 3. Filter Pills ────────────────────────────────────── */
 .filter-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: var(--space-xs);
     max-width: 900px;
-    margin: 40px auto 0;
-    padding: 0 20px;
+    margin: var(--space-xl) auto 0;
+    padding: 0 var(--space-lg);
 }
 
 .filter-pill {
-    padding: 10px 22px;
-    background: rgba(255, 255, 255, 0.04);
+    padding: 8px 16px;
+    background: var(--color-surface-alt);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--color-border);
+    color: var(--color-muted);
     font-family: var(--font-secondary);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: var(--weight-bold);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     cursor: pointer;
-    border-radius: 30px; /* Pill shape */
+    border-radius: var(--radius-full);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .filter-pill:hover {
-    color: white;
-    border-color: rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.filter-pill.active {
-    background: white;
-    color: var(--color-black) !important;
-    border-color: white;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Dark mode adjustments for cards when they are not in the hero (in case we reuse them) */
-body.dark-mode .filter-pill.active {
-    background: var(--color-primary);
-    color: var(--color-white) !important;
+    color: var(--color-primary);
     border-color: var(--color-primary);
 }
 
-/* ── 4. Responsive Adjustments ────────────────────────── */
-@media (max-width: 768px) {
-    .books-page-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 60px 20px;
-    }
-
-    .filter-container {
-        gap: 8px;
-        margin-top: 30px;
-    }
-
-    .filter-pill {
-        padding: 8px 16px;
-        font-size: 10px;
-    }
+.filter-pill.active {
+    background: var(--color-primary);
+    color: var(--color-on-primary) !important;
+    border-color: var(--color-primary);
 }
 
+/* ── 4. Tablet/Desktop Overrides (min-width: 768px) ──── */
+@media (min-width: 768px) {
+    .books-page-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: var(--space-xl);
+        padding: 100px var(--space-xl);
+    }
+    
+    .filter-container {
+        gap: var(--space-sm);
+        margin-top: var(--space-2xl);
+    }
+    
+    .filter-pill {
+        padding: 10px 22px;
+        font-size: 11px;
+    }
+}
