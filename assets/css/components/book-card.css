@@ -39,7 +39,7 @@
     cursor: pointer;
     background: transparent;
     border-radius: var(--radius-none); /* Square for editorial feel */
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all var(--transition-bounce);
     overflow: hidden;
     text-align: left;
     padding: 0;
@@ -56,12 +56,13 @@
     aspect-ratio: 2/3;
     object-fit: cover;
     border-radius: var(--radius-sm);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.4s ease;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-base);
 }
 .book-card:hover img {
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
 }
+
 
 /* ── 4. Book Card Text ─────────────────────────────────── */
 .book-card h3 {

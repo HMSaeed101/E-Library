@@ -16,14 +16,14 @@
 .book-container {
 	max-width: 1200px;
 	margin: 80px auto;
-	padding: 0 40px;
+	padding: 0 var(--space-xl);
 }
 
 /* ── 2. Book Header ────────────────────────────────────── */
 .book-header {
 	display: flex;
 	background-color: transparent;
-	gap: 60px;
+	gap: var(--space-3xl);
 	margin-bottom: 80px;
 	padding: 0;
 }
@@ -33,13 +33,14 @@
 	width: 300px;
 	height: 450px;
 	object-fit: cover;
-	border-radius: 2px;
-	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-	transition: transform 0.4s ease;
+	border-radius: var(--radius-xs);
+	box-shadow: var(--shadow-md);
+	transition: transform var(--transition-base);
 }
 .book-cover:hover {
 	transform: translateY(-5px);
 }
+
 
 /* ── 4. Book Info & Meta ───────────────────────────────── */
 .book-info {

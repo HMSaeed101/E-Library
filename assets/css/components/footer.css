@@ -30,7 +30,7 @@
     padding: var(--space-xs) 0;
     font-family: var(--font-secondary);
     font-size: var(--text-sm);
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
     display: inline-block;
 }
 
@@ -48,6 +48,7 @@
     margin: 0 auto;
     padding-bottom: 80px;
 }
+
 
 .outro {
     max-width: 300px;

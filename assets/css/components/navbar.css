@@ -19,42 +19,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5%; /* Percentage based for better fluidity */
+    padding: 0 5%;
     width: 100%;
     height: var(--header-height);
-    background: rgba(250, 249, 246, 0); /* Start transparent */
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    border-bottom: 1px solid transparent;
-    color: var(--color-text);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: var(--z-nav);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Scrolled state: Solid editorial background */
-.header.scrolled {
-    background: rgba(250, 249, 246, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: var(--color-bg);
     color: var(--color-text);
-    height: calc(var(--header-height) - 10px); /* Slim down slightly on scroll */
-}
-
-/* Specific styling for inner pages (non-hero) */
-body:not(.home-page) .header:not(.scrolled) {
-    background: rgba(250, 249, 246, 0.85);
-    backdrop-filter: blur(20px);
-    color: var(--color-text);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* Dark Mode Overrides */
-body.dark-mode .header.scrolled,
-body.dark-mode:not(.home-page) .header:not(.scrolled) {
-    background: rgba(18, 18, 18, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--color-white);
 }
 
 /* ── 2. Logo Area ──────────────────────────────────────── */
@@ -68,7 +41,7 @@ body.dark-mode:not(.home-page) .header:not(.scrolled) {
     gap: var(--space-md);
     color: inherit;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-base);
 }
 .logo-link:hover {
     transform: translateY(-1px);
@@ -84,19 +57,12 @@ body.dark-mode:not(.home-page) .header:not(.scrolled) {
 .logo-img img {
     width: 32px;
     height: 32px;
-    transition: filter 0.5s ease;
-}
-
-/* Logo inversion logic */
-.header:not(.scrolled) .logo-img img {
-    filter: brightness(0) invert(1);
-}
-.header.scrolled .logo-img img,
-body:not(.home-page) .header:not(.scrolled) .logo-img img {
+    transition: filter var(--transition-slow);
     filter: grayscale(1) brightness(0.2);
 }
-body.dark-mode .header .logo-img img {
-    filter: brightness(0) invert(1) !important;
+
+body.dark-mode .logo-img img {
+    filter: brightness(0) invert(1);
 }
 
 /* ── 3. Nav Container & Links ──────────────────────────── */
@@ -111,7 +77,7 @@ body.dark-mode .header .logo-img img {
 }
 .nav-links a {
     font-family: var(--font-secondary);
-    font-size: 11px;
+    font-size: var(--text-xs);
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-weight: var(--weight-bold);
@@ -120,7 +86,7 @@ body.dark-mode .header .logo-img img {
     position: relative;
     padding: var(--space-sm) 0;
     opacity: 0.8;
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
     display: flex;
     align-items: center;
 }
@@ -129,17 +95,12 @@ body.dark-mode .header .logo-img img {
     height: 12px;
     margin-right: var(--space-sm);
     opacity: 0.6;
-    transition: all 0.5s ease;
-    filter: brightness(0) invert(1);
+    transition: all var(--transition-slow);
+    filter: brightness(0);
 }
 
-/* Icon inversion based on background */
-.header.scrolled .nav-links img,
-body:not(.home-page) .header:not(.scrolled) .nav-links img {
-    filter: grayscale(1) brightness(0.2);
-}
 body.dark-mode .header .nav-links img {
-    filter: brightness(0) invert(1) !important;
+    filter: brightness(0) invert(1);
 }
 
 .nav-links a:hover,
@@ -188,10 +149,10 @@ body.dark-mode .header .nav-links img {
 #darkmode-btn {
     background-color: transparent;
     border: none;
-    font-size: 18px;
+    font-size: var(--text-xl);
     color: inherit;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all var(--transition-base);
     opacity: 0.7;
     padding: 0;
     display: flex;
@@ -225,19 +186,19 @@ body.dark-mode #darkmode-btn .moon { display: none; }
         width: 100%;
         max-width: 100%;
         height: 50vh;
-        background-color: var(--color-gray-200);
+        background-color: var(--color-surface-alt);
         flex-direction: column;
         justify-content: center;
         padding: var(--header-height) var(--space-2xl);
         gap: var(--space-3xl);
         transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+        box-shadow: var(--shadow-lg);
         z-index: var(--z-drawer);
     }
 
     body.dark-mode .nav-container {
         background-color: var(--color-surface);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        box-shadow: var(--shadow-lg);
     }
 
     .nav-container.active { right: 0; }
@@ -268,6 +229,7 @@ body.dark-mode #darkmode-btn .moon { display: none; }
         opacity: 0.4;
         filter: grayscale(1) brightness(0.2);
     }
+
 
     body.dark-mode .nav-links img {
         filter: brightness(0) invert(1) !important;

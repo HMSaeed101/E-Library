@@ -15,7 +15,7 @@
 }
 
 section {
-    padding: 100px 40px;
+    padding: 100px var(--space-2xl);
 }
 
 /* ── 2. Stats & Testimonials Section ───────────────────── */
@@ -29,28 +29,28 @@ section {
 .stats-area {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+    gap: var(--space-xl);
     max-width: 1400px;
-    padding: 2rem 4rem;
+    padding: var(--space-xl) var(--space-3xl);
 }
 .test-area {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 40px;
+    gap: var(--space-2xl);
     max-width: 1200px;
-    margin: 40px auto 0;
+    margin: var(--space-2xl) auto 0;
 }
 
 .stat-card {
-    padding: 32px;
+    padding: var(--space-xl);
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all var(--transition-slow) cubic-bezier(0.16, 1, 0.3, 1);
     text-align: left;
     display: flex;
     align-items: center;
-    gap: 24px;
-    border-radius: 4px;
+    gap: var(--space-lg);
+    border-radius: var(--radius-sm);
     position: relative;
     overflow: hidden;
 }
@@ -63,12 +63,12 @@ section {
     width: 60px;
     height: 60px;
     background: var(--color-surface-alt);
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-accent);
-    transition: all 0.4s ease;
+    transition: all var(--transition-base);
     flex-shrink: 0;
 }
 .stat-card:hover .stat-icon-wrapper {
@@ -86,35 +86,35 @@ section {
     letter-spacing: 0.15em;
     font-weight: var(--weight-bold);
     color: var(--color-muted);
-    margin-bottom: 8px;
+    margin-bottom: var(--space-sm);
 }
 .stat-card p.stat-number {
     font-family: var(--font-primary);
     font-size: var(--text-3xl);
     color: var(--color-primary);
     margin: 0;
-    line-height: 1.1;
+    line-height: var(--leading-tight);
 }
 
 .test-card {
-    padding: 60px 40px 40px;
+    padding: 60px var(--space-xl) var(--space-xl);
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     text-align: center;
     position: relative;
-    transition: all 0.5s ease;
+    transition: all var(--transition-base);
 }
 .test-avatar {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     object-fit: cover;
     position: absolute;
     top: -40px;
     left: 50%;
     transform: translateX(-50%);
     border: 4px solid var(--color-bg);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-sm);
 }
 .test-card p {
     font-family: var(--font-primary);
@@ -122,7 +122,7 @@ section {
     font-size: var(--text-base);
     line-height: var(--leading-relaxed);
     color: var(--color-text);
-    margin-bottom: 24px;
+    margin-bottom: var(--space-lg);
 }
 .test-author {
     font-family: var(--font-secondary);
@@ -141,8 +141,8 @@ section {
 .home-page .categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 40px;
+    gap: var(--space-lg);
+    padding: var(--space-2xl);
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -158,7 +158,7 @@ section {
     font-size: var(--text-3xl);
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all var(--transition-slow) cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
     text-decoration: none;
@@ -172,8 +172,8 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 26, 26, 0.2);
-    transition: all 0.6s ease;
+    background: rgba(var(--raw-primary), 0.2);
+    transition: all var(--transition-slow);
     z-index: 1;
 }
 .home-page .category-card span,
@@ -196,12 +196,12 @@ section {
     color: var(--color-white);
 }
 .home-page .category-card:hover::after {
-    background: rgba(26, 26, 26, 0.0); /* Lighten on hover */
+    background: rgba(var(--raw-primary), 0.0); /* Lighten on hover */
 }
 
 /* ── 4. Featured Books Section ─────────────────────────── */
 .featured-books {
-    padding: 2rem 4rem;
+    padding: var(--space-xl) var(--space-3xl);
     text-align: center;
 }
 
@@ -212,7 +212,7 @@ section {
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
-    padding: 160px 40px;
+    padding: 160px var(--space-2xl);
     color: white;
     text-align: center;
     display: flex;
@@ -226,7 +226,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 26, 26, 0.4);
+    background: var(--bg-overlay);
     z-index: 1;
 }
 .vision-content {
@@ -235,19 +235,20 @@ section {
     max-width: 800px;
 }
 .vision-content h2 {
-    color: white;
+    color: var(--color-white);
     font-size: var(--text-5xl);
-    margin-bottom: 30px;
-    line-height: 1.1;
+    margin-bottom: var(--space-xl);
+    line-height: var(--leading-tight);
     text-align: center;
 }
 .vision-content p {
     font-size: var(--text-lg);
     line-height: var(--leading-relaxed);
-    margin-bottom: 40px;
+    margin-bottom: var(--space-2xl);
     opacity: 0.9;
-    color: white;
+    color: var(--color-white);
 }
+
 
 /* ── 6. Responsive Styles ─────────────────────────────── */
 @media (max-width: 768px) {

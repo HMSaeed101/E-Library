@@ -30,11 +30,11 @@ export function toggleMenu() {
     const menuToggle = document.querySelector(".menu-toggle");
     const navContainer = document.querySelector(".nav-container");
     const body = document.body;
-    
+
     if (menuToggle && navContainer) {
         const isActive = menuToggle.classList.toggle("active");
         navContainer.classList.toggle("active");
-        
+
         // Prevent scrolling when menu is open
         body.style.overflow = isActive ? "hidden" : "";
     }
@@ -59,8 +59,8 @@ export function initNavInteractions() {
 
     // 2. Click outside to close
     document.addEventListener("click", (e) => {
-        if (navContainer?.classList.contains("active") && 
-            !navContainer.contains(e.target) && 
+        if (navContainer?.classList.contains("active") &&
+            !navContainer.contains(e.target) &&
             !menuToggle.contains(e.target)) {
             toggleMenu();
         }
@@ -84,7 +84,7 @@ export function highlightActiveNavLink() {
     navLinks.forEach(link => {
         const href = link.getAttribute("href");
         if (!href) return;
-        
+
         // Normalize paths for comparison
         const linkPath = href.split("?")[0].replace(/^\.\.\//g, "").replace(/^\//, "");
         const activePath = currentPath.replace(/^\//, "") || "index.html";
@@ -110,10 +110,10 @@ export function updateStats(books) {
  */
 export function initTabs() {
     const tabContainers = document.querySelectorAll(".tabs");
-    
+
     tabContainers.forEach(container => {
         const tabs = container.querySelectorAll(".tab");
-        
+
         tabs.forEach(tab => {
             tab.addEventListener("click", () => {
                 tabs.forEach(t => t.classList.remove("active"));

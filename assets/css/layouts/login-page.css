@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 10px;
+    padding: var(--space-2xl) var(--space-sm);
 }
 
 .login-page {
@@ -32,76 +32,77 @@
 
 /* ── 2. Login/Signup Card ──────────────────────────────── */
 .login-container {
-    background-color: #b5e1e4c6;
-    padding: 20px 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.701);
+    background-color: var(--color-info-bg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
     width: 100%;
     max-width: 400px;
     text-align: center;
     color: var(--color-white);
-    font-family: Arial, sans-serif;
+    font-family: var(--font-secondary);
 }
 .login-container form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--space-lg);
 }
 
 /* ── 3. Form Inputs & Buttons ─────────────────────────── */
 .login-container input {
-    padding: 12px 15px;
-    border-radius: 8px;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
     border: none;
     outline: none;
-    font-size: 14px;
+    font-size: var(--text-sm);
 }
 .login-container button {
-    padding: 12px;
-    border-radius: 8px;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
     border: none;
     background-color: var(--color-primary);
     color: var(--color-white);
-    font-weight: 600;
+    font-weight: var(--weight-semibold);
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color var(--transition-base), transform var(--transition-fast);
 }
 .login-container button:hover {
     color: var(--color-primary);
     background-color: var(--color-accent);
-    transform: scale(1.06);
+    transform: scale(1.05);
 }
 
 /* ── 4. Footer Links ───────────────────────────────────── */
 .signup-link {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #000000;
+    margin-top: var(--space-lg);
+    font-size: var(--text-sm);
+    color: var(--color-black);
 }
 .signup-link a {
-    color: #2563eb;
+    color: var(--color-info);
     text-decoration: none;
 }
 
 /* ── 5. Error Highlighting ───────────────────────────── */
 .error-field {
-    border: 2px solid #ef4444 !important;
-    background-color: #fee2e2 !important;
+    border: 2px solid var(--color-error) !important;
+    background-color: var(--color-error-bg) !important;
 }
 
 /* ── 5. Dark Theme Overrides ───────────────────────────── */
 .dark-mode.login-page,
 .dark-mode.signup-page {
-    background-color: var(--color-dark-bg);
+    background-color: var(--color-bg);
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)),
+        linear-gradient(var(--bg-overlay), var(--bg-overlay)),
         url("../../img/login.jpg"); /* Default to login.jpg for dark theme blend */
-    color: var(--color-dark-text);
-    transition: background-color 0.01s ease, color 0.1s ease;
+    color: var(--color-text);
+    transition: background-color 0.01s ease, color var(--transition-fast);
 }
 
 .dark-mode.signup-page {
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.527)),
+        linear-gradient(var(--bg-overlay), var(--bg-overlay)),
         url("../../img/signup.jpg");
 }
+

@@ -24,14 +24,25 @@
     --color-muted:        #717171;
     --color-border:       #e5e5e5;
 
-    /* ── 3. Specialized Component Tokens ─────────────────── */
+    /* ── 3. Semantic Colors ──────────────────────────────── */
+    --color-success:      #10b981;
+    --color-success-bg:   #ecfdf5;
+    --color-warning:      #f59e0b;
+    --color-warning-bg:   #fffbeb;
+    --color-error:        #ef4444;
+    --color-error-bg:     #fee2e2;
+    --color-info:         #3b82f6;
+    --color-info-bg:      #eff6ff;
+
+    /* ── 4. Specialized Component Tokens ─────────────────── */
     --card-bg:            var(--color-surface);
     --card-shadow:        rgba(var(--raw-shadow), 0.04);
     --card-shadow-hover:  rgba(var(--raw-shadow), 0.08);
     --grid-bg:            rgba(242, 241, 239, 0.5);
     --body-pattern:       transparent;
+    --bg-overlay:         rgba(26, 26, 26, 0.4);
 
-    /* ── 4. Neutral Color Scale ──────────────────── */
+    /* ── 5. Neutral Color Scale ──────────────────── */
     --color-gray-50:      #f9fafb;
     --color-gray-100:     #f3f4f6;
     --color-gray-200:     #e5e7eb;
@@ -45,7 +56,7 @@
     --color-white:        #ffffff;
     --color-black:        #000000;
 
-    /* ── 5. Typography ───────────────────────────── */
+    /* ── 6. Typography ───────────────────────────── */
     --font-primary:       'Libre Caslon Text', serif;
     --font-secondary:     'Inter', system-ui, -apple-system, sans-serif;
 
@@ -69,8 +80,10 @@
     --leading-normal:     1.6;
     --leading-relaxed:    1.8;
 
-    /* ── 6. Spacing System ───────────────────────── */
+    /* ── 7. Spacing System ───────────────────────── */
     --space-unit:         8px;
+    --space-3xs:          calc(var(--space-unit) * 0.25); /* 2px */
+    --space-2xs:          calc(var(--space-unit) * 0.375); /* 3px */
     --space-xs:           calc(var(--space-unit) * 0.5); /* 4px */
     --space-sm:           var(--space-unit);             /* 8px */
     --space-md:           calc(var(--space-unit) * 2);   /* 16px */
@@ -79,34 +92,42 @@
     --space-2xl:          calc(var(--space-unit) * 6);   /* 48px */
     --space-3xl:          calc(var(--space-unit) * 8);   /* 64px */
 
-    /* ── 7. Border Radius ───────────────────────── */
+    /* ── 8. Border Radius ───────────────────────── */
     --radius-none:        0px;
-    --radius-sm:          2px;
-    --radius-md:          4px;
-    --radius-lg:          8px;
+    --radius-xs:          2px;
+    --radius-sm:          4px;
+    --radius-md:          8px;
+    --radius-lg:          12px;
     --radius-xl:          16px;
+    --radius-2xl:         24px;
     --radius-full:        9999px;
 
-    /* ── 8. Global Dynamic Shadows ───────────────────────── */
+    /* ── 9. Transitions ──────────────────────────── */
+    --transition-fast:    0.15s ease;
+    --transition-base:    0.3s ease;
+    --transition-slow:    0.5s ease;
+    --transition-bounce:  0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* ── 10. Global Dynamic Shadows ───────────────────────── */
     --shadow-sm:          0 2px 4px var(--card-shadow);
     --shadow-md:          0 4px 12px var(--card-shadow-hover);
     --shadow-lg:          0 12px 24px rgba(var(--raw-shadow), 0.08);
 
-    /* ── 9. Layout & Z-Index ───────────────────────────── */
+    /* ── 11. Layout & Z-Index ───────────────────────────── */
     --header-height:      80px;
     --z-nav:              1000;
     --z-drawer:           1050;
     --z-overlay:          1100;
     --z-modal:            1200;
 
-    /* ── 10. Breakpoints ────────────────────────────────── */
+    /* ── 12. Breakpoints ────────────────────────────────── */
     --breakpoint-sm:      600px;
     --breakpoint-md:      1024px;
     --breakpoint-lg:      1440px;
 }
 
 /* ============================================================
-   ── 11. Fully Adaptive Dark Theme Override ──────────────────
+   ── 13. Fully Adaptive Dark Theme Override ──────────────────
 ============================================================ */
 body.dark-mode {
     color-scheme: dark;
@@ -124,15 +145,23 @@ body.dark-mode {
     --color-muted:        #a0a0a0;        /* Accessible low-emphasis text */
     --color-border:       #2a2a2a;        /* Subtle divider contrast */
 
-    /* 3. Automatic Channel Calculations */
+    /* 3. Semantic Colors (Dark Mode Adjustments) */
+    --color-success-bg:   rgba(16, 185, 129, 0.1);
+    --color-warning-bg:   rgba(245, 158, 11, 0.1);
+    --color-error-bg:     rgba(239, 68, 68, 0.1);
+    --color-info-bg:      rgba(59, 130, 246, 0.1);
+
+    /* 4. Automatic Channel Calculations */
     --color-primary:      rgb(var(--raw-primary));
     --color-primary-soft: rgba(var(--raw-primary), 0.15); /* Becomes a subtle glow layer */
     --color-accent:       rgb(var(--raw-accent));
     --color-accent-soft:  rgba(var(--raw-accent), 0.15);
 
-    /* 4. Specialized Component Adaptations */
+    /* 5. Specialized Component Adaptations */
     --card-bg:            var(--color-surface);
     --card-shadow:        rgba(var(--raw-shadow), 0.35); /* Heavy black alpha to step off dark bg */
     --card-shadow-hover:  rgba(var(--raw-shadow), 0.55);
     --grid-bg:            rgba(255, 255, 255, 0.02);    /* Inverted line rules */
+    --bg-overlay:         rgba(0, 0, 0, 0.7);
 }
+
