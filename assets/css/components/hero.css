@@ -60,8 +60,20 @@
 
 /* ── 2. Animated Heading ──────────────────────────── */
 .hero .heading-container {
-    margin-bottom: var(--space-2xl);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
     width: 100%;
+}
+
+@media (min-width: 768px) {
+    .hero .heading-container {
+        padding-top: var(--space-2xl);
+        padding-bottom: var(--space-2xl);
+        margin-top: var(--space-2xl);
+        margin-bottom: var(--space-2xl);
+    }
 }
 
 /* ── 3. Search Box & Dropdown ──────────────────────────── */
@@ -102,9 +114,9 @@
 .search-box .button {
     padding: var(--space-md) var(--space-lg);
     border-radius: var(--radius-none);
-    background-color: var(--color-white);
+    background-color: var(--color-bg);
     color: var(--color-primary);
-    font-size: 10px;
+    font-size: var(--text-xs);
 }
 
 /* ── 4. Search Dropdown ────────────────────────── */

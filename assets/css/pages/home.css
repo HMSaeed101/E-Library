@@ -21,6 +21,7 @@
     gap: var(--space-md);
     max-width: 1400px;
     margin: 0 auto;
+    padding: var(--space-lg)
 }
 .stat-card {
     padding: var(--space-lg);
@@ -141,14 +142,14 @@
 /* ── 4. Featured Books (Infinite Marquee) ───────────────── */
 .featured-books {
     text-align: center;
-    padding-top: var(--space-2xl);
+    padding-top: var(--space-lg);
     overflow: hidden;
 }
 .featured-books .book-grid {
     display: flex;
     width: max-content;
     gap: var(--space-3xl);
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0;
     animation: marquee-horizontal 100s linear infinite;
 }
 .featured-books .book-grid:hover {
@@ -159,7 +160,7 @@
 .daily-scroll {
     background-color: var(--color-surface);
     text-align: center;
-    padding: 80px var(--space-xl);
+    padding: var(--space-xl) var(--space-2xl);
     border-bottom: 1px solid var(--color-border);
 }
 .quote-container {
@@ -222,7 +223,7 @@
     margin: 0 auto;
 }
 .collection-card {
-    height: 300px;
+    height: 150px;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -243,8 +244,12 @@
     color: white;
     transition: transform 0.5s var(--transition-base);
 }
-.collection-overlay h3 { font-family: var(--font-primary); font-size: var(--text-2xl); margin-top: var(--space-xs); }
-.collection-card:hover .collection-overlay { transform: translateY(-10px); }
+.collection-overlay h3 {
+    font-family: var(--font-primary);
+    font-size: var(--text-2xl);
+    margin-top: var(--space-xs);
+    color: var(--color-white);
+}
 
 /* ── 7. Vision Section ─────────────────────────── */
 .vision-section {
@@ -252,8 +257,8 @@
     background: url("../../img/MultiBooks.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     padding: 100px var(--space-lg);
-    color: white;
     text-align: center;
 }
 .vision-section::before {
@@ -262,8 +267,15 @@
     top:0; left:0; width:100%; height:100%;
     background: var(--bg-overlay);
 }
-.vision-content { position: relative; z-index: 2; }
-.vision-content h2 { font-size: var(--text-3xl); margin-bottom: var(--space-md); }
+.vision-content { position: relative; z-index: 2; color: white;}
+.vision-content h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-md);
+    color: white;
+}
+.vision-content p{
+    color: white;
+}
 
 /* ── 8. Newsletter Section ──────────────────────────── */
 .newsletter-section {
@@ -312,7 +324,7 @@
 
     .vision-section { padding: 160px var(--space-2xl); }
     .vision-content h2 { font-size: var(--text-5xl); }
-    
+
     .newsletter-form { flex-direction: row; }
     .newsletter-form input { flex: 1; }
 }

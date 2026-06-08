@@ -54,7 +54,79 @@ body.dark-mode .logo-img img {
     filter: brightness(0) invert(1);
 }
 
-/* ── 3. Mobile Menu Toggle ────────────────────────────── */
+/* ── 3. Search Bar ───────────────────────────────────────── */
+.search-container {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 var(--space-lg);
+    display: none; /* Hidden by default on mobile, shown when needed or on desktop */
+}
+
+@media (min-width: 768px) {
+    .search-container {
+        display: block;
+    }
+}
+
+.global-search-form {
+    display: flex;
+    align-items: center;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    padding: 2px var(--space-sm) 2px var(--space-md);
+    transition: all var(--transition-base);
+}
+
+.global-search-form:focus-within {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-accent-soft);
+    background: var(--color-surface);
+}
+
+.global-search-form input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: var(--space-xs) 0;
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    outline: none;
+}
+
+.global-search-form input::placeholder {
+    color: var(--color-muted);
+    opacity: 0.6;
+}
+
+.search-icon-btn {
+    background: transparent;
+    border: none;
+    padding: var(--space-xs);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+    transition: color var(--transition-base);
+}
+
+.search-icon-btn:hover {
+    color: var(--color-accent);
+}
+
+.search-icon-btn img {
+    width: 14px;
+    height: 14px;
+    filter: grayscale(1) opacity(0.6);
+}
+
+body.dark-mode .search-icon-btn img {
+    filter: grayscale(1) opacity(0.6) invert(1);
+}
+
+/* ── 4. Mobile Menu Toggle ────────────────────────────── */
 .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -114,8 +186,8 @@ body.dark-mode .logo-img img {
 }
 
 .nav-links a {
-    font-family: var(--font-secondary); /* Modern clean minimalist font */
-    font-size: var(--text-base);
+    font-family: var(--font-secondary);
+    font-size: var(--text-xs);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     text-decoration: none;
@@ -124,7 +196,7 @@ body.dark-mode .logo-img img {
     display: flex;
     align-items: center;
     gap: var(--space-lg);
-    border-bottom: 1px solid rgba(var(--raw-primary), 0.03); /* Whisper-thin divider */
+    border-bottom: 2px solid rgba(var(--raw-primary), 0.04);
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(10px);
@@ -148,37 +220,29 @@ body.dark-mode .logo-img img {
 
 .nav-links img {
     display: inline-block;
-    width: 14px;
-    height: 14px;
-    opacity: 0.4; /* Understated icons */
+    width: var(--text-base);
+    height: var(--text-base);
+    opacity: 0.4;
     filter: brightness(0);
 }
 body.dark-mode .nav-links img { filter: brightness(0) invert(1); }
 
-/* Dark Mode Toggle (Micro Row) */
-#darkmode-btn {
-    margin-top: var(--space-xl);
-    background: transparent;
-    border: none;
-    padding: var(--space-sm) 0;
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    color: var(--color-muted);
+#darkmode-btn{
     font-family: var(--font-secondary);
-    font-size: 10px;
+    font-size: var(--text-xs);
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    opacity: 0;
-    transition: opacity 0.5s ease 0.4s;
+    letter-spacing: 0.25em;
+    text-decoration: none;
+    background: transparent;
+    color: var(--color-text);
+    padding: var(--space-md) 0px;
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.nav-container.active #darkmode-btn { opacity: 1; }
-
-#darkmode-btn .sun, #darkmode-btn .moon { font-size: 14px; }
-
-#darkmode-btn .sun { display: none; }
-body.dark-mode #darkmode-btn .sun { display: inline-block; }
-body.dark-mode #darkmode-btn .moon { display: none; }
 
 /* ── 5. Desktop Layout Override (min-width: 1024px) ────── */
 @media (min-width: 1024px) {
@@ -214,8 +278,8 @@ body.dark-mode #darkmode-btn .moon { display: none; }
     }
 
     .nav-links img {
-        width: 12px;
-        height: 12px;
+        width: var(--text-base);
+        height: var(--text-base);
         opacity: 1;
     }
 

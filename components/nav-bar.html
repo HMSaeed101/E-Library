@@ -12,6 +12,15 @@
         </a>
     </div>
 
+    <div class="search-container">
+        <form id="global-search-form" class="global-search-form">
+            <input type="text" id="global-search-input" placeholder="Search books..." aria-label="Search books">
+            <button type="submit" class="search-icon-btn" aria-label="Submit search">
+                <img src="assets/img/ui/search.svg" alt="" aria-hidden="true">
+            </button>
+        </form>
+    </div>
+
     <!-- Hamburger Toggle for Mobile -->
     <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">
         <span class="bar"></span>
@@ -25,12 +34,8 @@
             <a href="pages/books.html"><img src="assets/img/ui/book.svg" alt="" aria-hidden="true">Books</a>
             <a href="pages/categories.html"><img src="assets/img/ui/categories.svg" alt="" aria-hidden="true">Categories</a>
             <a href="pages/profile.html"><img src="assets/img/ui/profile.svg" alt="" aria-hidden="true">Profile</a>
+            <button onclick="toggleDarkMode()" id="darkmode-btn">Theme</button>
 
-        <button onclick="toggleDarkMode()" id="darkmode-btn" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
-            <span class="moon" aria-hidden="true">🌙</span>
-            <span class="sun" aria-hidden="true">☀️</span>
-        </button>
-        
         </div>
     </nav>
     <div class="scroll-progress-container">

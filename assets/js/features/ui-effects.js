@@ -123,3 +123,30 @@ export function initScrollProgress() {
         progressBar.style.width = scrolled + "%";
     });
 }
+
+/**
+ * Initializes Global Navbar Search logic
+ */
+export function initGlobalSearch() {
+    const searchForm = document.getElementById("global-search-form");
+    const searchInput = document.getElementById("global-search-input");
+
+    if (!searchForm || !searchInput) return;
+
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const query = searchInput.value.trim();
+        if (!query) return;
+
+        // Redirect to books page with search param
+        // We use relative paths based on current location
+        const currentPath = window.location.pathname;
+        let booksPath = "pages/books.html";
+        
+        if (currentPath.includes("/pages/")) {
+            booksPath = "books.html";
+        }
+        
+        window.location.href = `${booksPath}?search=${encodeURIComponent(query)}`;
+    });
+}

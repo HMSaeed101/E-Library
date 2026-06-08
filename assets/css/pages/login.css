@@ -17,9 +17,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px var(--space-xl) 60px;
+    padding: 60px var(--space-lg);
     position: relative;
 }
+
+@media (min-width: 768px) {
+    .login-page,
+    .signup-page {
+        padding: 100px var(--space-xl) 60px;
+    }
+}
+
 .login-page::before,
 .signup-page::before {
     content: '';
@@ -50,13 +58,20 @@
 /* ── 2. Login/Signup Card ──────────────────────────────── */
 .login-container {
     background-color: var(--color-bg);
-    padding: 60px var(--space-2xl);
+    padding: 40px var(--space-lg);
     border-radius: var(--radius-xs); /* Editorial square feel */
     box-shadow: var(--shadow-lg);
     width: 100%;
     max-width: 440px;
     text-align: center;
 }
+
+@media (min-width: 480px) {
+    .login-container {
+        padding: 60px var(--space-2xl);
+    }
+}
+
 .login-container form {
     display: flex;
     flex-direction: column;
@@ -129,10 +144,4 @@
 body.dark-mode .login-container {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
-}
-
-@media (max-width: 480px) {
-    .login-container {
-        padding: 40px var(--space-lg);
-    }
 }

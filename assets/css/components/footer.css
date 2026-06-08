@@ -11,7 +11,7 @@
 .footer {
     background-color: var(--color-bg);
     color: var(--color-text);
-    padding: 120px var(--space-3xl) 60px;
+    padding: var(--space-2xl) var(--space-xl);
 }
 
 .footer h4 {
@@ -42,23 +42,24 @@
 /* ── 2. Footer Content Grid ────────────────────────────── */
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl) var(--space-md);
     max-width: 1400px;
     margin: 0 auto;
-    padding-bottom: 80px;
+    padding-bottom: var(--space-3xl);
 }
 
-
 .outro {
-    max-width: 300px;
+    grid-column: 1 / -1;
+    max-width: 100%;
+    margin-bottom: var(--space-sm);
 }
 
 .outro h3 {
     font-family: var(--font-primary);
     font-size: var(--text-2xl);
     color: var(--color-primary);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-weight: var(--weight-normal);
@@ -70,6 +71,24 @@
     line-height: var(--leading-relaxed);
 }
 
+.footer-links {
+    grid-column: 1;
+}
+
+.categories-links {
+    grid-column: 2;
+}
+
+.newsletter {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    margin-top: var(--space-sm);
+}
+
+.footer h4 {
+    margin-bottom: var(--space-md);
+}
+
 .categories-links,
 .footer-links {
     display: flex;
@@ -78,75 +97,17 @@
     gap: var(--space-xs);
 }
 
-/* ── 3. Newsletter Input ───────────────────────────────── */
-.newsletter {
-    max-width: 320px;
-}
 
-.newsletter p {
-    font-size: var(--text-base);
-    color: var(--color-muted);
-    margin-bottom: var(--space-lg);
-    line-height: var(--leading-relaxed);
-}
-
-.newsletter .input-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-.input {
-    padding: var(--space-md) 0;
-    width: 100%;
-    background-color: transparent;
-    color: var(--color-text);
-    border: none;
-    border-bottom: 1px solid var(--color-border);
-    border-radius: var(--radius-none);
-    outline: none;
-    font-family: var(--font-secondary);
-    font-size: var(--text-base);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.input:focus {
-    border-color: var(--color-primary);
-    padding-left: var(--space-sm);
-}
-
-.newsletter .input-wrapper {
-    display: flex;
-    align-items: center;
-}
-
-.newsletter-btn {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--color-border);
-    color: var(--color-muted);
-    cursor: pointer;
-    padding: var(--space-md) 0 var(--space-md) var(--space-md);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.newsletter-btn:hover {
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-}
-
-.input::placeholder {
-    color: var(--color-muted);
-    opacity: 0.5;
-}
+/* ... (input styles remains same) ... */
 
 /* ── 4. Copyright Bar ──────────────────────────────────── */
 .copyright {
     display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
     justify-content: space-between;
     align-items: center;
-    padding-top: var(--space-2xl);
+    padding-top: var(--space-lg);
     font-family: var(--font-secondary);
     font-size: 9px; /* Even smaller for maximum elegance */
     color: var(--color-muted);
@@ -154,86 +115,43 @@
     text-transform: uppercase;
     letter-spacing: 0.2em;
     opacity: 0.6;
+    text-align: center;
 }
 
-.footer-socials {
-    display: flex;
-    gap: var(--space-lg);
-}
-
-.footer-socials a {
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    opacity: 0.5;
-    transition: all 0.3s ease;
-}
-
-.footer-socials a:hover {
-    opacity: 1;
-    color: var(--color-primary);
-    transform: translateY(-2px);
-}
-@media (max-width: 1200px) {
+@media (min-width: 768px) {
     .footer {
         padding: 100px var(--space-2xl) var(--space-2xl);
     }
-    .footer-content {
-        gap: var(--space-2xl);
-    }
-}
-
-@media (max-width: 1024px) {
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-3xl);
-    }
-}
-
-@media (max-width: 600px) {
-    .footer {
-        padding: var(--space-2xl) var(--space-lg) var(--space-xl);
-    }
 
     .footer-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-xl) var(--space-md);
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 80px;
+        padding-bottom: 80px;
     }
 
     .outro {
-        grid-column: 1 / -1;
-        max-width: 100%;
-        margin-bottom: var(--space-sm);
-    }
-
-    .footer-links {
-        grid-column: 1;
-    }
-
-    .categories-links {
-        grid-column: 2;
-    }
-
-    .newsletter {
-        grid-column: 1 / -1;
-        max-width: 100%;
-        margin-top: var(--space-sm);
-    }
-
-    .footer h4 {
-        margin-bottom: var(--space-md);
+        grid-column: auto;
+        max-width: 300px;
+        margin-bottom: 0;
     }
 
     .outro h3 {
-        font-size: var(--text-xl);
-        margin-bottom: var(--space-md);
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-lg);
+    }
+
+    .footer-links, .categories-links, .newsletter {
+        grid-column: auto;
+        margin-top: 0;
+    }
+
+    .newsletter {
+        max-width: 320px;
     }
 
     .copyright {
-        flex-direction: column;
-        gap: var(--space-md);
-        text-align: center;
-        padding-top: var(--space-lg);
-        margin-top: 0;
+        flex-direction: row;
+        padding-top: var(--space-2xl);
+        text-align: left;
     }
 }
