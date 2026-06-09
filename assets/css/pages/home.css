@@ -202,6 +202,7 @@
     text-align: left;
     margin-bottom: var(--space-2xl);
     max-width: 1400px;
+    width: 100%;
     margin: 0 auto var(--space-2xl);
 }
 .section-header h2 {
@@ -209,6 +210,7 @@
     font-size: var(--text-3xl);
     color: var(--color-primary);
     margin-bottom: var(--space-xs);
+    text-align: left; /* Overriding global center alignment */
 }
 .section-header p {
     font-family: var(--font-secondary);
@@ -220,6 +222,7 @@
     grid-template-columns: 1fr;
     gap: var(--space-md);
     max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
 }
 .collection-card {
@@ -328,7 +331,15 @@
     .newsletter-form { flex-direction: row; }
     .newsletter-form input { flex: 1; }
 }
-
 @media (min-width: 1024px) {
     .stats-area { grid-template-columns: repeat(4, 1fr); }
 }
+
+.collection-card:hover .collection-overlay {
+    transform: translateY(-5px);
+}
+
+.collection-card:hover h3 {
+    text-decoration: underline;
+}
+

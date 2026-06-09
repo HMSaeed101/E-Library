@@ -12,6 +12,7 @@ import { updateStats, toggleMenu, initTabs, highlightActiveNavLink, initNavInter
 import { renderBooksGrid, renderSkeletons } from "./features/books.js";
 import { initAuth } from "./core/auth.js";
 import { initBookDetails } from "./features/book.js";
+import { initProfile } from "./features/profile.js";
 
 // 1. Immediate initialization
 initDarkMode();
@@ -109,6 +110,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Initialize Book Details (if on detail page)
         await initBookDetails();
+
+        // Initialize Profile Features
+        initProfile();
 
         // Handle Category Page
         handleCategoryPage(books);

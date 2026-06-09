@@ -19,87 +19,163 @@
 <div id="nav-bar" data-include="../components/nav-bar.html"></div>
 
 <div class="profile-container">
+    <!-- Mobile Navigation (Horizontal Scroll) -->
+    <nav class="mobile-nav">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#library">Library</a>
+        <a href="#wishlist">Wishlist</a>
+        <a href="#history">History</a>
+        <a href="#achievements">Awards</a>
+    </nav>
 
-<div class="profile-header">
+    <aside class="profile-sidebar">
+        <nav class="profile-nav">
+            <a href="#overview" class="active">Overview</a>
+            <a href="#my-library">My Library</a>
+            <a href="#wishlist">Wishlist</a>
+            <a href="#reading-history">History</a>
+            <a href="#settings">Settings</a>
+        </nav>
+    </aside>
 
-    <div class="avatar-container">
-        <img src="../assets/img/people/saeed.jpg" class="profile-img" alt="User Avatar">
-    </div>
-
-    <div class="profile-info">
-        <h2>Saeed</h2>
-        <p class="username">@hms_aeed</p>
-        <p class="join-date">Member since July 2022 • Rawalpindi</p>
-
-        <div class="stats">
-            <div class="stat-box">
-                <h3>120</h3>
-                <span>Books Read</span>
-            </div>
-            <div class="stat-box">
-                <h3>8</h3>
-                <span>Reading</span>
-            </div>
-            <div class="stat-box">
-                <h3>35</h3>
-                <span>Wishlist</span>
-            </div>
-        </div>
-
-        <div class="actions">
-            <button class="btn primary">Follow</button>
-            <button class="btn outline">Message</button>
-            <button class="btn ghost">Edit Profile</button>
-        </div>
-
-    </div>
-</div>
-
-    <!-- Reading Dashboard -->
-    <div class="profile-section">
-        <h3>Currently Reading</h3>
-
-        <div class="profile-book-grid" id="currently-reading-grid">
-
-            <div class="book-card">
-                <h4>Atomic Habits</h4>
-                <div class="progress-bar">
-                    <div class="progress" style="width:90%"></div>
+    <main class="profile-main">
+        <header class="profile-header">
+            <div class="profile-header-top">
+                <div class="avatar-container">
+                    <img src="../assets/img/people/saeed.jpg" class="profile-img" alt="User Avatar">
+                    <button class="edit-avatar-btn" aria-label="Edit avatar">
+                        <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                    </button>
                 </div>
-                <span>90% Completed</span>
-            </div>
-
-            <div class="book-card">
-                <h4>Deep Work</h4>
-                <div class="progress-bar">
-                    <div class="progress" style="width:30%"></div>
+                <div class="header-main-info">
+                    <h2>Saeed</h2>
+                    <p class="username">@hms_aeed</p>
+                    <div class="location-tag">
+                        <svg viewBox="0 0 24 24" width="12" height="12"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>Rawalpindi, PK</span>
+                    </div>
                 </div>
-                <span>30% Completed</span>
             </div>
 
-        </div>
-    </div>
+            <p class="bio">Avid reader, tech enthusiast, and collector of rare first editions. Always looking for my next great adventure between the pages.</p>
 
-    <!-- Library Management Tabs -->
-    <div class="profile-section">
-        <h3>My Library</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value">120</span>
+                    <span class="stat-label">Read</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">8</span>
+                    <span class="stat-label">Active</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">35</span>
+                    <span class="stat-label">List</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">12</span>
+                    <span class="stat-label">Badges</span>
+                </div>
+            </div>
 
-        <div class="tabs">
-            <button class="tab active" data-tab="to-read">To Read</button>
-            <button class="tab" data-tab="favorites">Favorites</button>
-            <button class="tab" data-tab="history">History</button>
-        </div>
+            <div class="profile-actions-mobile">
+                <button class="btn primary full-width">Edit Profile</button>
+                <button class="btn ghost outline full-width">Share Profile</button>
+            </div>
+        </header>
 
-        <div class="profile-book-grid" id="library-grid">
+        <!-- Reading Goal Card -->
+        <section class="profile-section">
+            <div class="profile-grid-2col">
+                <div class="goal-card">
+                    <div class="goal-info">
+                        <h4>2024 Reading Goal</h4>
+                        <p>15 of 25 books completed</p>
+                    </div>
+                    <div class="goal-progress-circle">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">60%</text>
+                        </svg>
+                    </div>
+                </div>
 
-            <div class="book-card"><a href="book-details.html?id=alchemist">
-                <h4>The Alchemist</h4>
-                <button class="action-btn">Read</button>
-            </a></div>
+                <div class="activity-heatmap-card">
+                    <div class="card-header">
+                        <h4>Reading Activity</h4>
+                        <span>Last 6 months</span>
+                    </div>
+                    <div class="heatmap-container">
+                        <!-- Mock heatmap cells -->
+                        <div class="heatmap-grid">
+                            <!-- JS or CSS will style these to look like a GitHub-style activity map -->
+                            <div class="heat-cell level-1"></div><div class="heat-cell level-2"></div><div class="heat-cell level-0"></div><div class="heat-cell level-3"></div>
+                            <div class="heat-cell level-1"></div><div class="heat-cell level-0"></div><div class="heat-cell level-4"></div><div class="heat-cell level-2"></div>
+                            <div class="heat-cell level-3"></div><div class="heat-cell level-1"></div><div class="heat-cell level-0"></div><div class="heat-cell level-1"></div>
+                            <div class="heat-cell level-2"></div><div class="heat-cell level-4"></div><div class="heat-cell level-1"></div><div class="heat-cell level-3"></div>
+                            <!-- More cells... -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        </div>
-    </div>
+        <section class="profile-section">
+            <div class="section-header">
+                <h3>Continue Reading</h3>
+                <a href="#" class="view-all">See All</a>
+            </div>
 
+            <div class="horizontal-scroll">
+                <div class="reading-card-compact">
+                    <img src="../assets/img/books/atomichabits.jpg" alt="Atomic Habits">
+                    <div class="compact-info">
+                        <h5>Atomic Habits</h5>
+                        <div class="mini-progress-bar"><div class="progress" style="width: 90%"></div></div>
+                    </div>
+                </div>
+                <div class="reading-card-compact">
+                    <img src="../assets/img/books/cleancode.jpg" alt="Clean Code">
+                    <div class="compact-info">
+                        <h5>Clean Code</h5>
+                        <div class="mini-progress-bar"><div class="progress" style="width: 30%"></div></div>
+                    </div>
+                </div>
+                <div class="reading-card-compact">
+                    <img src="../assets/img/books/pragmatic.jpg" alt="Pragmatic Programmer">
+                    <div class="compact-info">
+                        <h5>Pragmatic Programmer</h5>
+                        <div class="mini-progress-bar"><div class="progress" style="width: 15%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-section">
+            <div class="section-tabs-mobile">
+                <button class="active">Library</button>
+                <button>Reviews</button>
+                <button>Following</button>
+            </div>
+
+            <div class="mobile-book-grid">
+                <div class="book-item-simple">
+                    <img src="../assets/img/books/Alchemist.jpg" alt="Book">
+                </div>
+                <div class="book-item-simple">
+                    <img src="../assets/img/books/sapiens.jpg" alt="Book">
+                </div>
+                <div class="book-item-simple">
+                    <img src="../assets/img/books/1984.jpg" alt="Book">
+                </div>
+                <div class="book-item-simple">
+                    <img src="../assets/img/books/meditations.jpg" alt="Book">
+                </div>
+            </div>
+            <button class="btn ghost full-width show-more-btn">Show More</button>
+        </section>
+    </main>
 </div>
 
 <div id="footer" data-include="../components/footer.html"></div>
