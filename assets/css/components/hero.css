@@ -77,6 +77,9 @@
 }
 
 /* ── 3. Search Box & Dropdown ──────────────────────────── */
+.search-books-page{
+    padding: var(--space-xs);
+}
 .search-box {
     width: 100%;
     max-width: 100%;
@@ -242,8 +245,11 @@
         min-height: 85vh;
         padding: var(--header-height) 10%;
     }
+    .search-books-page {
+    width: 60%;
+    }
     .search-box {
-        max-width: 600px;
+        max-width: 900px;
     }
     .search-box input {
         padding: var(--space-md) var(--space-xl);

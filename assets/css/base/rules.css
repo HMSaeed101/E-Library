@@ -148,6 +148,10 @@
 }
 
 section, .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 60px var(--space-lg);
 }
 

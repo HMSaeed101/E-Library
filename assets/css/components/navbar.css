@@ -23,7 +23,6 @@
     z-index: var(--z-nav);
     background: var(--color-surface);
     color: var(--color-text);
-    border-bottom: 1px solid var(--color-border);
 }
 
 /* ── 2. Logo Area ──────────────────────────────────────── */

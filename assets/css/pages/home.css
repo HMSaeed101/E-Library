@@ -68,7 +68,7 @@
     width: max-content;
     gap: var(--space-2xl);
     padding: 80px 0 40px;
-    animation: marquee-horizontal 80s linear infinite;
+    animation: marquee-horizontal 40s linear infinite;
 }
 .test-area:hover {
     animation-play-state: paused;
@@ -150,7 +150,7 @@
     width: max-content;
     gap: var(--space-3xl);
     padding: var(--space-xl) 0;
-    animation: marquee-horizontal 100s linear infinite;
+    animation: marquee-horizontal 50s linear infinite;
 }
 .featured-books .book-grid:hover {
     animation-play-state: paused;
