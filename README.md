@@ -1,4 +1,5 @@
 # Electronic Library
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2aa5b6e3-c801-4d36-9eca-361f804f33fb/deploy-status)](https://app.netlify.com/projects/hmslibrary/deploys)
 
 A comprehensive electronic library website built with HTML, CSS, and JavaScript. It allows users to browse, search, and read books in PDF format, with features like categories, dark mode, and user interface enhancements.
 
