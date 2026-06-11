@@ -29,10 +29,12 @@
 
 /* ── 3. Filter Pills ────────────────────────────────────── */
 .filter-container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-xs);
+    z-index: 1;
     max-width: 900px;
     margin: var(--space-xl) auto 0;
     padding: 0 var(--space-lg);
@@ -73,12 +75,12 @@
         gap: var(--space-xl);
         padding: 100px var(--space-xl);
     }
-    
+
     .filter-container {
         gap: var(--space-sm);
         margin-top: var(--space-2xl);
     }
-    
+
     .filter-pill {
         padding: 10px 22px;
         font-size: 11px;
