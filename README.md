@@ -1,65 +1,32 @@
-# Electronic Library
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2aa5b6e3-c801-4d36-9eca-361f804f33fb/deploy-status)](https://app.netlify.com/projects/hmslibrary/deploys)
+# Electronic Library (E-Lib)
 
-A comprehensive electronic library website built with HTML, CSS, and JavaScript. It allows users to browse, search, and read books in PDF format, with features like categories, dark mode, and user interface enhancements.
+A frontend-focused digital library platform for browsing, searching, and previewing book collections. This project utilizes a modular JavaScript architecture to dynamically manage content and provide a responsive user interface.
 
-## Features
+## Core Functionality
 
-- **Book Collection**: Extensive collection of books with individual pages containing metadata, descriptions, and "Read Now" buttons to open PDFs.
-- **Categories**: Organized book categories including Fiction, History, Science, etc.
-- **Search Functionality**: Search UI for finding books.
-- **Dark Mode**: Toggle between light and dark themes.
-- **Responsive Design**: CSS-based styling for various devices.
-- **Navigation**: Browser navigation helpers and active link highlighting.
-- **Contact Form**: Contact page (frontend only).
+- **Dynamic Book Grids**: Automatically renders book collections into grids using data from `assets/data/books.json`.
+- **Search & Filtering**: Real-time search that filters the book catalog by title or author.
+- **HTML Component Inclusion**: Uses a custom `data-include` system to reuse HTML components (like the navigation bar and footer) across multiple pages.
+- **Theme Management**: Integrated dark mode toggle with persistent state saved in `localStorage`.
+- **Book Previews**: A "Quick Peek" modal system for viewing book summaries and metadata.
+- **Loading States**: Visual skeleton screens that display while data is being loaded or rendered.
+- **Responsive Design**: Modular CSS architecture providing layouts optimized for mobile and desktop.
 
-## Technologies Used
+## Technical Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript
-
-## Quick Start
-
-1. Clone or download the project folder.
-2. Open [index.html](index.html) in your web browser to start browsing the library.
+- **Frontend**: HTML5, Vanilla CSS, and JavaScript (ES6 Modules).
+- **Data Storage**: JSON files located in `assets/data/`.
+- **Client-side Logic**: Modularized into `core/` (shared utilities) and `features/` (page-specific logic).
 
 ## Project Structure
 
-- `index.html` — Homepage
-- `about.html`, `contact.html` — Static pages
-- `books.html` — Books listing page
-- `categories.html` — Categories page
-- `login.html`, `signup.html`, `profile.html` — Authentication pages (frontend only)
-- `books/` — Individual book HTML pages
-- `categories/` — Category-specific pages
-- `css/` — Stylesheets (including dark mode)
-- `js/` — Client-side scripts
-- `pdfs/` — PDF files for books
-- `pics/` — Images and covers
-- `extras/` — Reusable HTML components like nav-bar and footer
-- `php-actions/` — Backend logic (login, signup, etc.)
-
-## Adding a New Book
-
-1. Upload the PDF file to the `pdfs/` folder.
-2. Upload the book cover image to `/assets/img/books/`.
-3. Create a new HTML file in `books/` based on an existing template (e.g., copy `books/animalfarm.html`).
-4. Update the book's metadata, description, and "Read Now" link in the new HTML file.
-5. Optionally, update listing pages like `books.html` or category pages to include the new book.
-
-## Development Notes
-
-- Active navigation highlighting is handled in `js/main.js` using the current page filename.
-- Dark mode toggle is implemented in `js/main.js`.
-- Search functionality and alerts are also in `js/main.js`.
-
-## Contributing
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Make your changes.
-4. Test locally by opening in a browser.
-5. Submit a pull request.
-
-## License
-
-This project is open-source. Please add an appropriate LICENSE file if distributing.
+- `index.html`: Main landing page.
+- `pages/`: Individual application views (books, categories, profile, etc.).
+- `components/`: Reusable HTML snippets for the `data-include` system.
+- `assets/js/`:
+    - `core/`: Fundamental logic for data fetching, theme management, and HTML inclusion.
+    - `features/`: Specific logic for search, book grids, and profile interactions.
+- `assets/css/`: Modular stylesheets organized by base rules, components, and pages.
+- `assets/data/`: Central JSON data files (books.json).
+- `assets/pdfs/`: Digital book files in PDF format.
+- `php-actions/`: Non-functional PHP stubs for legacy backend logic.
