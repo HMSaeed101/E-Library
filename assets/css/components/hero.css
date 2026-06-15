@@ -114,12 +114,28 @@
 .search-box input::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
-.search-box .button {
-    padding: var(--space-md) var(--space-lg);
-    border-radius: var(--radius-none);
-    background-color: var(--color-bg);
-    color: var(--color-primary);
-    font-size: var(--text-xs);
+.search-btn {
+    background: transparent;
+    border: none;
+    padding: var(--space-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    color: var(--color-white);
+}
+
+.search-btn:hover {
+    transform: scale(1.1);
+    color: var(--color-accent);
+}
+
+.search-btn .search-icon {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    transition: all var(--transition-base);
 }
 
 /* ── 4. Search Dropdown ────────────────────────── */
@@ -255,8 +271,9 @@
         padding: var(--space-md) var(--space-xl);
         font-size: var(--text-base);
     }
-    .search-box .button {
-        padding: var(--space-md) var(--space-2xl);
+    .search-btn .search-icon {
+        width: 24px;
+        height: 24px;
     }
     .hero-pages {
         min-height: 50vh;

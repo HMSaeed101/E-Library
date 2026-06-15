@@ -8,7 +8,7 @@ import { initIncludes } from "./core/include.js";
 import { getRootPrefix } from "./core/utils.js";
 import { getBooks } from "./core/data.js";
 import { initSearch } from "./features/search.js";
-import { updateStats, toggleMenu, initTabs, highlightActiveNavLink, initNavInteractions, initScrollProgress, initGlobalSearch } from "./features/ui-effects.js";
+import { updateStats, toggleMenu, initTabs, highlightActiveNavLink, initNavInteractions, initScrollProgress } from "./features/ui-effects.js";
 import { renderBooksGrid, renderSkeletons } from "./features/books.js";
 import { initAuth } from "./core/auth.js";
 import { initBookDetails } from "./features/book.js";
@@ -87,9 +87,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         // Initialize Declarative Includes (Navbar, Footer, etc.)
         await initIncludes();
-
-        // Initialize Global Search
-        initGlobalSearch();
 
         // Highlight current page in nav
         highlightActiveNavLink();

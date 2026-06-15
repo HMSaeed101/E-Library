@@ -40,19 +40,27 @@ export function displaySearchResults(dropdown, results) {
     dropdown.style.display = "block";
 }
 
-export function initSearch() {
-    const searchInput = document.getElementById("searchInput");
-    const searchDropdown = document.getElementById("searchDropdown");
+/**
+ * Common search execution logic
+ * @param {string} query 
+ */
+function executeSearch(query) {
+    const trimmed = query.trim();
+    if (!trimmed) return;
+    const rootPrefix = getRootPrefix();
+    window.location.href = `${rootPrefix}pages/books.html?search=${encodeURIComponent(trimmed)}`;
+}
+
+/**
+ * Setup a search input and its associated dropdown
+ * @param {string} inputId 
+ * @param {string} dropdownId 
+ */
+function setupSearchPair(inputId, dropdownId) {
+    const searchInput = document.getElementById(inputId);
+    const searchDropdown = document.getElementById(dropdownId);
 
     if (!searchInput || !searchDropdown) return;
-
-    // Redirect handler helper
-    const executeSearch = (query) => {
-        const trimmed = query.trim();
-        if (!trimmed) return;
-        const rootPrefix = getRootPrefix();
-        window.location.href = `${rootPrefix}pages/books.html?search=${encodeURIComponent(trimmed)}`;
-    };
 
     searchInput.addEventListener("input", async (e) => {
         const term = e.target.value;
@@ -72,13 +80,21 @@ export function initSearch() {
         }
     });
 
-    // Trigger search when clicking the sibling Search button
-    const searchButton = searchInput.parentElement?.querySelector("button");
-    if (searchButton) {
-        searchButton.addEventListener("click", (e) => {
+    // Trigger search when clicking the sibling Search button or parent form submission
+    const parentForm = searchInput.closest("form");
+    if (parentForm) {
+        parentForm.addEventListener("submit", (e) => {
             e.preventDefault();
             executeSearch(searchInput.value);
         });
+    } else {
+        const searchButton = searchInput.parentElement?.querySelector("button");
+        if (searchButton) {
+            searchButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                executeSearch(searchInput.value);
+            });
+        }
     }
 
     // Close dropdown when clicking outside
@@ -87,4 +103,12 @@ export function initSearch() {
             searchDropdown.style.display = "none";
         }
     });
+}
+
+export function initSearch() {
+    // 1. Home Page Search
+    setupSearchPair("searchInput", "searchDropdown");
+
+    // 2. Global Navbar Search
+    setupSearchPair("global-search-input", "global-search-dropdown");
 }

@@ -59,6 +59,7 @@ body.dark-mode .logo-img img {
     max-width: 400px;
     margin: 0 var(--space-lg);
     display: none; /* Hidden by default on mobile, shown when needed or on desktop */
+    position: relative;
 }
 
 @media (min-width: 768px) {
@@ -108,21 +109,32 @@ body.dark-mode .logo-img img {
     align-items: center;
     justify-content: center;
     color: var(--color-muted);
-    transition: color var(--transition-base);
+    transition: all var(--transition-base);
 }
 
 .search-icon-btn:hover {
     color: var(--color-accent);
+    transform: scale(1.1);
 }
 
-.search-icon-btn img {
-    width: 14px;
-    height: 14px;
-    filter: grayscale(1) opacity(0.6);
+.search-icon-btn .search-icon {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    opacity: 0.6;
+    transition: all var(--transition-base);
 }
 
-body.dark-mode .search-icon-btn img {
-    filter: grayscale(1) opacity(0.6) invert(1);
+.search-icon-btn:hover .search-icon {
+    opacity: 1;
+}
+
+#global-search-dropdown {
+    top: calc(100% + 5px);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
 }
 
 /* ── 4. Mobile Menu Toggle ────────────────────────────── */
