@@ -15,46 +15,84 @@
 		<script type="module" src="../assets/js/app.js"></script>
 	</head>
 	<body>
+		<div class="sanctuary-progress"></div>
 		<div id="nav-bar" data-include="../components/nav-bar.html"></div>
 
-		<main class="book-container">
-			<div class="book-header">
-				<div class="book-cover-wrapper">
-					<img src="" alt="Book Cover" class="book-cover" />
+		<main class="book-details-page">
+			<!-- 1. Immersive Hero Section -->
+			<header class="book-hero">
+				<div class="hero-bg-blur"></div>
+				<div class="hero-content container">
+					<div class="book-cover-wrapper">
+						<img src="" alt="Book Cover" class="book-cover skeleton" />
+					</div>
+
+					<div class="book-essential-info">
+						<nav class="breadcrumb">
+							<a href="../index.html">Home</a> / <a href="books.html">Library</a> / <span id="breadcrumb-title">Loading...</span>
+						</nav>
+
+						<h1 class="book-title">Loading Title...</h1>
+						<p class="book-author">Loading Author...</p>
+
+						<div class="meta-row">
+							<!-- Meta items (published year, pages, language, rating) will be injected here -->
+						</div>
+
+						<div class="action-buttons">
+							<button class="btn primary">Read Now</button>
+							<button class="btn secondary">Add to Favorites</button>
+							<button class="btn tertiary" title="Download PDF">
+								Download
+							</button>
+						</div>
+					</div>
 				</div>
+			</header>
 
-				<div class="book-info">
-					<h1 class="book-title">Loading Title...</h1>
-					<p class="book-author">Loading Author...</p>
-
-					<div class="meta-row">
-						<!-- Meta items (published year, pages, language, rating) will be injected here -->
-					</div>
-
-					<div class="genres">
-						<!-- Genres will be injected here -->
-					</div>
-
-					<div class="action-buttons">
-						<button class="btn primary">Read Now</button>
-						<button class="btn secondary">Add to Favorites</button>
-						<button class="btn tertiary">Download PDF</button>
-						<button id="sanctuaryToggle" class="btn outline" title="Focus Mode">
-							<span class="icon">🌿</span> Sanctuary Mode
+			<!-- 2. Content Section -->
+			<div class="book-content-grid container">
+				<aside class="book-sidebar">
+					<div class="sidebar-card sanctuary-card">
+						<h3>Focus Mode</h3>
+						<p>Enter a minimalist environment for distraction-free reading.</p>
+						<button id="sanctuaryToggle" class="btn outline full-width">
+							Sanctuary Mode
 						</button>
 					</div>
-				</div>
+
+					<div class="sidebar-card details-card">
+						<h3>Technical Specs</h3>
+						<div class="details-grid">
+							<!-- Detailed book info will be injected here -->
+						</div>
+					</div>
+				</aside>
+
+				<section class="book-main-content">
+					<div class="description-wrapper">
+						<h2>The Narrative</h2>
+						<div class="book-description">
+							<p>Loading description...</p>
+						</div>
+					</div>
+
+					<div class="genres-wrapper">
+						<h3>Classifications</h3>
+						<div class="genres">
+							<!-- Genres will be injected here -->
+						</div>
+					</div>
+				</section>
 			</div>
 
-			<section class="book-description">
-				<h2>Description</h2>
-				<p>Loading description...</p>
-			</section>
-
-			<section class="book-details-section">
-				<h2>Book Details</h2>
-				<div class="details-grid">
-					<!-- Detailed book info (publisher, ISBN, etc.) will be injected here -->
+			<!-- 3. Discovery Section -->
+			<section class="related-books-section container">
+				<div class="section-header">
+					<h3>More like this</h3>
+				</div>
+				<div id="relatedBooksGrid" class="book-grid">
+					<!-- Related books will be injected here -->
 				</div>
 			</section>
 		</main>

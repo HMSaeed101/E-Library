@@ -1,29 +1,32 @@
 /* ============================================================
-   BOOK.JS — Book Detail Page Logic
+   BOOK.JS — Book Detail Page Logic (Enhanced)
 ============================================================ */
 
 import { getRootPrefix } from "../core/utils.js";
-import { getBookById } from "../core/data.js";
+import { getBookById, getBooks } from "../core/data.js";
+import { renderBooksGrid } from "./books.js";
 
 /**
  * Initialize Book Detail page logic
- * @param {Array} booksData - DEPRECATED: Uses core/data.js internally
  */
-export async function initBookDetails(booksData = null) {
+export async function initBookDetails() {
     const params = new URLSearchParams(window.location.search);
     const bookId = params.get("id");
     if (!bookId) return;
 
-    const bookContainer = document.querySelector(".book-container");
-    if (!bookContainer) return;
+    const bookPage = document.querySelector(".book-details-page");
+    if (!bookPage) return;
 
     try {
         const rootPrefix = getRootPrefix();
         const book = await getBookById(bookId);
 
         if (book) {
-            // Inject Data into UI
+            // 1. Core Metadata
             document.title = `${book.title} | E-Library`;
+
+            const breadcrumbTitle = document.getElementById("breadcrumb-title");
+            if (breadcrumbTitle) breadcrumbTitle.textContent = book.title;
 
             const titleEl = document.querySelector(".book-title");
             if (titleEl) titleEl.textContent = book.title;
@@ -32,20 +35,26 @@ export async function initBookDetails(booksData = null) {
             if (authorEl) authorEl.textContent = book.author;
 
             const descEl = document.querySelector(".book-description p");
-            if (descEl) descEl.textContent = book.description;
+            if (descEl) descEl.textContent = book.description || "No description available for this volume.";
 
+            // 2. Visuals (Cover & Background)
             const coverEl = document.querySelector(".book-cover");
+            const heroBg = document.querySelector(".hero-bg-blur");
             if (coverEl) {
-                // Ensure cover path is relative to current page
                 const coverPath = book.cover.startsWith("/") ? book.cover.substring(1) : book.cover;
-                coverEl.src = rootPrefix + coverPath;
+                const fullCoverPath = rootPrefix + coverPath;
+                coverEl.src = fullCoverPath;
                 coverEl.alt = book.title;
+                coverEl.classList.remove("skeleton");
+
+                if (heroBg) {
+                    heroBg.style.backgroundImage = `url('${fullCoverPath}')`;
+                }
             }
 
-            // Update meta-row details
+            // 3. Meta Row (Reading Time, Pages, etc.)
             const metaRow = document.querySelector(".meta-row");
             if (metaRow) {
-                // Calculate Reading Time (assuming 250 words per page, 200 words per minute)
                 let readingTimeStr = "";
                 if (book.pages) {
                     const pageCount = parseInt(book.pages);
@@ -60,83 +69,162 @@ export async function initBookDetails(booksData = null) {
                 metaRow.innerHTML = `
                     ${book.published_year ? `<span class="meta-item">${book.published_year}</span>` : ''}
                     ${book.pages ? `<span class="meta-item">${book.pages}</span>` : ''}
-                    ${readingTimeStr ? `<span class="meta-item time">${readingTimeStr}</span>` : ''}
+                    ${readingTimeStr ? `<span class="meta-item time">${getIcon("clock")} ${readingTimeStr}</span>` : ''}
                     ${book.language ? `<span class="meta-item">${book.language}</span>` : ''}
-                    ${book.rating ? `<span class="meta-item rating">${book.rating}</span>` : ''}
+                    ${book.rating ? `<span class="meta-item rating">${getIcon("star")} ${book.rating}</span>` : ''}
                 `;
             }
 
-            // Sanctuary Mode Logic
-            const sanctuaryToggle = document.getElementById("sanctuaryToggle");
-            
-            const updateSanctuaryUI = (active) => {
-                if (active) {
-                    document.body.classList.add("sanctuary-mode");
-                    if (sanctuaryToggle) {
-                        sanctuaryToggle.innerHTML = `<span class="icon">🏛️</span> Leave Sanctuary`;
-                    }
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                } else {
-                    document.body.classList.remove("sanctuary-mode");
-                    if (sanctuaryToggle) {
-                        sanctuaryToggle.innerHTML = `<span class="icon">🌿</span> Sanctuary Mode`;
-                    }
-                }
-            };
-
-            // Restore sanctuary state from localStorage
-            const isSanctuaryActive = localStorage.getItem("sanctuary-mode") === "true";
-            if (isSanctuaryActive) updateSanctuaryUI(true);
-
-            if (sanctuaryToggle) {
-                sanctuaryToggle.addEventListener("click", () => {
-                    const isActive = document.body.classList.toggle("sanctuary-mode");
-                    localStorage.setItem("sanctuary-mode", isActive);
-                    updateSanctuaryUI(isActive);
-                });
-            }
-
-            // Update genres
+            // 4. Genres / Classifications
             const genresContainer = document.querySelector(".genres");
             if (genresContainer && book.genres && book.genres.length > 0) {
                 genresContainer.innerHTML = book.genres.map(genre => `<span class="genre-tag">${genre}</span>`).join('');
             }
 
-            // Update action buttons
-            const readNowBtn = document.querySelector(".btn.primary");
-            if (readNowBtn && book.pdf) {
-                const pdfPath = book.pdf.startsWith("/") ? book.pdf.substring(1) : book.pdf;
-                readNowBtn.onclick = () => window.open(rootPrefix + pdfPath, "_blank");
-            }
-
-            const downloadBtn = document.querySelector(".btn.tertiary");
-            if (downloadBtn && book.pdf) {
-                const pdfPath = book.pdf.startsWith("/") ? book.pdf.substring(1) : book.pdf;
-                downloadBtn.onclick = () => {
-                    const link = document.createElement('a');
-                    link.href = rootPrefix + pdfPath;
-                    link.download = `${book.title}.pdf`;
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                };
-            }
-
-            // Update book details section
-            const detailsGrid = document.querySelector(".book-details-section .details-grid");
+            // 5. Technical Specs (Sidebar)
+            const detailsGrid = document.querySelector(".details-grid");
             if (detailsGrid) {
-                detailsGrid.innerHTML = `
-                    ${book.publisher ? `<div class="detail-item"><span class="label">Publisher</span><span class="value">${book.publisher}</span></div>` : ''}
-                    ${book.isbn ? `<div class="detail-item"><span class="label">ISBN</span><span class="value">${book.isbn}</span></div>` : ''}
-                    ${book.publication_date ? `<div class="detail-item"><span class="label">Publication Date</span><span class="value">${book.publication_date}</span></div>` : ''}
-                    ${book.file_size ? `<div class="detail-item"><span class="label">File Size</span><span class="value">${book.file_size}</span></div>` : ''}
-                    ${book.format ? `<div class="detail-item"><span class="label">Format</span><span class="value">${book.format}</span></div>` : ''}
-                `;
+                const specs = [
+                    { label: "Publisher", value: book.publisher },
+                    { label: "ISBN", value: book.isbn },
+                    { label: "Publication Date", value: book.publication_date },
+                    { label: "File Size", value: book.file_size },
+                    { label: "Format", value: book.format },
+                    { label: "Category", value: book.category }
+                ];
+
+                detailsGrid.innerHTML = specs
+                    .filter(s => s.value)
+                    .map(s => `
+                        <div class="detail-item">
+                            <span class="label">${s.label}</span>
+                            <span class="value">${s.value}</span>
+                        </div>
+                    `).join('');
             }
+
+            // 6. Action Buttons
+            const readNowBtn = document.querySelector(".btn.primary");
+            const downloadBtn = document.querySelector(".btn.tertiary");
+            const favBtn = document.querySelector(".btn.secondary");
+
+            if (favBtn) favBtn.innerHTML = `${getIcon("favorite")} Add to Favorites`;
+
+            if (book.pdf) {
+                const pdfPath = book.pdf.startsWith("/") ? book.pdf.substring(1) : book.pdf;
+                const fullPdfPath = rootPrefix + pdfPath;
+
+                if (readNowBtn) {
+                    readNowBtn.innerHTML = `${getIcon("read")} Read Now`;
+                    readNowBtn.onclick = () => window.open(fullPdfPath, "_blank");
+                }
+                if (downloadBtn) {
+                    downloadBtn.innerHTML = `${getIcon("download")} Download`;
+                    downloadBtn.onclick = () => {
+                        const link = document.createElement('a');
+                        link.href = fullPdfPath;
+                        link.download = `${book.title}.pdf`;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    };
+                }
+            } else {
+                if (readNowBtn) readNowBtn.disabled = true;
+                if (downloadBtn) downloadBtn.disabled = true;
+            }
+
+            // 7. Sanctuary Mode
+            initSanctuaryMode();
+
+            // 8. Related Books
+            loadRelatedBooks(book);
+
         } else {
-            bookContainer.innerHTML = "<h1 style='text-align:center; padding: 50px;'>Book not found!</h1>";
+            bookPage.innerHTML = `<div class="container" style="padding: 100px 0; text-align: center;"><h1>Volume not found in our archives.</h1><a href="books.html" class="button">Return to Library</a></div>`;
         }
     } catch (e) {
-        console.error("Failed to load book details", e);
+        console.error("Failed to load book details:", e);
+    }
+}
+
+import { getIcon } from "../core/icons.js";
+
+/**
+ * Sanctuary Mode Focus Logic
+ */
+function initSanctuaryMode() {
+    const sanctuaryToggle = document.getElementById("sanctuaryToggle");
+    const progressBar = document.querySelector(".sanctuary-progress");
+    if (!sanctuaryToggle) return;
+
+    const updateSanctuaryUI = (active) => {
+        if (active) {
+            document.body.classList.add("sanctuary-mode");
+            sanctuaryToggle.innerHTML = `${getIcon("temple")} Leave Sanctuary`;
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            initProgressBar();
+        } else {
+            document.body.classList.remove("sanctuary-mode");
+            sanctuaryToggle.innerHTML = `${getIcon("leaf")} Sanctuary Mode`;
+            removeProgressBar();
+        }
+    };
+
+    const handleScroll = () => {
+        if (!document.body.classList.contains("sanctuary-mode")) return;
+        
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        
+        if (progressBar) {
+            progressBar.style.width = scrolled + "%";
+        }
+    };
+
+    const initProgressBar = () => {
+        window.addEventListener("scroll", handleScroll);
+    };
+
+    const removeProgressBar = () => {
+        window.removeEventListener("scroll", handleScroll);
+        if (progressBar) progressBar.style.width = "0%";
+    };
+
+    // Initial state
+    const isSanctuaryActive = localStorage.getItem("sanctuary-mode") === "true";
+    if (isSanctuaryActive) updateSanctuaryUI(true);
+
+    sanctuaryToggle.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("sanctuary-mode");
+        localStorage.setItem("sanctuary-mode", isActive);
+        updateSanctuaryUI(isActive);
+    });
+}
+
+/**
+ * Load and render related books based on category
+ */
+async function loadRelatedBooks(currentBook) {
+    const relatedGrid = document.getElementById("relatedBooksGrid");
+    if (!relatedGrid) return;
+
+    const allBooks = await getBooks();
+
+    // Filter by same category, excluding current book
+    const related = allBooks
+        .filter(b => b.category === currentBook.category && b.id !== currentBook.id)
+        .slice(0, 4);
+
+    if (related.length > 0) {
+        renderBooksGrid(relatedGrid, related);
+    } else {
+        // Fallback: Just show any 4 other books
+        const fallback = allBooks
+            .filter(b => b.id !== currentBook.id)
+            .sort(() => 0.5 - Math.random())
+            .slice(0, 4);
+        renderBooksGrid(relatedGrid, fallback);
     }
 }

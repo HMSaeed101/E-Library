@@ -1,68 +1,103 @@
 /* ============================================================
-	BOOK DETAIL PAGE — pages/book-details.css
-	Layout for the individual book detail page.
-	Sections:
-	1. Page Container (mobile first)
-	2. Book Header (cover + info)
-	3. Book Info & Meta
-	4. Action Buttons
-	5. Description & Details
-	6. Tablet/Desktop Overrides
+	BOOK DETAIL PAGE — assets/css/pages/book-details.css
+	Optimized for: Mobile-first, Immersive Hero, Sanctuary Mode.
 ============================================================ */
 
-/* ── 1. Page Container ─────────────────────────────────── */
-.book-container {
-	max-width: 1200px;
-	margin: var(--header-height) auto 0;
-	padding: var(--space-2xl) var(--space-xl);
+/* ── 1. Page & Hero Section ───────────────────────────── */
+.book-details-page {
+    overflow-x: hidden;
+    background: var(--color-bg);
 }
 
-/* ── 2. Book Header & Cover ────────────────────────────── */
-.book-header {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	gap: var(--space-2xl);
-	margin-bottom: var(--space-3xl);
+.book-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-4xl);
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-border);
 }
+
+.hero-bg-blur {
+    position: absolute;
+    top: -10%; left: -10%; width: 120%; height: 110%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(60px) opacity(0.15);
+    z-index: 0;
+    transition: background-image 0.8s var(--transition-base);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2xl);
+    text-align: center;
+}
+
+/* ── 2. Book Cover ───────────────────────────────────── */
+.book-cover-wrapper {
+    position: relative;
+    perspective: 1000px;
+}
+
 .book-cover {
-	width: 220px;
-	height: 330px;
-	object-fit: cover;
-	border-radius: var(--radius-xs);
-	box-shadow: var(--shadow-md);
+    width: 220px;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: var(--radius-xs);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform var(--transition-slow) var(--transition-bounce);
 }
 
-/* ── 3. Book Info & Meta ───────────────────────────────── */
-.book-info {
-	display: flex;
-	flex-direction: column;
+/* ── 3. Essential Info & Breadcrumb ───────────────────── */
+.book-essential-info {
+    max-width: 600px;
 }
+
+.breadcrumb {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-muted);
+    margin-bottom: var(--space-xl);
+}
+
+.breadcrumb a { color: var(--color-accent); }
+
 .book-title {
-	font-family: var(--font-primary);
-	font-size: var(--text-3xl);
-	color: var(--color-primary);
-	margin-bottom: var(--space-sm);
-    font-weight: var(--weight-normal);
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-xs);
+    color: var(--color-primary);
 }
+
 .book-author {
-	font-family: var(--font-primary);
-	font-size: var(--text-lg);
-	color: var(--color-muted);
-	margin-bottom: var(--space-xl);
+    font-size: var(--text-lg);
     font-style: italic;
+    color: var(--color-muted);
+    margin-bottom: var(--space-2xl);
 }
+
 .meta-row {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: var(--space-lg);
-	margin-bottom: var(--space-2xl);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-3xl);
     font-family: var(--font-secondary);
     font-size: var(--text-xs);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-md);
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-full);
 }
 
 .meta-item.time {
@@ -70,155 +105,325 @@
     font-weight: var(--weight-bold);
 }
 
-.genre-tag {
-	background: var(--color-surface-alt);
-	padding: var(--space-xs) var(--space-md);
-	font-size: 10px;
-	text-transform: uppercase;
-	border: 1px solid var(--color-border);
-}
-
-/* ── 4. Action Buttons ─────────────────────────────────── */
+/* ── 4. Action Buttons ───────────────────────────────── */
 .action-buttons {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-md);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    width: 100%;
 }
 
-/* ── 5. Description & Details ────────────────────────── */
-.book-description {
-	margin-bottom: var(--space-3xl);
-    font-family: var(--font-secondary);
-    line-height: var(--leading-relaxed);
-    font-size: var(--text-base);
-    color: var(--color-text);
+@media (min-width: 480px) {
+    .action-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-.book-details-section h2 {
-    font-size: var(--text-xl);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--space-md);
+
+/* ── 5. Content Grid (Layout) ───────────────────────── */
+.book-content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4xl);
+    padding: var(--space-4xl) var(--space-lg);
+}
+
+.book-sidebar {
+    order: 2; /* Sidebar below main content on mobile */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.sidebar-card {
+    background: var(--color-surface);
+    padding: var(--space-xl);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.sidebar-card h3 {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-lg);
+    color: var(--color-muted);
+}
+
+.sidebar-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text);
     margin-bottom: var(--space-xl);
 }
 
-.details-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: var(--space-lg);
+.full-width { width: 100%; }
+
+/* ── 6. Main Content Area ───────────────────────────── */
+.book-main-content {
+    order: 1;
 }
-.label {
-	font-family: var(--font-secondary);
-	font-size: 9px;
-	color: var(--color-muted);
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
+
+.description-wrapper h2,
+.genres-wrapper h3 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-xl);
+    text-align: left;
+}
+
+.book-description {
+    font-family: var(--font-secondary);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text);
+    font-size: var(--text-base);
+}
+
+.genres-wrapper {
+    margin-top: var(--space-4xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.genre-tag {
+    padding: var(--space-xs) var(--space-lg);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-base);
+}
+
+.genre-tag:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* ── 7. Details Grid ────────────────────────────────── */
+.details-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.detail-item .label {
+    font-size: 9px;
+    text-transform: uppercase;
+    color: var(--color-muted);
     font-weight: var(--weight-bold);
 }
-.value {
-	font-family: var(--font-primary);
-	font-size: var(--text-base);
+
+.detail-item .value {
+    font-size: var(--text-sm);
+    color: var(--color-primary);
 }
 
-/* ── 6. Tablet/Desktop Overrides (min-width: 768px) ──── */
-@media (min-width: 768px) {
-    .book-container { padding: var(--space-4xl) var(--space-2xl); }
+/* ── 8. Related Books ───────────────────────────────── */
+.related-books-section {
+    padding: var(--space-5xl) var(--space-lg);
+    border-top: 1px solid var(--color-border);
+}
 
-    .book-header {
+/* ── 9. Tablet/Desktop Overrides (min-width: 1024px) ─── */
+@media (min-width: 1024px) {
+    .book-hero {
+        padding: calc(var(--header-height) + var(--space-5xl)) 0 var(--space-5xl);
+    }
+
+    .hero-content {
         flex-direction: row;
         align-items: flex-start;
         text-align: left;
-        gap: var(--space-4xl);
+        gap: var(--space-5xl);
     }
-    .book-cover { width: 300px; height: 450px; }
+
+    .book-cover { width: 320px; }
+
+    .book-essential-info { padding-top: var(--space-xl); }
+
     .book-title { font-size: var(--text-5xl); }
+
     .meta-row { justify-content: flex-start; }
-    .action-buttons { flex-direction: row; }
-    .book-description { font-size: var(--text-lg); max-width: 800px; }
-    .book-details-section h2 { font-size: var(--text-2xl); }
-    .details-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+
+    .action-buttons {
+        grid-template-columns: repeat(3, auto);
+        justify-content: flex-start;
+        gap: var(--space-lg);
+    }
+
+    .book-content-grid {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--space-5xl);
+    }
+
+    .book-sidebar {
+        width: 300px;
+        flex-shrink: 0;
+        order: 1;
+        position: sticky;
+        top: calc(var(--header-height) + var(--space-xl));
+    }
+
+    .book-main-content {
+        flex: 1;
+        order: 2;
+    }
+
+    .book-description { font-size: var(--text-lg); }
 }
 
-/* ── 7. Sanctuary Mode (Focus Mode) ────────────────────── */
+/* ── 10. Sanctuary Mode (Refined) ───────────────────── */
 body.sanctuary-mode {
     background-color: var(--color-bg);
     overflow-x: hidden;
 }
 
-body.sanctuary-mode .header,
+/* Hide non-essential elements */
+body.sanctuary-mode #nav-bar,
 body.sanctuary-mode #footer,
-body.sanctuary-mode .book-cover-wrapper,
-body.sanctuary-mode .genres,
-body.sanctuary-mode .book-details-section,
-body.sanctuary-mode .action-buttons > *:not(#sanctuaryToggle):not(.primary) {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    position: absolute; /* Take out of flow to prevent gaps */
+body.sanctuary-mode .book-hero,
+body.sanctuary-mode .related-books-section,
+body.sanctuary-mode .genres-wrapper {
+    display: none !important;
 }
 
-body.sanctuary-mode .book-container {
-    margin-top: 0;
-    padding-top: var(--space-5xl);
-    max-width: 700px; /* Narrower for better readability */
-    margin-left: auto;
-    margin-right: auto;
-    transition: all 0.8s var(--transition-base);
+/* Sidebar behavior in Sanctuary Mode */
+body.sanctuary-mode .book-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: visible;
+    z-index: var(--z-modal);
 }
 
-body.sanctuary-mode .book-title {
-    font-size: var(--text-5xl);
+body.sanctuary-mode .book-sidebar > *:not(.sanctuary-card) {
+    display: none !important;
+}
+
+body.sanctuary-mode .sanctuary-card {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+body.sanctuary-mode .sanctuary-card h3,
+body.sanctuary-mode .sanctuary-card p {
+    display: none !important;
+}
+
+body.sanctuary-mode .book-details-page {
+    padding: var(--space-5xl) var(--space-lg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.sanctuary-mode .book-main-content {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    animation: sanctuaryFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.sanctuary-mode .description-wrapper h2 {
     text-align: center;
-    margin-bottom: var(--space-lg);
     font-family: var(--font-primary);
-    color: var(--color-primary);
-}
-
-body.sanctuary-mode .book-author {
-    text-align: center;
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-3xl);
-    color: var(--color-muted);
-    font-style: italic;
-}
-
-body.sanctuary-mode .meta-row {
-    justify-content: center;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--space-xl);
+    font-size: clamp(var(--text-3xl), 8vw, var(--text-5xl));
     margin-bottom: var(--space-4xl);
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
 }
 
 body.sanctuary-mode .book-description {
-    font-size: 1.15rem;
-    line-height: 1.9;
-    color: var(--color-text);
-    text-align: justify;
+    font-family: var(--font-primary);
+    font-size: clamp(1.125rem, 4vw, 1.35rem);
+    line-height: 2.1;
+    text-align: left; /* Justify can be hard to read on mobile */
+    color: var(--color-primary-soft);
 }
 
-body.sanctuary-mode .action-buttons {
-    margin-top: var(--space-4xl);
-    justify-content: center;
-    border-top: 1px solid var(--color-border);
-    padding-top: var(--space-2xl);
+/* Reading Progress Bar */
+.sanctuary-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--color-accent);
+    z-index: var(--z-modal);
+    transition: width 0.2s ease;
+    display: none;
 }
 
-body.sanctuary-mode .action-buttons .btn.primary {
-    padding: var(--space-md) var(--space-3xl);
-    font-size: var(--text-base);
-    letter-spacing: 0.2em;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+body.sanctuary-mode .sanctuary-progress {
+    display: block;
 }
 
+/* Refined Toggle Button */
 body.sanctuary-mode #sanctuaryToggle {
     position: fixed;
     bottom: var(--space-xl);
     right: var(--space-xl);
-    z-index: 1000;
+    z-index: var(--z-modal);
     background: var(--color-surface);
-    box-shadow: var(--shadow-lg);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    color: var(--color-primary);
     border: 1px solid var(--color-border);
-    padding: var(--space-sm) var(--space-lg);
+    padding: var(--space-ms) var(--space-xl);
     border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    font-weight: var(--weight-medium);
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
 }
+
+body.sanctuary-mode #sanctuaryToggle:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-surface-alt);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    body.sanctuary-mode .book-details-page {
+        padding-top: var(--space-3xl);
+    }
+
+    body.sanctuary-mode #sanctuaryToggle {
+        bottom: var(--space-lg);
+        right: var(--space-lg);
+        padding: var(--space-sm) var(--space-lg);
+        font-size: var(--text-sm);
+    }
+}
+
+@keyframes sanctuaryFadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px);
+        filter: blur(10px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+

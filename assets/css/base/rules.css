@@ -114,8 +114,8 @@
     /* ── 9. Transitions ──────────────────────────── */
     --transition-fast:    0.15s ease;
     --transition-base:    0.3s ease;
-    --transition-slow:    0.5s ease;
-    --transition-bounce:  0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-slow:    0.8s ease;
+    --transition-bounce:  0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     /* ── 10. Global Dynamic Shadows ───────────────────────── */
     --shadow-sm:          0 2px 4px var(--card-shadow);
