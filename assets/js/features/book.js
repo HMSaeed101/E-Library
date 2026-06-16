@@ -134,10 +134,7 @@ export async function initBookDetails() {
                 if (downloadBtn) downloadBtn.disabled = true;
             }
 
-            // 7. Sanctuary Mode
-            initSanctuaryMode();
-
-            // 8. Related Books
+            // 7. Related Books
             loadRelatedBooks(book);
 
         } else {
@@ -149,59 +146,6 @@ export async function initBookDetails() {
 }
 
 import { getIcon } from "../core/icons.js";
-
-/**
- * Sanctuary Mode Focus Logic
- */
-function initSanctuaryMode() {
-    const sanctuaryToggle = document.getElementById("sanctuaryToggle");
-    const progressBar = document.querySelector(".sanctuary-progress");
-    if (!sanctuaryToggle) return;
-
-    const updateSanctuaryUI = (active) => {
-        if (active) {
-            document.body.classList.add("sanctuary-mode");
-            sanctuaryToggle.innerHTML = `${getIcon("temple")} Leave Sanctuary`;
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            initProgressBar();
-        } else {
-            document.body.classList.remove("sanctuary-mode");
-            sanctuaryToggle.innerHTML = `${getIcon("leaf")} Sanctuary Mode`;
-            removeProgressBar();
-        }
-    };
-
-    const handleScroll = () => {
-        if (!document.body.classList.contains("sanctuary-mode")) return;
-        
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        
-        if (progressBar) {
-            progressBar.style.width = scrolled + "%";
-        }
-    };
-
-    const initProgressBar = () => {
-        window.addEventListener("scroll", handleScroll);
-    };
-
-    const removeProgressBar = () => {
-        window.removeEventListener("scroll", handleScroll);
-        if (progressBar) progressBar.style.width = "0%";
-    };
-
-    // Initial state
-    const isSanctuaryActive = localStorage.getItem("sanctuary-mode") === "true";
-    if (isSanctuaryActive) updateSanctuaryUI(true);
-
-    sanctuaryToggle.addEventListener("click", () => {
-        const isActive = document.body.classList.toggle("sanctuary-mode");
-        localStorage.setItem("sanctuary-mode", isActive);
-        updateSanctuaryUI(isActive);
-    });
-}
 
 /**
  * Load and render related books based on category
