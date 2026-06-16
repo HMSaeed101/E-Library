@@ -45,8 +45,8 @@
     text-transform: uppercase;
 }
 .logo-img img {
-    width: 18px;
-    height: 18px;
+    width: var(--text-3xl);
+    height: var(--text-3xl);
     filter: brightness(0);
 }
 body.dark-mode .logo-img img {
@@ -324,22 +324,4 @@ body.dark-mode .nav-links img { filter: brightness(0) invert(1); }
     .nav-links a.active::after {
         width: 100%;
     }
-}
-
-/* ── 6. Scroll Progress Bar ────────────────────────────── */
-.scroll-progress-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: transparent;
-    z-index: 10;
-}
-
-.scroll-progress-bar {
-    height: 100%;
-    width: 0%;
-    background: var(--color-accent);
-    transition: width 0.1s ease-out;
 }
