@@ -7,6 +7,7 @@
 import { getRootPrefix, safeFetch } from "./utils.js";
 
 let cachedBooks = null;
+let booksMap = null; // New ID-based lookup map
 
 /**
  * Loads books data from books.json (with caching)
@@ -18,6 +19,13 @@ export async function getBooks() {
     const dataPath = `${rootPrefix}assets/data/books.json`;
     
     cachedBooks = await safeFetch(dataPath);
+    
+    if (cachedBooks) {
+        // Build the lookup map once for O(1) retrieval
+        booksMap = new Map();
+        cachedBooks.forEach(book => booksMap.set(book.id, book));
+    }
+
     return cachedBooks || [];
 }
 
@@ -26,8 +34,10 @@ export async function getBooks() {
  * @param {string} id 
  */
 export async function getBookById(id) {
-    const books = await getBooks();
-    return books.find(book => book.id === id);
+    if (!booksMap) {
+        await getBooks();
+    }
+    return booksMap ? booksMap.get(id) : null;
 }
 
 /**

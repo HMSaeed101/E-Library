@@ -3,7 +3,7 @@
     Manages book search data, filtering, and UI updates.
 ============================================================ */
 
-import { getRootPrefix } from "../core/utils.js";
+import { getRootPrefix, debounce } from "../core/utils.js";
 import { getBooks, filterBooks } from "../core/data.js";
 
 /**
@@ -27,7 +27,8 @@ export function displaySearchResults(dropdown, results) {
 
     const rootPrefix = getRootPrefix();
 
-    results.forEach((book) => {
+    // Limit dropdown results for performance
+    results.slice(0, 10).forEach((book) => {
         const item = document.createElement("div");
         item.classList.add("item");
         item.textContent = `${book.title} by ${book.author}`;
@@ -62,7 +63,7 @@ function setupSearchPair(inputId, dropdownId) {
 
     if (!searchInput || !searchDropdown) return;
 
-    searchInput.addEventListener("input", async (e) => {
+    const handleInput = debounce(async (e) => {
         const term = e.target.value;
         if (!term) {
             searchDropdown.style.display = "none";
@@ -70,7 +71,9 @@ function setupSearchPair(inputId, dropdownId) {
         }
         const results = await filterBooks({ search: term });
         displaySearchResults(searchDropdown, results);
-    });
+    }, 250);
+
+    searchInput.addEventListener("input", handleInput);
 
     // Trigger search when pressing Enter key
     searchInput.addEventListener("keydown", (e) => {

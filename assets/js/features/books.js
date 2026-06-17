@@ -22,7 +22,6 @@ export function renderBooksGrid(container, books, infinite = false) {
 
     const bookHTML = books.map(book => {
         const coverSrc = book.cover.startsWith("/") ? book.cover.substring(1) : book.cover;
-        const bookDetailsHref = `${rootPrefix}pages/book-details.html?id=${book.id}`;
 
         // Calculate Reading Time
         let readingTimeStr = "";
@@ -37,10 +36,10 @@ export function renderBooksGrid(container, books, infinite = false) {
         }
 
         return `
-            <div class="book-card" data-id="${book.id}" onclick="window.location.href='${bookDetailsHref}'">
+            <div class="book-card" data-id="${book.id}">
                 <div class="book-card-image">
-                    <img src="${rootPrefix}${coverSrc}" alt="${book.title}" />
-                    <button class="quick-peek-btn" onclick="event.stopPropagation(); window.openQuickPeek('${book.id}')">
+                    <img src="${rootPrefix}${coverSrc}" alt="${book.title}" loading="lazy" />
+                    <button class="quick-peek-btn" data-action="quick-peek">
                         Quick Peek
                     </button>
                     ${readingTimeStr ? `<span class="reading-time-badge">${readingTimeStr}</span>` : ''}
@@ -55,6 +54,25 @@ export function renderBooksGrid(container, books, infinite = false) {
 
     // If infinite, duplicate the content for a seamless loop
     container.innerHTML = infinite ? bookHTML + bookHTML : bookHTML;
+
+    // Attach Event Delegation (if not already attached)
+    if (!container.dataset.eventAttached) {
+        container.addEventListener("click", (e) => {
+            const card = e.target.closest(".book-card");
+            if (!card) return;
+
+            const bookId = card.dataset.id;
+            const action = e.target.dataset.action;
+
+            if (action === "quick-peek") {
+                e.stopPropagation();
+                openQuickPeek(bookId);
+            } else {
+                window.location.href = `${rootPrefix}pages/book-details.html?id=${bookId}`;
+            }
+        });
+        container.dataset.eventAttached = "true";
+    }
 }
 
 /**
