@@ -115,7 +115,7 @@
     color: rgba(255, 255, 255, 0.5);
 }
 .search-btn {
-    background: transparent;
+    background: var(--color-accent); /* Solid background for high contrast */
     border: none;
     padding: var(--space-md);
     cursor: pointer;
@@ -124,11 +124,13 @@
     justify-content: center;
     transition: all var(--transition-base);
     color: var(--color-white);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin: -4px; /* Align with input padding */
 }
 
 .search-btn:hover {
-    transform: scale(1.1);
-    color: var(--color-accent);
+    background: var(--color-primary);
+    transform: none;
 }
 
 .search-btn .search-icon {
@@ -192,10 +194,10 @@
 }
 
 #surpriseMeBtn {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--color-accent); /* Made solid for high contrast */
+    border: none;
     color: var(--color-white);
-    padding: var(--space-md) var(--space-xl);
+    padding: 1.25rem 2.5rem;
     font-size: var(--text-xs);
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -205,14 +207,14 @@
     gap: var(--space-sm);
     cursor: pointer;
     margin: 0 auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
 }
 
 #surpriseMeBtn:hover {
-    background: var(--color-white);
-    color: var(--color-primary);
-    border-color: var(--color-white);
+    background: var(--color-primary);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-lg);
 }
 
 #surpriseMeBtn .icon {
@@ -244,10 +246,7 @@
 .hero-pages::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background: var(--bg-overlay);
 }
 .hero-pages > * {
