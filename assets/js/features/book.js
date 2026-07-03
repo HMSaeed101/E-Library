@@ -2,6 +2,7 @@
    BOOK.JS — Book Detail Page Logic (Enhanced)
 ============================================================ */
 
+import { getIcon } from "../core/icons.js";
 import { getRootPrefix } from "../core/utils.js";
 import { getBookById, getBooks } from "../core/data.js";
 import { renderBooksGrid } from "./books.js";
@@ -145,7 +146,6 @@ export async function initBookDetails() {
     }
 }
 
-import { getIcon } from "../core/icons.js";
 
 /**
  * Load and render related books based on category

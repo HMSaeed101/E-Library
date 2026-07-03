@@ -1,0 +1,67 @@
+graph TD
+    subgraph Browser_Environment [Browser Environment]
+        DOMContentLoaded[DOMContentLoaded Event]
+        WindowObject[Window Object]
+    end
+
+    subgraph Entry_Point [Entry Point: app.js]
+        MainInit["Main Initialization Loop (async)"]
+    end
+
+    subgraph Core_Layer [Core Modules: /assets/js/core/]
+        IncludeJS["include.js<br/>(Declarative HTML Injection)"]
+        DataJS["data.js<br/>(Data Fetching & Caching)"]
+        ThemeJS["theme.js<br/>(Dark/Light Mode)"]
+        AuthJS["auth.js<br/>(User Session & Login)"]
+        UtilsJS["utils.js<br/>(Shared Helpers)"]
+    end
+
+    subgraph Feature_Layer [Feature Modules: /assets/js/features/]
+        SearchJS["search.js<br/>(Global Search Box)"]
+        BooksJS["books.js<br/>(Grid Rendering & Filters)"]
+        BookJS["book.js<br/>(Details Page Logic)"]
+        UIEffectsJS["ui-effects.js<br/>(Scroll, Stats, Menu)"]
+        ProfileJS["profile.js<br/>(User Dashboard)"]
+    end
+
+    subgraph Data_Source [External Assets]
+        BooksJSON["/assets/data/books.json"]
+        HTMLComponents["Navbar, Footer, Modals"]
+    end
+
+    %% Initialization Flow
+    DOMContentLoaded --> MainInit
+    MainInit --> ThemeJS
+    MainInit --> IncludeJS
+    IncludeJS -- Fetches --> HTMLComponents
+    MainInit -- Awaits --> DataJS
+    DataJS -- Fetches --> BooksJSON
+
+    %% Integration Details
+    MainInit --> AuthJS
+    MainInit --> SearchJS
+    MainInit --> UIEffectsJS
+    
+    %% Feature Logic
+    SearchJS -- Uses --> DataJS
+    BooksJS -- Uses --> DataJS
+    BookJS -- Uses --> DataJS
+    
+    %% Dynamic Binding
+    MainInit --> BooksJS
+    MainInit --> BookJS
+    MainInit --> ProfileJS
+
+    %% Learning Concepts
+    Concepts[Key JS Concepts Used]
+    Concepts --> ESM[ES Modules: import/export]
+    Concepts --> Async[Asynchronous JS: async/await/Promise.all]
+    Concepts --> DOM[DOM Manipulation: querySelector/innerHTML]
+    Concepts --> Fetch[Fetch API: Loading JSON/HTML]
+    Concepts --> Closures[Closures & State: cachedBooks in data.js]
+    Concepts --> URLParams[URLSearchParams: Routing & Filtering]
+
+    style Entry_Point fill:#f9f,stroke:#333,stroke-width:2px
+    style Core_Layer fill:#bbf,stroke:#333,stroke-width:2px
+    style Feature_Layer fill:#bfb,stroke:#333,stroke-width:2px
+    style Concepts fill:#fff4dd,stroke:#d4a017,stroke-width:2px
